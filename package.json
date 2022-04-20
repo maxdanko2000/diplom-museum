@@ -29,7 +29,7 @@
         "webpack-dev-server": "^4.2.1"
     },
     "main": "index.js",
-    "repository": "https://github.com/filimonov-codedot/static-site-webpack",
-    "author": "filimonov-codedot <filimonov.codedot@gmail.com>",
+    "repository": "https://github.com/maxdanko2000/diplom-museum",
+    "author": "maxdanko2000",
     "license": "MIT"
 }
