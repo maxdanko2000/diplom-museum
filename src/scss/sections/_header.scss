@@ -29,6 +29,9 @@
 
 .nav {
     display: flex;
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
     justify-content: flex-end;
     &__list {
         list-style: none;
@@ -40,5 +43,3 @@
         display: flex;
     }
 }
-
-.nav-link {}

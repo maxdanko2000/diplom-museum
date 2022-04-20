@@ -1,0 +1,36 @@
+#burger-toggler {
+    display: none;
+}
+
+.burger {
+    display: none;
+    @include media-breakpoint-down(xl) {
+        display: flex;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--palette-primary-main);
+    padding: 35px 55px;
+    z-index: 1;
+    .nav {
+        &__list {
+            flex-direction: column;
+        }
+        &__list-item {
+            .nav-link {
+                display: inline-flex;
+                width: 180px;
+                justify-content: space-between;
+                align-items: center;
+                &:hover {
+                    &__arrow {
+                        path {
+                            fill: var(--palette-secondary-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
