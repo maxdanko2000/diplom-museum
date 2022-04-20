@@ -1,6 +1,6 @@
 $font-base-url: "../../fonts/";
 @font-face {
-    font-family: 'Forum';
+    font-family: 'Forum', sans-serif;
     src: local('Forum'),
     url("#{font-base-url}Forum/Forum.woff2") format('woff2');
     font-weight: normal;

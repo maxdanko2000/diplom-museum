@@ -1,0 +1,44 @@
+.header {
+    width: 100%;
+    background-color: var(--palette-primary-main);
+    &__container {
+        max-width: 1480px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    &__logo {
+        display: inline-flex;
+        gap: 25px;
+        padding: 10px 20px;
+    }
+    &__logo-image {}
+    &__logo-title {
+        font-family: 'Forum';
+        font-size: 28px;
+        letter-spacing: 2px;
+        color: var(--palette-primary-text);
+        text-transform: uppercase;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    &__list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__list-item {
+        display: flex;
+    }
+}
+
+.nav-link {}
