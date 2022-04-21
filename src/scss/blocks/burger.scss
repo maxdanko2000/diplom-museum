@@ -28,8 +28,10 @@ li {
                 .burger {
                     transform: translateX(0%);
                 }
-                .hero__title {
-                    transform: translateX(-100%);
+                @include media-breakpoint-down(xl) {
+                    .hero__title {
+                        transform: translateX(-100%);
+                    }
                 }
             }
         }
@@ -75,6 +77,7 @@ li {
         }
     }
     .burger-gallery {
+        position: relative;
         display: none;
         flex-wrap: wrap;
         width: 100%;
@@ -82,8 +85,9 @@ li {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding: 10px;
-        border-bottom: 1px solid white;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--palette-primary-light);
         &__item {
             display: flex;
             width: 100%;
