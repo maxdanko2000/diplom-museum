@@ -75,12 +75,11 @@ li {
     .burger-gallery {
         display: inline-flex;
         justify-content: center;
+        gap: 10px;
         padding-top: 10px;
         padding-bottom: 10px;
         border-bottom: 1px solid white;
-        &__item {
-            padding: 10px;
-        }
+        &__item {}
         &__item-image {
             max-width: 95px;
             max-height: 95px;
