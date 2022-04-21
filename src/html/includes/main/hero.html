@@ -59,13 +59,22 @@
             </ul>
             <ul class="burger-gallery">
                 <li class="burger-gallery__item">
-                    <img class="burger-gallery__item-image" src="./img/burger/gallery-image1.jpg" alt="">
+                    <picture class="burger-gallery__item-image">
+                        <source media="(max-width: 479.98px)" srcset="./img/burger/gallery-image1.jpg">
+                        <img src="./img/burger/gallery-image1-768.jpg" alt="">
+                    </picture>
                 </li>
                 <li class="burger-gallery__item">
-                    <img class="burger-gallery__item-image" src="./img/burger/gallery-image2.jpg" alt="">
+                    <picture class="burger-gallery__item-image">
+                        <source media="(max-width: 479.98px)" srcset="./img/burger/gallery-image2.jpg">
+                        <img src="./img/burger/gallery-image2-768.jpg" alt="">
+                    </picture>
                 </li>
                 <li class="burger-gallery__item">
-                    <img class="burger-gallery__item-image" src="./img/burger/gallery-image3.jpg" alt="">
+                    <picture class="burger-gallery__item-image">
+                        <source media="(max-width: 479.98px)" srcset="./img/burger/gallery-image3-768.jpg">
+                        <img src="./img/burger/gallery-image3-768.jpg" alt="">
+                    </picture>
                 </li>
             </ul>
             <ul class="socials">
@@ -96,9 +105,14 @@
                 </li>
             </ul>
         </div>
-        <div class="hero__slider">
-            <div class="hero__slider-images">
-                <img src="./img/hero/hero-image.jpg" alt="">
+        <div class="hero__title">
+            <h1 class="hero__title-text">Welcome <br> to the Louvre</h1>
+            <p class="hero__title-desc">From the castle to the museum</p>
+            <button class="btn">Discover the Louvre</button>
+        </div>
+        <div class="hero-slider">
+            <div class="hero-slider__images">
+                <img class="hero-slider__images-item" src="./img/hero/hero-image.jpg" alt="">
             </div>
             <div class="slider-nav">
                 <div class="slider-nav__slides-counter">
@@ -137,10 +151,6 @@
                 </div>
             </div>
         </div>
-        <div class="hero__title">
-            <h1 class="hero__title-text">Welcome <br> to the Louvre</h1>
-            <p class="hero__title-desc">From the castle to the museum</p>
-            <button class="btn">Discover the Louvre</button>
-        </div>
+
     </div>
 </section>
