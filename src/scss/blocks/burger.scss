@@ -28,6 +28,9 @@ li {
                 .burger {
                     transform: translateX(0%);
                 }
+                .hero__title {
+                    transform: translateX(-100%);
+                }
             }
         }
     }
@@ -38,6 +41,7 @@ li {
     .socials {
         display: none;
     }
+    height: 100%;
     position: absolute;
     transform: translateX(-100%);
     top: 0;
@@ -45,7 +49,8 @@ li {
     flex-direction: column;
     gap: 20px;
     background-color: var(--palette-primary-main);
-    padding: 35px 35px;
+    padding-left: 25px;
+    padding-right: 25px;
     z-index: 1;
     transition: 0.5s;
     .nav {
@@ -71,6 +76,9 @@ li {
     }
     .burger-gallery {
         display: none;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -79,38 +87,6 @@ li {
         border-bottom: 1px solid white;
         &__item {
             display: flex;
-        }
-        &__item:nth-child(1) {
-            width: 100%;
-            height: 100%;
-            grid-row-start: 1;
-            grid-column-start: 1;
-            grid-row-end: 2;
-            grid-column-end: 3;
-        }
-        &__item:nth-child(2) {
-            grid-row-start: 2;
-            grid-column-start: 1;
-            grid-row-end: 3;
-            grid-column-end: 2;
-        }
-        &__item:nth-child(3) {
-            grid-row-start: 2;
-            grid-column-start: 2;
-            grid-row-end: 3;
-            grid-column-end: 3;
-        }
-        &__item:nth-child(2),
-        &__item:nth-child(3) {
-            width: 100%;
-            @include media-breakpoint-down(md) {
-                max-width: 319px;
-                max-height: 161px;
-            }
-            @include media-breakpoint-down(sm) {
-                max-width: 100%;
-                max-height: 100%;
-            }
         }
         &__item-image {
             display: flex;
@@ -123,7 +99,7 @@ li {
             }
         }
         @include media-breakpoint-down(lg) {
-            display: grid;
+            display: flex;
             padding: 10px 25px;
         }
         @include media-breakpoint-down(sm) {
@@ -136,6 +112,7 @@ li {
     }
     @include media-breakpoint-down(lg) {
         width: 100%;
+        height: 100%;
         .socials {
             display: flex;
         }
