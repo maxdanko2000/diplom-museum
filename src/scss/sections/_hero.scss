@@ -14,17 +14,19 @@
         width: 100%;
         padding-right: 20px;
         padding-left: 20px;
+        padding-bottom: 60px;
         @include media-breakpoint-down(lg) {
             flex-direction: column;
         }
     }
     &__title {
         position: absolute;
-        top: 150px;
+        top: 15%;
         left: 20px;
         transform: translateX(0%);
         transition: 0.5s;
-        @include media-breakpoint-down(lg) {
+        z-index: 1;
+        @include media-breakpoint-down(md) {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -35,13 +37,8 @@
         }
         .btn {
             display: flex;
-            @include media-breakpoint-down(lg) {
-                display: none;
-            }
             margin-top: 55px;
-            font-family: 'Roboto',
-            sans-serif,
-            sans-serif;
+            font-family: 'Roboto', sans-serif, sans-serif;
             font-weight: 300;
             font-size: 22px;
             text-align: center;
@@ -53,6 +50,15 @@
             color: var(--palette-primary-text);
             &:hover {
                 background-color: var(--palette-secondary-light);
+            }
+            @include media-breakpoint-down(xl) {
+                padding: 20px 50px;
+            }
+            @include media-breakpoint-down(lg) {
+                padding: 15px 40px;
+            }
+            @include media-breakpoint-down(md) {
+                display: none;
             }
         }
     }
@@ -88,7 +94,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 60px;
+    position: relative;
     @include media-breakpoint-down(xxl) {
         width: 69%;
     }
@@ -101,7 +107,7 @@
         @include media-breakpoint-down(xl) {
             width: 60%;
         }
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-down(md) {
             width: 100%;
         }
     }
@@ -117,7 +123,7 @@
     justify-content: center;
     position: absolute;
     gap: 40px;
-    bottom: 5px;
+    bottom: 0;
     right: 0;
     background-color: var(--palette-primary-main);
     padding: 40px 75px;
@@ -132,6 +138,9 @@
     &__bars {
         display: inline-flex;
         gap: 10px;
+        @include media-breakpoint-down(sm) {
+            gap: 0;
+        }
     }
     &__bars-item {
         display: flex;
@@ -164,8 +173,17 @@
             }
         }
     }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
+        position: relative;
+    }
+    @include media-breakpoint-down(md) {
         width: 100%;
+        gap: 20px;
+        padding: 40px 50px;
+    }
+    @include media-breakpoint-down(sm) {
+        gap: 10px;
+        padding: 40px 20px;
     }
 }
 
