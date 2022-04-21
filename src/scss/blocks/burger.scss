@@ -1,5 +1,36 @@
-#burger-toggler {
+li {
+    list-style: none;
+}
+
+.burger-toggler {
     display: none;
+}
+
+.burger-toggler:checked {
+    &~.header {
+        .header__container {
+            .burger-toggler-btn {
+                &__buns {
+                    &::before {
+                        transform: rotate(45deg);
+                    }
+                    &::after {
+                        transform: rotate(-45deg);
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+    &~.main {
+        .hero {
+            &__container {
+                .burger {
+                    transform: translateX(0%);
+                }
+            }
+        }
+    }
 }
 
 .burger {
@@ -7,15 +38,23 @@
     @include media-breakpoint-down(xl) {
         display: flex;
     }
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
     position: absolute;
+    transform: translateX(-100%);
     top: 0;
     left: 0;
+    flex-direction: column;
+    gap: 20px;
     background-color: var(--palette-primary-main);
-    padding: 35px 55px;
+    padding: 35px 35px;
     z-index: 1;
+    transition: 0.5s;
     .nav {
         &__list {
             flex-direction: column;
+            align-items: flex-start;
         }
         &__list-item {
             .nav-link {
@@ -24,13 +63,57 @@
                 justify-content: space-between;
                 align-items: center;
                 &:hover {
-                    &__arrow {
+                    .nav-link__arrow {
                         path {
                             fill: var(--palette-secondary-light);
                         }
                     }
                 }
             }
+        }
+    }
+    .burger-gallery {
+        display: inline-flex;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid white;
+        &__item {
+            padding: 10px;
+        }
+        &__item-image {
+            max-width: 95px;
+            max-height: 95px;
+        }
+    }
+}
+
+.burger-toggler-btn {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
+    &__buns {
+        position: absolute;
+        width: 32px;
+        height: 14px;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            width: 32px;
+            height: 3px;
+            background-color: var(--palette-primary-light);
+            transition: 0.5s;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            top: 10px;
         }
     }
 }
