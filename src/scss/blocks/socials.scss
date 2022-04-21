@@ -1,0 +1,17 @@
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    &__item {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--palette-primary-light);
+        border-radius: 50%;
+        padding: 12px;
+    }
+    &__item-icon {}
+}
