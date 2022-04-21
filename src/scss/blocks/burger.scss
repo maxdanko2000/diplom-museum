@@ -82,8 +82,7 @@ li {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding: 10px;
         border-bottom: 1px solid white;
         &__item {
             display: flex;
