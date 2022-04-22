@@ -33,7 +33,7 @@
         }
     }
     &__title-text {
-        font-family: 'Forum';
+        font-family: 'Forum', serif;
         font-weight: 400;
         font-size: 70px;
         letter-spacing: 5px;
@@ -106,7 +106,7 @@
     }
     &__card-title {
         position: relative;
-        font-family: 'Forum';
+        font-family: 'Forum', serif;
         font-weight: 400;
         font-size: 32px;
         letter-spacing: 3px;
@@ -133,7 +133,7 @@
     }
     &__card-desc {
         margin-top: 10px;
-        font-family: 'Roboto';
+        font-family: 'Roboto', sans-serif;
         font-weight: 100;
         font-size: 22px;
         line-height: 26px;
