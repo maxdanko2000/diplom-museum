@@ -27,13 +27,13 @@
         }
     }
     &~.main {
-        overflow-y: hidden;
-        position: fixed;
-        top: 122px;
-        left: 0;
-        .hero {
-            &__container {
-                @include media-breakpoint-down(xl) {
+        @include media-breakpoint-down(md) {
+            overflow-y: hidden;
+            position: fixed;
+            top: 122px;
+            left: 0;
+            .hero {
+                &__container {
                     opacity: 0;
                 }
             }
@@ -47,7 +47,7 @@
     height: 100%;
     position: fixed;
     transform: translateX(-100%);
-    top: 121px;
+    top: 115px;
     left: 0;
     background-color: var(--palette-primary-main);
     padding-left: 25px;

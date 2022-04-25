@@ -133,11 +133,15 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    gap: 40px;
+    gap: 10px;
     bottom: 0;
     right: 0;
     background-color: var(--palette-primary-main);
     padding: 40px 75px;
+    @include media-breakpoint-down(sm) {
+        padding: 10px 75px;
+        gap: 5px;
+    }
     &__slides-counter {
         display: flex;
         gap: 10px;
@@ -145,45 +149,58 @@
         font-size: 22px;
         color: var(--palette-primary-text);
         line-height: 17px;
+        @include media-breakpoint-down(sm) {
+            gap: 5px;
+        }
     }
     &__bars {
         display: inline-flex;
-        gap: 10px;
-        @include media-breakpoint-down(sm) {
-            gap: 0;
-        }
     }
     &__bars-item {
         display: flex;
-        padding: 10px;
-        cursor: pointer;
-        .slider-nav__bars-toggler {
+        .slider-nav__bars-btn {
             display: flex;
-            width: 16px;
-            height: 16px;
-            background-color: var(--palette-primary-light);
-        }
-        &:hover {
-            .slider-nav__bars-toggler {
-                background-color: var(--palette-secondary-light);
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            @include media-breakpoint-down(xl) {
+                padding: 10px 10px;
             }
-        }
-        @include media-breakpoint-down(md) {
-            padding: 5px;
+            @include media-breakpoint-down(sm) {
+                padding: 5px;
+            }
+            &:hover {
+                .slider-nav__bars-toggler {
+                    background-color: var(--palette-secondary-light);
+                }
+            }
+            .slider-nav__bars-toggler {
+                display: flex;
+                width: 16px;
+                height: 16px;
+                background-color: var(--palette-primary-light);
+            }
         }
     }
     &__arrows {
         display: flex;
-        gap: 10px;
-    }
-    &__arrows-left,
-    &__arrows-right {
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        &:hover {
-            path {
-                fill: var(--palette-secondary-light);
+        .slider-nav__arrows-btn {
+            display: flex;
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            @include media-breakpoint-down(xl) {
+                padding: 10px;
+            }
+            @include media-breakpoint-down(sm) {
+                padding: 5px;
+            }
+            &:hover {
+                svg {
+                    path {
+                        fill: var(--palette-secondary-light);
+                    }
+                }
             }
         }
     }
