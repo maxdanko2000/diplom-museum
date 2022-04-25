@@ -1,7 +1,3 @@
-li {
-    list-style: none;
-}
-
 .burger-toggler {
     display: none;
 }
@@ -9,6 +5,9 @@ li {
 .burger-toggler:checked {
     &~.header {
         .header__container {
+            .burger {
+                transform: translateX(0%);
+            }
             .burger-toggler-btn {
                 width: 26px;
                 height: 26px;
@@ -29,15 +28,13 @@ li {
     }
     &~.main {
         overflow-y: hidden;
+        position: fixed;
+        top: 122px;
+        left: 0;
         .hero {
             &__container {
-                .burger {
-                    transform: translateX(0%);
-                }
                 @include media-breakpoint-down(xl) {
-                    .hero__title {
-                        transform: translateX(-100%);
-                    }
+                    opacity: 0;
                 }
             }
         }
@@ -48,20 +45,36 @@ li {
     display: none;
     flex-direction: column;
     height: 100%;
-    position: absolute;
+    position: fixed;
     transform: translateX(-100%);
-    top: 0;
+    top: 121px;
     left: 0;
     background-color: var(--palette-primary-main);
     padding-left: 25px;
     padding-right: 25px;
     z-index: 2;
     transition: 0.5s;
-    padding-bottom: 10px;
     gap: 10px;
     &__container {
-        max-height: 660px;
         overflow: auto;
+    }
+    @include media-breakpoint-down(xl) {
+        display: flex;
+        width: 40%;
+    }
+    @include media-breakpoint-down(md) {
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 180px;
+        &__container {
+            .socials {
+                display: flex;
+                background-color: var(--palette-primary-main);
+                position: absolute;
+                bottom: 118px;
+                left: 0;
+            }
+        }
     }
     .nav {
         &__list {
@@ -137,22 +150,6 @@ li {
             gap: 5px;
         }
     }
-    @include media-breakpoint-down(xl) {
-        display: flex;
-        width: 40%;
-    }
-    @include media-breakpoint-down(lg) {
-        top: 122px;
-    }
-    @include media-breakpoint-down(md) {
-        width: 100%;
-        height: 100vh;
-        &__container {
-            .socials {
-                display: flex;
-            }
-        }
-    }
 }
 
 .burger-toggler-btn {
@@ -191,10 +188,4 @@ li {
     @include media-breakpoint-down(xl) {
         display: flex;
     }
-}
-
-.socials {
-    display: none;
-    position: absolute;
-    bottom: 130px;
 }
