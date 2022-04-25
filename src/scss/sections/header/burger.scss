@@ -10,12 +10,17 @@ li {
     &~.header {
         .header__container {
             .burger-toggler-btn {
+                width: 26px;
+                height: 26px;
                 &__buns {
+                    top: 12px;
+                    left: -3px;
+                    transform: rotate(45deg);
                     &::before {
-                        transform: rotate(45deg);
+                        top: 0;
                     }
                     &::after {
-                        transform: rotate(-45deg);
+                        transform: rotate(90deg);
                         top: 0;
                     }
                 }
@@ -23,6 +28,7 @@ li {
         }
     }
     &~.main {
+        overflow-y: hidden;
         .hero {
             &__container {
                 .burger {
@@ -40,32 +46,38 @@ li {
 
 .burger {
     display: none;
-    .socials {
-        display: none;
-    }
+    flex-direction: column;
     height: 100%;
     position: absolute;
     transform: translateX(-100%);
     top: 0;
     left: 0;
-    flex-direction: column;
-    gap: 20px;
     background-color: var(--palette-primary-main);
     padding-left: 25px;
     padding-right: 25px;
     z-index: 2;
     transition: 0.5s;
+    padding-bottom: 10px;
+    gap: 10px;
+    &__container {
+        max-height: 660px;
+        overflow: auto;
+    }
     .nav {
         &__list {
             flex-direction: column;
             align-items: flex-start;
         }
         &__list-item {
+            width: 100%;
             .nav-link {
                 display: inline-flex;
-                width: 180px;
                 justify-content: space-between;
                 align-items: center;
+                .nav-link__arrow {
+                    width: 20px;
+                    margin-left: 10px;
+                }
                 &:hover {
                     .nav-link__arrow {
                         path {
@@ -103,8 +115,6 @@ li {
             grid-row-end: 2;
             grid-column-end: 3;
         }
-        &__item:nth-child(2),
-        &__item:nth-child(3) {}
         &__item-image {
             display: flex;
             width: 100%;
@@ -131,11 +141,16 @@ li {
         display: flex;
         width: 40%;
     }
+    @include media-breakpoint-down(lg) {
+        top: 122px;
+    }
     @include media-breakpoint-down(md) {
         width: 100%;
-        height: 100%;
-        .socials {
-            display: flex;
+        height: 100vh;
+        &__container {
+            .socials {
+                display: flex;
+            }
         }
     }
 }
@@ -143,14 +158,19 @@ li {
 .burger-toggler-btn {
     position: relative;
     width: 32px;
-    height: 32px;
+    height: 23px;
     display: none;
     align-items: center;
     margin: 10px 20px;
     &__buns {
         position: absolute;
         width: 32px;
-        height: 14px;
+        height: 3px;
+        top: 0;
+        left: 0;
+        background-color: var(--palette-primary-light);
+        transition-duration: 0.3s;
+        opacity: 1;
         &::before,
         &::after {
             content: "";
@@ -159,16 +179,22 @@ li {
             width: 32px;
             height: 3px;
             background-color: var(--palette-primary-light);
-            transition: 0.5s;
+            transition-duration: 0.3s;
         }
         &::before {
-            top: 0;
+            top: 10px;
         }
         &::after {
-            top: 10px;
+            top: 20px;
         }
     }
     @include media-breakpoint-down(xl) {
         display: flex;
     }
+}
+
+.socials {
+    display: none;
+    position: absolute;
+    bottom: 130px;
 }

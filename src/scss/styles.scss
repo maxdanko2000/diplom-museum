@@ -11,13 +11,13 @@
 // Mixes
 // Blocks
 @import "blocks/dropdowns";
-@import "blocks/burger";
 @import "blocks/buttons";
 @import "blocks/links";
 @import "blocks/socials";
 @import "blocks/title";
 //Sections
-@import "sections/header";
+@import "sections/header/header";
+@import "sections/header/burger.scss";
 @import "sections/main";
 @import "sections/hero";
 @import "sections/visiting";
