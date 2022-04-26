@@ -88,38 +88,52 @@
         }
     }
     
-    #slide1:checked~.hero-slider__images {
-        .hero-slider__images-item1 {
-            opacity: 1;
-            z-index: 1;
+    #slide1:checked~.hero-slider__images>.hero-slider__images-item1,
+    #slide2:checked~.hero-slider__images>.hero-slider__images-item2,
+    #slide3:checked~.hero-slider__images>.hero-slider__images-item3,
+    #slide4:checked~.hero-slider__images>.hero-slider__images-item4,
+    #slide5:checked~.hero-slider__images>.hero-slider__images-item5 {
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    #slide1:checked~.slider-nav {
+        .slider-nav__slides-counter {
+            .slides-counter__current-slide::before {
+                content: "01";
+            }
         }
     }
     
-    #slide2:checked~.hero-slider__images {
-        .hero-slider__images-item2 {
-            opacity: 1;
-            z-index: 1;
+    #slide2:checked~.slider-nav {
+        .slider-nav__slides-counter {
+            .slides-counter__current-slide::before {
+                content: "02";
+            }
         }
     }
     
-    #slide3:checked~.hero-slider__images {
-        .hero-slider__images-item3 {
-            opacity: 1;
-            z-index: 1;
+    #slide3:checked~.slider-nav {
+        .slider-nav__slides-counter {
+            .slides-counter__current-slide::before {
+                content: "03";
+            }
         }
     }
     
-    #slide4:checked~.hero-slider__images {
-        .hero-slider__images-item4 {
-            opacity: 1;
-            z-index: 1;
+    #slide4:checked~.slider-nav {
+        .slider-nav__slides-counter {
+            .slides-counter__current-slide::before {
+                content: "04";
+            }
         }
     }
     
-    #slide5:checked~.hero-slider__images {
-        .hero-slider__images-item5 {
-            opacity: 1;
-            z-index: 1;
+    #slide5:checked~.slider-nav {
+        .slider-nav__slides-counter {
+            .slides-counter__current-slide::before {
+                content: "05";
+            }
         }
     }
     
@@ -259,7 +273,11 @@
     }
     
     .slides-counter {
-        &__current-slide {}
+        &__current-slide {
+            &::before {
+                content: "01";
+            }
+        }
         &__slash {}
         &__all-slides {}
     }
