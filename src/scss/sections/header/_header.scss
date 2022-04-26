@@ -24,6 +24,14 @@
         display: inline-flex;
         gap: 25px;
         padding: 10px 20px;
+        .title {
+            font-size: 28px;
+            letter-spacing: 2px;
+            color: var(--palette-primary-text);
+            @include media-breakpoint-down(sm) {
+                font-size: 16px;
+            }
+        }
     }
     &__logo-image {
         max-width: 49px;
@@ -33,18 +41,6 @@
         @include media-breakpoint-down(sm) {
             max-width: 26px;
             max-height: 16px;
-        }
-    }
-    &__logo-title {
-        display: flex;
-        align-items: center;
-        font-family: 'Forum', serif;
-        font-size: 28px;
-        letter-spacing: 2px;
-        color: var(--palette-primary-text);
-        text-transform: uppercase;
-        @include media-breakpoint-down(sm) {
-            font-size: 16px;
         }
     }
 }
@@ -63,5 +59,20 @@
     }
     &__list-item {
         display: flex;
+    }
+    &__list-link {
+        color: var(--palette-primary-text);
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 22px;
+        padding: 10px 25px;
+        letter-spacing: 2px;
+        @include media-breakpoint-down(xl) {
+            font-weight: 300;
+            font-size: 20px;
+        }
+        &:hover {
+            color: var(--palette-tertiary-text);
+        }
     }
 }

@@ -1,16 +1,16 @@
 html,
 body {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 100vh;
     min-width: 320px;
     width: 100%;
 }
 
 body {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
 }
 
 ul,
