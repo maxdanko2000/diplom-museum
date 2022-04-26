@@ -7,6 +7,11 @@
         z-index: 1;
     }
     
+    // #slide1
+    // #slide2
+    // #slide3
+    // #slide4
+    // #slide5 
     #slide1:checked~.slider-nav {
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
@@ -138,9 +143,6 @@
     }
     
     .hero-slider {
-        input {
-            display: none;
-        }
         display: flex;
         flex-direction: column;
         align-items: flex-end;
