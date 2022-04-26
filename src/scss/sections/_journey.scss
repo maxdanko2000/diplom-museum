@@ -90,10 +90,16 @@
     margin-top: 30px;
 }
 
-.slider-next,
-.slider-prev {
-    cursor: pointer;
-    transition: 0.3s;
+.slider-next-btn,
+.slider-prev-btn {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    transition-duration: 0.3s;
     &:hover {
         transform: scale(1.2);
     }
