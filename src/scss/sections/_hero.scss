@@ -1,3 +1,11 @@
+    #slide1,
+    #slide2,
+    #slide3,
+    #slide4,
+    #slide5 {
+        display: none;
+    }
+    
     #slide1:checked~.hero-slider__images>.hero-slider__images-item1,
     #slide2:checked~.hero-slider__images>.hero-slider__images-item2,
     #slide3:checked~.hero-slider__images>.hero-slider__images-item3,
