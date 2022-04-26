@@ -7,12 +7,14 @@
         z-index: 1;
     }
     
-    // #slide1
-    // #slide2
-    // #slide3
-    // #slide4
-    // #slide5 
     #slide1:checked~.slider-nav {
+        .slider-nav__bars {
+            .slider-nav__bars-item:first-child {
+                label:after {
+                    background-color: var(--palette-primary-dark);
+                }
+            }
+        }
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
                 content: "01";
@@ -21,6 +23,13 @@
     }
     
     #slide2:checked~.slider-nav {
+        .slider-nav__bars {
+            .slider-nav__bars-item:nth-child(2) {
+                label:after {
+                    background-color: var(--palette-primary-dark);
+                }
+            }
+        }
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
                 content: "02";
@@ -29,6 +38,13 @@
     }
     
     #slide3:checked~.slider-nav {
+        .slider-nav__bars {
+            .slider-nav__bars-item:nth-child(3) {
+                label:after {
+                    background-color: var(--palette-primary-dark);
+                }
+            }
+        }
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
                 content: "03";
@@ -37,6 +53,13 @@
     }
     
     #slide4:checked~.slider-nav {
+        .slider-nav__bars {
+            .slider-nav__bars-item:nth-child(4) {
+                label:after {
+                    background-color: var(--palette-primary-dark);
+                }
+            }
+        }
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
                 content: "04";
@@ -45,6 +68,13 @@
     }
     
     #slide5:checked~.slider-nav {
+        .slider-nav__bars {
+            .slider-nav__bars-item:last-child {
+                label:after {
+                    background-color: var(--palette-primary-dark);
+                }
+            }
+        }
         .slider-nav__slides-counter {
             .slides-counter__current-slide::before {
                 content: "05";
