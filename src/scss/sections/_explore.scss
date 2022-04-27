@@ -17,14 +17,32 @@
         }
         @include media-breakpoint-down(xl) {
             flex-direction: column;
+            align-items: center;
         }
     }
     &__comparison {
         width: 60vw;
         height: 60vw;
-        max-width: 600px;
-        max-height: 600px;
+        max-width: 700px;
+        max-height: 700px;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include media-breakpoint-down(md) {
+            min-width: 430px;
+            min-height: 430px;
+        }
+        @include media-breakpoint-down(sm) {
+            min-width: 320px;
+            min-height: 320px;
+        }
+        @include media-breakpoint-down(s) {
+            min-height: 100%;
+            min-width: 100%;
+            width: 90vw;
+            height: 90vw;
+        }
     }
     &__comparison-img-before {
         background-image: url("/img/explore/slider-before.jpg");
@@ -36,6 +54,8 @@
         img {
             position: relative;
             width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
     &__comparison-img-after {
