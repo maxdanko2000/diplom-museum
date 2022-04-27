@@ -3,6 +3,7 @@
     height: 100%;
     &__container {
         display: grid;
+        min-width: 0;
         gap: 75px;
         max-width: 1440px;
         margin-left: auto;
@@ -172,7 +173,6 @@
     align-items: center;
     gap: 20px;
     width: 100%;
-    overflow: hidden;
 }
 
 .slider-next-btn,
@@ -197,7 +197,6 @@
 .slider {
     &__list {
         width: 100%;
-        overflow: auto;
         display: flex;
         align-items: center;
         gap: 60px;
@@ -223,7 +222,19 @@
 .slider-video {
     display: flex;
     min-height: 220px;
-    @include media-breakpoint-down(md) {
-        width: 100%;
-    }
+    max-width: 100%;
+    // @include media-breakpoint-down(md) {
+    //     width: 100%;
+    // }
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+
+.swiper-wrapper {
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
 }
