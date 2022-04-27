@@ -278,6 +278,7 @@
             &:hover {
                 .slider-nav__bars-toggler::after {
                     background-color: var(--palette-secondary-light);
+                    transition-duration: 0.3s;
                 }
             }
         }
@@ -292,10 +293,11 @@
                 width: 16px;
                 height: 16px;
                 background-color: var(--palette-primary-light);
+                transition-duration: 0.3s;
             }
         }
         &__arrows {
-            display: flex;
+            display: none;
             .slider-nav__arrows-btn {
                 display: flex;
                 background-color: transparent;
