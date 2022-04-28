@@ -58,7 +58,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 60px;
-        margin-top: 60px;
+        margin-top: 75px;
         @include media-breakpoint-down(xxl) {
             gap: 40px;
             padding-right: 60px;
@@ -76,12 +76,11 @@
         }
         @include media-breakpoint-down(sm) {}
     }
-    &__cards-item {
-        margin-top: 15px;
-    }
     &__card-link {
         display: flex;
+        transition-duration: 0.3s;
         &:hover {
+            transform: scale(1.03);
             ~.visiting__card-title {
                 &::after {
                     width: 100%;
