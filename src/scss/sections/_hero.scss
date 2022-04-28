@@ -96,17 +96,9 @@
         height: 100%;
         background-color: var(--palette-primary-main);
         &__container {
-            max-width: 1440px;
-            height: 100%;
-            width: 100%;
             display: flex;
             justify-content: flex-end;
             position: relative;
-            margin-left: auto;
-            margin-right: auto;
-            padding-right: 20px;
-            padding-left: 20px;
-            padding-bottom: 60px;
             @include media-breakpoint-down(lg) {
                 flex-direction: column;
             }

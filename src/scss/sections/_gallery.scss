@@ -3,27 +3,20 @@
     width: 100%;
     height: 100%;
     background-color: var(--palette-primary-main);
-    padding-top: 75px;
-    padding-bottom: 75px;
     &__container {
-        max-width: 1440px;
         height: 1220px;
-        margin-left: auto;
-        margin-right: auto;
         overflow: hidden;
+        @include media-breakpoint-down(xxl) {
+            height: 1000px;
+        }
         &::before {
             content: "";
             position: absolute;
-            bottom: 73px;
+            bottom: 0;
             left: 0;
             width: 100%;
             height: 15%;
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-        }
-        @include media-breakpoint-down(xxl) {
-            height: 1000px;
-            padding-left: 20px;
-            padding-right: 20px;
         }
     }
     &__body {
