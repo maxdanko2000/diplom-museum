@@ -57,9 +57,14 @@
             cursor: pointer;
         }
     }
-    // &__comparison-undertext {
-    //     display: none;
-    // }
+    &__comparison-undertext {
+        position: absolute;
+        color: var(--palette-primary-text);
+        font-family: 'Roboto';
+        font-weight: 300;
+        font-size: 16px;
+        text-align: center;
+    }
 }
 
 .explore-left {
@@ -89,7 +94,7 @@
         }
     }
     &__desc-text {
-        font-family: 'Roboto';
+        font-family: 'Roboto', sans-serif;
         font-weight: 300;
         font-size: 22px;
         line-height: 38px;
