@@ -61,6 +61,18 @@
         }
         @include media-breakpoint-down(sm) {}
     }
+    &__card-link {
+        display: flex;
+        transition-duration: 0.3s;
+        &:hover {
+            transform: scale(1.03);
+            ~.visiting__card-title {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
     &__card-img {
         max-width: 440px;
         max-height: 285px;
@@ -115,19 +127,6 @@
         }
         @include media-breakpoint-down(md) {
             font-size: 15px;
-        }
-    }
-}
-
-.card-link {
-    display: flex;
-    transition-duration: 0.3s;
-    &:hover {
-        transform: scale(1.03);
-        ~.visiting__card-title {
-            &::after {
-                width: 100%;
-            }
         }
     }
 }
