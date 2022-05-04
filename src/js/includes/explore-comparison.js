@@ -1,7 +1,11 @@
-const divisor = document.querySelector(".explore__comparison-img-after");
-const comparison = document.querySelector(".explore__comparison");
-const comparisonWidth = document.querySelector(".explore__comparison").clientWidth;
+const divisor = document.querySelector(".explore__comparison-divisor");
 
-comparison.addEventListener("mousemove", (e) => {
-    divisor.style.width = (e.offsetX * 100 / comparisonWidth) + "%";
-})
+function comparing() {
+    let slideValue = document.querySelector(".explore__comparison-divisor").value;
+    document.querySelector(".explore__comparison-after").style.clipPath = "polygon(0 0," + slideValue + "% 0," + slideValue + "% 100%, 0 100%)";
+    console.log(slideValue);
+}
+
+
+
+divisor.addEventListener("input", comparing);
