@@ -14,6 +14,9 @@
         @include media-breakpoint-down(lg) {
             height: 300px;
         }
+        &__img {
+            display: none;
+        }
     }
     &__bg-image {}
 }
