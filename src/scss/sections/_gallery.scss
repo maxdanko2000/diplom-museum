@@ -9,6 +9,9 @@
         @include media-breakpoint-down(xxl) {
             height: 1000px;
         }
+        .title {
+            color: var(--palette-primary-text);
+        }
         &::before {
             content: "";
             position: absolute;
@@ -31,10 +34,6 @@
             gap: 24px;
         }
     }
-}
-
-.title {
-    color: var(--palette-primary-text);
 }
 
 .body {
