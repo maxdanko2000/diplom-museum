@@ -14,9 +14,6 @@
             @include media-breakpoint-down(xl) {
                 font-size: 26px;
             }
-            @include media-breakpoint-down(sm) {
-                font-size: 16px;
-            }
         }
     }
     &__logo-image {
@@ -44,6 +41,12 @@
     width: 100%;
     @include media-breakpoint-down(lg) {
         flex-direction: column;
+    }
+    .socials {
+        max-width: 260px;
+        align-items: flex-end;
+        &__item {}
+        &__item-icon {}
     }
 }
 
@@ -79,13 +82,6 @@
     }
     &__list {}
     &__list-item {}
-}
-
-.socials {
-    max-width: 260px;
-    align-items: flex-end;
-    &__item {}
-    &__item-icon {}
 }
 
 .footer-bottom {
