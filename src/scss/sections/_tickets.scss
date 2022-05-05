@@ -87,7 +87,7 @@
         height: 17px;
     }
     &__bar-title {
-        font-family: 'Roboto';
+        font-family: 'Roboto', sans-serif;
         font-weight: 300;
         font-size: 22px;
         white-space: nowrap;
@@ -145,7 +145,7 @@
 }
 
 .amount-field-title {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
     font-size: 22px;
@@ -166,7 +166,7 @@
     margin-bottom: 15px;
     &__increase,
     &__decrease {
-        font-family: 'Roboto';
+        font-family: 'Roboto', sans-serif;
         font-weight: 400;
         font-size: 32px;
         line-height: 38px;
