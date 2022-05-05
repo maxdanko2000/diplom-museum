@@ -15,9 +15,18 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    &__item-link {
+        display: flex;
         border: 1px solid var(--palette-primary-light);
         border-radius: 50%;
         padding: 12px;
+        width: 48px;
+        height: 48px;
+        transition-duration: 0.3s;
+        &:hover {
+            box-shadow: 0 0 24px 0 var( --palette-secondary-light);
+        }
     }
     &__item-icon {
         width: 100%;

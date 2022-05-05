@@ -1,187 +1,193 @@
 .tickets {
+  width: 100%;
+  height: 100%;
+  &__container {
+  }
+  &__title {
+    display: flex;
+    border-bottom: 3px solid var(--palette-primary-dark);
+    padding-bottom: 25px;
+    @include media-breakpoint-down(xl) {
+      padding-bottom: 20px;
+    }
+  }
+  &__body {
+    display: flex;
+    gap: 40px;
+    margin-top: 75px;
+    align-items: flex-start;
+    justify-content: center;
+    @include media-breakpoint-down(xxl) {
+      gap: 10px;
+    }
+    @include media-breakpoint-down(xl) {
+      gap: 80px;
+      margin-top: 60px;
+    }
+    @include media-breakpoint-down(lg) {
+      margin-top: 40px;
+      gap: 60px;
+    }
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+  &__body-img {
+    max-width: 720px;
+    max-height: 550px;
     width: 100%;
     height: 100%;
-    &__container {}
-    &__title {
-        display: flex;
-        border-bottom: 3px solid var(--palette-primary-dark);
-        padding-bottom: 25px;
-        @include media-breakpoint-down(xl) {
-            padding-bottom: 20px;
-        }
+    object-fit: cover;
+    @include media-breakpoint-down(xl) {
+      max-width: 700px;
+      max-height: 440px;
     }
-    &__body {
-        display: flex;
-        gap: 40px;
-        margin-top: 75px;
-        align-items: flex-start;
-        justify-content: center;
-        @include media-breakpoint-down(xxl) {
-            gap: 10px;
-        }
-        @include media-breakpoint-down(xl) {
-            gap: 80px;
-            margin-top: 60px;
-        }
-        @include media-breakpoint-down(lg) {
-            margin-top: 40px;
-            gap: 60px;
-        }
-        @include media-breakpoint-down(md) {
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-        }
+    @include media-breakpoint-down(lg) {
+      max-width: 444px;
+      max-height: 340px;
     }
-    &__body-img {
-        max-width: 720px;
-        max-height: 550px;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        @include media-breakpoint-down(xl) {
-            max-width: 700px;
-            max-height: 440px;
-        }
-        @include media-breakpoint-down(lg) {
-            max-width: 444px;
-            max-height: 340px;
-        }
-        @include media-breakpoint-down(sm) {
-            max-width: 100%;
-            max-height: 160px;
-        }
+    @include media-breakpoint-down(sm) {
+      max-width: 100%;
+      max-height: 160px;
     }
+  }
 }
 
 .title {
-    color: var(--palette-tertiary-text);
+  color: var(--palette-tertiary-text);
 }
 
 .tickets-type,
 .tickets-amount {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .tickets-type {
-    flex: 1 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    @include media-breakpoint-down(xxl) {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    @include media-breakpoint-down(xl) {
-        display: none;
-    }
-    &__title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 28px;
-        color: var(--palette-secondary-text);
-        margin-bottom: 25px;
-    }
-    &__bar {
-        width: 17px;
-        height: 17px;
-    }
-    &__bar-title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 22px;
-        white-space: nowrap;
-        padding-top: 12.5px;
-        padding-bottom: 12.5px;
-    }
+  flex: 1 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include media-breakpoint-down(xxl) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  @include media-breakpoint-down(xl) {
+    display: none;
+  }
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--palette-secondary-text);
+    margin-bottom: 25px;
+  }
+  &__bar {
+    width: 17px;
+    height: 17px;
+  }
+  &__bar-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    white-space: nowrap;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+  }
 }
 
 .tickets-amount {
-    width: 175px;
-    &__title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 28px;
-        color: var(--palette-secondary-text);
-        margin-bottom: 35px;
-        @include media-breakpoint-down(xl) {
-            text-align: center;
-        }
-        @include media-breakpoint-down(sm) {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+  width: 175px;
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--palette-secondary-text);
+    margin-bottom: 35px;
+    @include media-breakpoint-down(xl) {
+      text-align: center;
     }
-    &__top {}
-    &__bottom {}
-    &__price {
-        text-align: center;
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+      margin-bottom: 20px;
     }
-    &__price-title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 28px;
-        color: var(--palette-secondary-text);
-        @include media-breakpoint-down(sm) {
-            font-size: 16px;
-        }
+  }
+  &__top {
+  }
+  &__bottom {
+  }
+  &__price {
+    text-align: center;
+  }
+  &__price-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--palette-secondary-text);
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
     }
-    &__price-value {}
-    &__btn {
-        padding: 11px 28px;
-        margin-top: 40px;
-        background-color: var(--palette-primary-main);
-        color: var( --palette-primary-text);
-        border: none;
-        border-radius: 2px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 22px;
-        text-align: center;
-        @include media-breakpoint-down(md) {
-            margin-top: 15px;
-        }
+  }
+  &__price-value {
+  }
+  &__btn {
+    padding: 11px 28px;
+    margin-top: 40px;
+    background-color: var(--palette-primary-main);
+    color: var(--palette-primary-text);
+    border: none;
+    border-radius: 2px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    text-align: center;
+    @include media-breakpoint-down(md) {
+      margin-top: 15px;
     }
+  }
 }
 
 .amount-field-title {
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 22px;
-    margin-bottom: 15px;
-    @include media-breakpoint-down(sm) {
-        font-size: 16px;
-    }
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 22px;
+  margin-bottom: 15px;
+  @include media-breakpoint-down(sm) {
+    font-size: 16px;
+  }
 }
 
 .amount-field-row {
-    display: flex;
-    flex-direction: revert;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    border: 3px solid var(--palette-primary-main);
-    margin-top: 15px;
-    margin-bottom: 15px;
-    &__increase,
-    &__decrease {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 38px;
-        text-align: center;
-        padding: 6px 14px;
-        cursor: pointer;
-    }
-    &__decrease {}
-    &__increase {}
-    &__value {
-        max-width: 26px;
-        max-height: 26px;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        all: unset;
-    }
+  display: flex;
+  flex-direction: revert;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 3px solid var(--palette-primary-main);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &__increase,
+  &__decrease {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    padding: 6px 14px;
+    cursor: pointer;
+  }
+  &__decrease {
+  }
+  &__increase {
+  }
+  &__value {
+    max-width: 26px;
+    max-height: 26px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    all: unset;
+  }
 }

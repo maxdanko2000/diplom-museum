@@ -1,6 +1,7 @@
 .header {
     width: 100%;
     background-color: var(--palette-primary-main);
+    position: relative;
     &__container {
         max-width: 1440px;
         width: 100%;
@@ -67,10 +68,12 @@
         width: 100%;
         display: flex;
         align-items: center;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 22px;
         letter-spacing: 2px;
+        border-radius: 25px;
+        transition-duration: 0.3s;
         @include media-breakpoint-down(xxl) {
             padding: 10px 15px;
         }
@@ -80,6 +83,7 @@
         }
         &:hover {
             color: var(--palette-tertiary-text);
+            box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
         }
     }
 }

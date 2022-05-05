@@ -1,49 +1,54 @@
 <section class="tickets">
-    <div class="tickets__container section-container">
-        <div class="tickets__title">
-            <h2 class="title">buy tickets</h2>
-        </div>
-        <div class="tickets__body">
-            <img class="tickets__body-img" src="./img/tickets/main-image-tickets.webp" alt="" loading="lazy">
-            <div class="tickets-type">
-                <span class="tickets-type__title">Ticket Type</span>
-                <label class="tickets-type__bar-title" for="permanent">
-                  <input class="tickets-type__bar" type="radio" name="ticket-type" id="permanent">
-                  Permanent exhibition
-                </label>
-                <label class="tickets-type__bar-title" for="temporary">
-                  <input class="tickets-type__bar" type="radio" name="ticket-type" id="temporary">
-                  Temporary exhibition
-                </label>
-                <label class="tickets-type__bar-title" for="combined">
-                  <input class="tickets-type__bar" type="radio" name="ticket-type" id="combined">
-                  Combined Admission
-                </label>
-            </div>
-            <div class="tickets-amount">
-                <span class="tickets-amount__title">Amount</span>
-                <div class="tickets-amount__top">
-                    <label class="amount-field-title" for="amount-top-value">Basic 18+</label>
-                    <div class="amount-field-row">
-                        <span class="amount-field-row__decrease">-</span>
-                        <input class="amount-field-row__value" type="text" id="amount-top-value">
-                        <span class="amount-field-row__increase">+</span>
-                    </div>
-                </div>
-                <div class="tickets-amount__bottom">
-                    <label class="amount-field-title" for="amount-bottom-value">Senior 65+</label>
-                    <div class="amount-field-row">
-                        <span class="amount-field-row__decrease">-</span>
-                        <input class="amount-field-row__value" type="text" id="amount-bottom-value">
-                        <span class="amount-field-row__increase">+</span>
-                    </div>
-                </div>
-                <div class="tickets-amount__price">
-                    <span class="tickets-amount__price-title">Total €</span>
-                    <span class="tickets-amount__price-value"></span>
-                </div>
-                <button class="tickets-amount__btn">Buy Now</button>
-            </div>
-        </div>
+  <div class="tickets__container section-container">
+    <div class="tickets__title">
+      <h2 class="title">buy tickets</h2>
     </div>
+    <div class="tickets__body">
+      <img
+        class="tickets__body-img"
+        src="./img/tickets/main-image-tickets.webp"
+        alt=""
+        loading="lazy"
+      />
+      <div class="tickets-type">
+        <span class="tickets-type__title">Ticket Type</span>
+        <label class="tickets-type__bar-title" for="permanent">
+          <input class="tickets-type__bar" type="radio" name="ticket-type" id="permanent" />
+          Permanent exhibition
+        </label>
+        <label class="tickets-type__bar-title" for="temporary">
+          <input class="tickets-type__bar" type="radio" name="ticket-type" id="temporary" />
+          Temporary exhibition
+        </label>
+        <label class="tickets-type__bar-title" for="combined">
+          <input class="tickets-type__bar" type="radio" name="ticket-type" id="combined" />
+          Combined Admission
+        </label>
+      </div>
+      <div class="tickets-amount">
+        <span class="tickets-amount__title">Amount</span>
+        <div class="tickets-amount__top">
+          <label class="amount-field-title" for="amount-top-value">Basic 18+</label>
+          <div class="amount-field-row">
+            <span class="amount-field-row__decrease">-</span>
+            <input class="amount-field-row__value" type="text" id="amount-top-value" />
+            <span class="amount-field-row__increase">+</span>
+          </div>
+        </div>
+        <div class="tickets-amount__bottom">
+          <label class="amount-field-title" for="amount-bottom-value">Senior 65+</label>
+          <div class="amount-field-row">
+            <span class="amount-field-row__decrease">-</span>
+            <input class="amount-field-row__value" type="text" id="amount-bottom-value" />
+            <span class="amount-field-row__increase">+</span>
+          </div>
+        </div>
+        <div class="tickets-amount__price">
+          <span class="tickets-amount__price-title">Total €</span>
+          <span class="tickets-amount__price-value"></span>
+        </div>
+        <button class="tickets-amount__btn">Buy Now</button>
+      </div>
+    </div>
+  </div>
 </section>

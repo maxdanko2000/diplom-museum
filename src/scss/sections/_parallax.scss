@@ -1,22 +1,23 @@
 .parallax {
-    .parallax-picture-box {
-        background-image: url('/img/parallax/parallax-image.webp');
-        height: 400px;
-        width: 100%;
-        background-attachment: fixed;
-        display: flex;
-        justify-content: center;
-        color: var(--palette-primary-light);
-        position: relative;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        @include media-breakpoint-down(lg) {
-            height: 300px;
-        }
-        &__img {
-            display: none;
-        }
+  .parallax-picture-box {
+    background-image: url("/img/parallax/parallax-image.webp");
+    height: 400px;
+    width: 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    color: var(--palette-primary-light);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include media-breakpoint-down(lg) {
+      height: 300px;
     }
-    &__bg-image {}
+    &__img {
+      display: none;
+    }
+  }
+  &__bg-image {
+  }
 }

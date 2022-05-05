@@ -37,7 +37,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 55px;
-            font-family: 'Roboto', sans-serif, sans-serif;
+            font-family: "Roboto", sans-serif, sans-serif;
             font-weight: 300;
             font-size: 22px;
             letter-spacing: 2px;
@@ -46,6 +46,7 @@
             border-radius: 10px;
             background-color: var(--palette-primary-dark);
             color: var(--palette-primary-text);
+            transition-duration: 0.3s;
             @include media-breakpoint-down(xl) {
                 padding: 20px 50px;
             }
@@ -58,13 +59,14 @@
             }
             &:hover {
                 background-color: var(--palette-secondary-light);
+                box-shadow: 0 0 24px 0 var(--palette-secondary-light);
             }
         }
     }
     &__title-desc {
         margin-top: 20px;
         margin-bottom: 20px;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 28px;
         letter-spacing: 2px;
@@ -101,7 +103,7 @@
         width: 500px;
         height: 100%;
         z-index: 2;
-        background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+        background: linear-gradient( 90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
     }
     &__images {
         display: flex;
@@ -116,6 +118,13 @@
     &__prev {
         padding: 10px;
         cursor: pointer;
+        &:hover {
+            svg {
+                path {
+                    filter: brightness(0.5);
+                }
+            }
+        }
     }
     &__next {}
     &__prev {}
@@ -143,7 +152,7 @@
         display: flex;
         gap: 5px;
         justify-content: space-between;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 400;
         font-size: 22px;
         color: var(--palette-primary-text);
@@ -163,6 +172,12 @@
         border-radius: 5px;
         max-width: 600px;
         width: 100%;
+        cursor: pointer;
+        &:hover {
+            .swiper-scrollbar-drag {
+                filter: brightness(0.7);
+            }
+        }
         .swiper-scrollbar-drag {
             height: 100%;
             background-color: var(--palette-primary-dark);

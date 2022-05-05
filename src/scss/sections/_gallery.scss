@@ -1,59 +1,59 @@
 .gallery {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--palette-primary-main);
+  &__container {
+    height: 1220px;
+    overflow: hidden;
+    @include media-breakpoint-down(xxl) {
+      height: 1000px;
+    }
+    .title {
+      color: var(--palette-primary-text);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    }
+  }
+  &__body {
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    gap: 36px;
     width: 100%;
     height: 100%;
-    background-color: var(--palette-primary-main);
-    &__container {
-        height: 1220px;
-        overflow: hidden;
-        @include media-breakpoint-down(xxl) {
-            height: 1000px;
-        }
-        .title {
-            color: var(--palette-primary-text);
-        }
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 15%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-        }
+    @include media-breakpoint-down(lg) {
+      gap: 24px;
     }
-    &__body {
-        overflow: auto;
-        display: flex;
-        justify-content: center;
-        margin-top: 75px;
-        gap: 36px;
-        width: 100%;
-        height: 100%;
-        @include media-breakpoint-down(lg) {
-            gap: 24px;
-        }
-    }
+  }
 }
 
 .body {
-    &__column {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        width: 50%;
-        &:first-child,
-        &:last-child {
-            margin-top: 50px;
-        }
-        @include media-breakpoint-down(xl) {
-            &:last-child {
-                display: none;
-            }
-        }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 50%;
+    &:first-child,
+    &:last-child {
+      margin-top: 50px;
     }
-    &__column-image {
-        width: 100%;
-        object-fit: cover;
+    @include media-breakpoint-down(xl) {
+      &:last-child {
+        display: none;
+      }
     }
+  }
+  &__column-image {
+    width: 100%;
+    object-fit: cover;
+  }
 }

@@ -7,6 +7,8 @@
         display: inline-flex;
         gap: 25px;
         padding: 10px 20px;
+        align-items: center;
+        justify-content: center;
         .title {
             font-size: 28px;
             letter-spacing: 2px;
@@ -38,6 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 900px;
     width: 100%;
     @include media-breakpoint-down(lg) {
         flex-direction: column;
@@ -52,6 +55,7 @@
 
 .footer-nav {
     display: flex;
+    gap: 10px;
     &_list-link {
         color: var(--palette-primary-text);
         padding: 10px 25px;
@@ -59,10 +63,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        font-family: 'Roboto', sans-serif;
+        justify-content: center;
+        font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 22px;
         letter-spacing: 2px;
+        border-radius: 25px;
+        transition-duration: 0.3s;
         @include media-breakpoint-down(xxl) {
             padding: 10px 15px;
         }
@@ -78,6 +85,7 @@
         }
         &:hover {
             color: var(--palette-tertiary-text);
+            box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
         }
     }
     &__list {}
@@ -90,6 +98,7 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 50px;
+        padding: 20px;
         border-top: 3px solid var(--palette-primary-light);
     }
     &__list-item {
@@ -106,10 +115,13 @@
         width: 100%;
         display: flex;
         align-items: center;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-weight: 100;
         font-size: 22px;
         letter-spacing: 2px;
+        border-radius: 25px;
+        transition-duration: 0.3s;
+        white-space: nowrap;
         @include media-breakpoint-down(xxl) {
             padding: 10px 15px;
         }
@@ -125,6 +137,7 @@
         }
         &:hover {
             color: var(--palette-tertiary-text);
+            box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
         }
     }
 }
