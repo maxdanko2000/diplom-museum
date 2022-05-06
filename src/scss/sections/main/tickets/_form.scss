@@ -1,0 +1,124 @@
+.tickets-form {
+    width: 100%;
+    height: 100%;
+    background-color: var(--palette-primary-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    &__wrapper {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 91px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__logo-image {
+        path {
+            fill: var(--palette-secondary-light);
+        }
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 50px;
+        letter-spacing: 0;
+    }
+    &__subtitle {
+        width: 100%;
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        border-bottom: 3px solid var(--palette-primary-dark);
+        color: var(--palette-primary-dark);
+    }
+    &__term {
+        display: flex;
+    }
+    &__username-field {}
+    &__email-field {}
+    &__phone-field {}
+    &__overview {}
+    &__overview-title {}
+    &__overview-subtitle {}
+}
+
+.title {}
+
+select:focus>option:hover {
+    background: #000 !important;
+}
+
+.tickets-field {
+    // border: 1px solid var(--palette-primary-main);
+    position: relative;
+    &__icon {
+        position: absolute;
+    }
+    &__droplist {
+        padding: 13px 15px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        outline: 0;
+    }
+    &__droplist-item {}
+}
+
+.tickets {
+    &__entry {}
+}
+
+.entry {
+    &__title {}
+    &__row {}
+    &__row-text {}
+    &__row-price {}
+    &__counter {}
+    &__counter-increase {}
+    &__counter-field {}
+    &__counter-decrease {}
+}
+
+.price-basic {}
+
+.price-senior {}
+
+.overview {
+    &__row {}
+    &__row-icon {}
+    &__row-text {}
+    &__row-age {}
+    &__total-summ {}
+}
+
+.date-text {}
+
+.time-text {}
+
+.ticket-type-text {}
+
+.row-age {
+    &__container {}
+    &__count {}
+    &__count-text {}
+    &__count-price {}
+    &__total-price {}
+}
+
+.total-price-basic {}
+
+.total-price-senior {}
+
+.total-summ {
+    &__text {}
+    &__price {}
+}

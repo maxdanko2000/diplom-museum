@@ -15,13 +15,14 @@
 //Sections
 @import "sections/header/header";
 @import "sections/header/burger.scss";
-@import "sections/main";
-@import "sections/hero";
-@import "sections/visiting";
-@import "sections/explore";
-@import "sections/journey";
-@import "sections/gallery";
-@import "sections/tickets";
-@import "sections/parallax";
-@import "sections/contacts";
+@import "sections/main/main";
+@import "sections/main/hero";
+@import "sections/main/visiting";
+@import "sections/main/explore";
+@import "sections/main/journey";
+@import "sections/main/gallery";
+@import "sections/main/tickets/tickets";
+@import "sections/main/tickets/form";
+@import "sections/main/parallax";
+@import "sections/main/contacts";
 @import "sections/footer";

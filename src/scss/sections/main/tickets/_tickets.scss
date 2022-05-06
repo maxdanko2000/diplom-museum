@@ -1,6 +1,7 @@
 .tickets {
     width: 100%;
     height: 100%;
+    position: relative;
     &__container {}
     &__title {
         display: flex;
@@ -145,8 +146,15 @@
         font-weight: 300;
         font-size: 22px;
         text-align: center;
+        transition-duration: 0.2s;
         @include media-breakpoint-down(md) {
             margin-top: 15px;
+        }
+        &:hover {
+            box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:active {
+            background-color: var(--palette-secondary-light);
         }
     }
 }
@@ -180,11 +188,15 @@
         width: 18px;
         height: 18px;
         cursor: pointer;
+        transition-duration: 0.1s;
         &::before {
             content: '';
             width: 100%;
             background-color: var(--palette-primary-main);
             border-radius: 5px;
+        }
+        &:active {
+            transform: scale(0.8);
         }
     }
     &__decrease {

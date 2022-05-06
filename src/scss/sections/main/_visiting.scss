@@ -42,7 +42,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 60px;
+        gap: 120px;
         margin-top: 75px;
         @include media-breakpoint-down(xxl) {
             gap: 40px;
@@ -61,7 +61,9 @@
         }
         @include media-breakpoint-down(sm) {}
     }
-    &__cards-item {}
+    &__cards-item {
+        max-width: 400px;
+    }
     &__card-link {
         display: flex;
         padding: 5px;
