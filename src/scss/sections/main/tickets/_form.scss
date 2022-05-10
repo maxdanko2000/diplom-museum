@@ -10,6 +10,40 @@
     }
 }
 
+#tickets-form-toggler {
+    display: none;
+    &:checked {
+        ~.tickets-form {
+            transform: translateX(0);
+        }
+    }
+}
+
+.tickets-form-close {
+    position: absolute;
+    top: 30px;
+    right: 27px;
+    width: 25px;
+    height: 25px;
+    &::before,
+    &:after {
+        position: absolute;
+        content: "";
+        z-index: 1;
+        background-color: var(--palette-primary-main);
+        width: 30px;
+        height: 2px;
+        top: 12px;
+        right: -2px;
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
 .tickets-form {
     width: 100%;
     background-color: var(--palette-primary-light);
@@ -17,6 +51,8 @@
     top: 0;
     left: 0;
     z-index: 1;
+    transition-duration: 0.5s;
+    transform: translateX(100%);
     @include media-breakpoint-up(xxl) {
         height: 100%;
     }
