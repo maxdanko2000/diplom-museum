@@ -1,24 +1,43 @@
+#select-date,
+#select-time,
+#select-ticket-type {
+    display: none;
+    &:checked {
+        ~.tickets-field__droplist {
+            opacity: 1;
+            transform: scaleY(100%);
+        }
+    }
+}
+
 .tickets-form {
     width: 100%;
-    height: 100%;
     background-color: var(--palette-primary-light);
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 1;
+    @include media-breakpoint-up(xxl) {
+        height: 100%;
+    }
+    @include media-breakpoint-down(xxl) {}
     &__wrapper {
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
         padding: 91px 30px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 40px;
+        justify-content: space-between;
+        gap: 10px;
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+        }
     }
     &__left {
         display: flex;
         flex-direction: column;
         gap: 15px;
+        max-width: 400px;
     }
     &__logo-image {
         path {
@@ -27,7 +46,7 @@
     }
     &__title {
         font-weight: 400;
-        font-size: 50px;
+        font-size: 43px;
         letter-spacing: 0;
     }
     &__subtitle {
@@ -41,51 +60,172 @@
     }
     &__term {
         display: flex;
+        gap: 20px;
     }
-    &__username-field {}
-    &__email-field {}
-    &__phone-field {}
-    &__overview {}
-    &__overview-title {}
-    &__overview-subtitle {}
+    &__field {
+        height: 100%;
+        display: flex;
+        all: unset;
+        cursor: text;
+    }
+    &__overview {
+        max-width: 530px;
+        width: 100%;
+        padding: 25px 30px;
+        border: 1px solid var(--palette-primary-main);
+        position: relative;
+    }
+    &__overview-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 32px;
+        color: var(--palette-secondary-text);
+    }
+    &__overview-subtitle {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 22px;
+        color: var(--palette-primary-dark);
+        margin-bottom: 10px;
+    }
+    &__overview-image {
+        max-width: 150px;
+        max-height: 120px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 25px;
+        right: 30px;
+    }
 }
 
 .title {}
 
-select:focus>option:hover {
-    background: #000 !important;
-}
-
 .tickets-field {
     // border: 1px solid var(--palette-primary-main);
     position: relative;
-    &__icon {
-        position: absolute;
+    width: 100%;
+    &__toggler {
+        display: flex;
+        align-items: center;
+        border: 1px solid var(--palette-primary-main);
+        padding: 12px 15px;
+        cursor: pointer;
     }
+    &__text {
+        display: flex;
+        flex: 1 0 auto;
+        margin-left: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+    &__icon {}
+    &__arrow {}
     &__droplist {
-        padding: 13px 15px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -ms-appearance: none;
-        appearance: none;
-        outline: 0;
+        width: 100%;
+        transform: scaleY(0);
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transition-duration: 0.3s;
+        z-index: 1;
     }
-    &__droplist-item {}
+    &__droplist-item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--palette-primary-main);
+        border-left: 1px solid var(--palette-primary-main);
+        border-right: 1px solid var(--palette-primary-main);
+        padding-top: 12px;
+        padding-right: 15px;
+        padding-bottom: 12px;
+        padding-left: 45px;
+        background-color: var(--palette-primary-light);
+        cursor: pointer;
+        transition-duration: 0.3s;
+        &:hover {
+            background-color: var( --palette-tertiary-main);
+        }
+    }
 }
 
 .tickets {
-    &__entry {}
+    &__entry {
+        display: grid;
+        gap: 15px;
+    }
 }
 
 .entry {
-    &__title {}
-    &__row {}
-    &__row-text {}
+    &__title {
+        display: flex;
+        width: 100%;
+        border-bottom: 2px solid var(--palette-primary-dark);
+        font-family: 'Forum', serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: var(--palette-tertiary-text);
+        padding-bottom: 5px;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__row-text {
+        display: flex;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        .tickets-field__text {
+            margin-left: 0;
+        }
+    }
     &__row-price {}
-    &__counter {}
-    &__counter-increase {}
-    &__counter-field {}
+    &__counter {
+        display: flex;
+    }
+    &__counter-increase,
+    &__counter-decrease {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 25px;
+        background-color: var(--palette-primary-main);
+        cursor: pointer;
+        &::before {
+            content: '';
+            background-color: var(--palette-primary-light);
+            width: 10px;
+            height: 2px;
+        }
+    }
+    &__counter-increase {
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            content: '';
+            background-color: var(--palette-primary-light);
+            width: 2px;
+            height: 10px;
+        }
+    }
     &__counter-decrease {}
+    &__counter-field {
+        width: 35px;
+        height: 23px;
+        all: unset;
+        border-top: 1px solid var(--palette-primary-main);
+        border-bottom: 1px solid var(--palette-primary-main);
+        text-align: center;
+    }
 }
 
 .price-basic {}
@@ -95,9 +235,63 @@ select:focus>option:hover {
 .overview {
     &__row {}
     &__row-icon {}
-    &__row-text {}
-    &__row-age {}
-    &__total-summ {}
+    &__row-text {
+        margin-left: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        color: var(--palette-secondary-text);
+    }
+    &__row-age {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+    }
+    &__total-summ {
+        display: flex;
+        margin-top: 15px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 32px;
+    }
+    &__cards {
+        position: relative;
+        width: 470px;
+    }
+    &__card {
+        max-width: 360px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 10px;
+        border-radius: 5px;
+    }
+    &__card:first-child {
+        background-color: var(--palette-tertiary-light);
+    }
+    &__card:last-child {
+        background-color: var( --palette-tertiary-dark);
+        position: absolute;
+        align-items: flex-end;
+        justify-content: flex-end;
+        top: 30px;
+        right: 0;
+        z-index: -1;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 45px;
+            background-color: var(--palette-primary-main);
+            top: 25px;
+            left: 0;
+        }
+    }
 }
 
 .date-text {}
@@ -107,18 +301,82 @@ select:focus>option:hover {
 .ticket-type-text {}
 
 .row-age {
-    &__container {}
-    &__count {}
-    &__count-text {}
-    &__count-price {}
-    &__total-price {}
+    &__container {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+    }
+    &__count {
+        width: 32px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--palette-primary-main);
+        border-radius: 5px;
+        color: var(--palette-primary-text);
+        font-size: 18px;
+    }
+    &__count-text {
+        margin-left: 10px;
+    }
 }
 
-.total-price-basic {}
-
-.total-price-senior {}
-
 .total-summ {
-    &__text {}
-    &__price {}
+    &__text {
+        display: flex;
+        flex: 1 0 auto;
+    }
+    &__price {
+        font-weight: 500;
+    }
+}
+
+.card {
+    &__top-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    &__top-left-container {
+        max-width: 215px;
+        width: 100%;
+        display: grid;
+        gap: 10px;
+    }
+    &__container {
+        display: flex;
+        gap: 15px;
+    }
+    &__text-field {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--palette-primary-main);
+    }
+    &__inner-field {
+        width: 100%;
+        height: 35px;
+        margin-top: 5px;
+        border: none;
+        padding: 10px;
+    }
+    &__back-container {
+        max-width: 75px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.card-types {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    gap: 15px;
 }
