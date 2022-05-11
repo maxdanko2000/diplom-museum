@@ -199,6 +199,12 @@
     align-items: center;
     width: 100%;
     height: 100%;
+    &__item {
+        display: flex;
+        align-items: center;
+    }
 }
 
-.slider-video {}
+.slider-video {
+    width: 300px;
+}

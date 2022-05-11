@@ -191,7 +191,7 @@
         cursor: pointer;
         transition-duration: 0.1s;
         &::before {
-            content: '';
+            content: "";
             width: 100%;
             background-color: var(--palette-primary-main);
             border-radius: 5px;
@@ -211,7 +211,7 @@
             height: 3px;
         }
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             width: 3px;
             height: 100%;
@@ -228,5 +228,9 @@
         height: 100%;
         text-align: center;
         all: unset;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
     }
 }

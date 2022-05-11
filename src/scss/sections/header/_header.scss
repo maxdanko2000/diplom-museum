@@ -3,13 +3,15 @@
     background-color: var(--palette-primary-main);
     position: relative;
     &__container {
-        max-width: 1440px;
+        max-width: 1480px;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         padding-top: 50px;
         padding-bottom: 50px;
         @include media-breakpoint-down(xl) {
@@ -57,6 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 10px;
     }
     &__list-item {
         display: flex;
@@ -85,5 +88,67 @@
             color: var(--palette-tertiary-text);
             box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
         }
+    }
+}
+
+.user-icon {
+    path {
+        fill: var(--palette-primary-light);
+    }
+}
+
+.item-dropdown {
+    position: relative;
+    &:hover {
+        .nav-dropdown {
+            transform: scaleY(1);
+        }
+    }
+}
+
+.nav-dropdown {
+    transform: scaleY(0);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 6;
+    transition-duration: 0.3s;
+    background-color: var(--palette-primary-main);
+    border-left: 1px solid var(--palette-primary-light);
+    border-right: 1px solid var(--palette-primary-light);
+    border-radius: 5px;
+    &__item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--palette-primary-light);
+        transition-duration: 0.3s;
+        &:hover {
+            background-color: var(--palette-secondary-light);
+        }
+        &:active {
+            filter: contrast(0.5);
+        }
+    }
+    &__link {
+        white-space: nowrap;
+        padding: 11px 20px;
+        font-family: "Roboto";
+        font-weight: 100;
+        font-size: 22px;
+        color: var(--palette-primary-light);
+    }
+}
+
+.dropdown-toggler-menu {
+    padding: 15px;
+    display: flex;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+    &:hover {
+        background-color: var(--palette-secondary-light);
+        box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
     }
 }
