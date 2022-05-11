@@ -13,26 +13,27 @@ const swiper = new Swiper(".journey-slider-inner", {
         nextEl: ".journey-slider__btn-next",
         prevEl: ".journey-slider__btn-prev",
     },
-    // breakpoints: {
-    //     1200: {
-    //         slidesPerView: 4,
-    //         spaceBetween: 80
-    //     },
-    //     992: {
-    //         slidesPerView: 3,
-    //         spaceBetween: 120
-    //     },
-    //     768: {
-    //         slidesPerView: 2,
-    //         spaceBetween: 160
-    //     },
-    //     // 480: {
-    //     //     slidesPerView: 2,
-    //     //     spaceBetween: 160
-    //     // },
-    //     // 375: {
-    //     //     slidesPerView: 1,
-    //     //     spaceBetween: 120
-    //     // }
-    // }
+    breakpoints: {
+        1200: {
+            slidesPerView: 4,
+            spaceBetween: 80
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 120
+        },
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 180
+        },
+        480: {
+            slidesPerView: 2,
+        },
+        320: {
+            slidesPerView: 1,
+            spaceBetween: 0
+
+        }
+
+    }
 });

@@ -177,12 +177,23 @@
     }
     &__pagination {
         display: flex;
-        gap: 20px;
+        @include media-breakpoint-up(xxxl) {
+            gap: 20px;
+        }
+        @include media-breakpoint-down(xxxl) {
+            gap: 20px;
+        }
+        @include media-breakpoint-down(sm) {
+            gap: 10px;
+        }
         .swiper-pagination-bullet {
             width: 12px;
             height: 12px;
             background-color: var(--palette-primary-dark);
             border-radius: 50%;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: var(--palette-primary-main);
         }
     }
 }
@@ -205,6 +216,4 @@
     }
 }
 
-.slider-video {
-    width: 300px;
-}
+.slider-video {}
