@@ -32,8 +32,6 @@ const swiper = new Swiper(".journey-slider-inner", {
         320: {
             slidesPerView: 1,
             spaceBetween: 0
-
         }
-
     }
 });

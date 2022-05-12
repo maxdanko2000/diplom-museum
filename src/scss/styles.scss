@@ -15,6 +15,7 @@
 //Sections
 @import "sections/header/header";
 @import "sections/header/burger.scss";
+//Main page
 @import "sections/main/main";
 @import "sections/main/hero";
 @import "sections/main/visiting";
@@ -27,4 +28,6 @@
 @import "sections/main/contacts";
 //User page
 @import "sections/user";
+//Admin page
+@import "sections/admin";
 @import "sections/footer";
