@@ -93,7 +93,6 @@
         max-width: 100px;
         padding: 10px;
         text-align: center;
-        border: 2px solid var(--palette-tertiary-main);
         all: unset;
         cursor: text;
     }
@@ -107,6 +106,9 @@
         background-color: var(--palette-tertiary-main);
         padding: 10px;
         border: 2px solid var(--palette-tertiary-main);
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -119,6 +121,9 @@
         font-weight: 300;
         font-size: 22px;
         color: var(--palette-primary-text);
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
     }
     &__list {}
     &__list-item {
