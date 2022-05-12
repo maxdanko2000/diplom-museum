@@ -27,6 +27,7 @@
         display: inline-flex;
         gap: 25px;
         padding: 10px 20px;
+        flex: 1 0 auto;
         .title {
             font-size: 28px;
             letter-spacing: 2px;
@@ -50,9 +51,6 @@
 
 .nav {
     display: flex;
-    @include media-breakpoint-down(xl) {
-        display: none;
-    }
     justify-content: flex-end;
     &__list {
         list-style: none;
@@ -60,6 +58,9 @@
         align-items: center;
         justify-content: space-between;
         gap: 10px;
+        @include media-breakpoint-down(xl) {
+            display: none;
+        }
     }
     &__list-item {
         display: flex;
