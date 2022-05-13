@@ -12,6 +12,7 @@
         @include media-breakpoint-down(md) {
             flex-direction: column-reverse;
             align-items: center;
+            gap: 40px;
         }
     }
     &__left {
@@ -78,6 +79,7 @@
         border-bottom-right-radius: 5px;
         cursor: pointer;
         transition-duration: 0.3s;
+        border: none;
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
         }
@@ -97,6 +99,9 @@
         @include media-breakpoint-down(lg) {
             width: 100%;
             margin-top: 20px;
+        }
+        @include media-breakpoint-down(md) {
+            gap: 20px;
         }
     }
     &__center-title {
@@ -119,6 +124,10 @@
         font-size: 20px;
         max-width: 400px;
         transition-duration: 0.3s;
+        border-radius: 5px;
+        @include media-breakpoint-down(md) {
+            margin-top: 20px;
+        }
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
         }
