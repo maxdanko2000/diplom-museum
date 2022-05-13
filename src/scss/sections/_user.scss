@@ -41,7 +41,6 @@
         align-self: center;
         padding: 11px 20px;
         margin-top: 20px;
-        background-color: var(--palette-primary-main);
         color: var(--palette-primary-text);
         font-family: "Roboto", sans-serif;
         font-weight: 400;
@@ -51,6 +50,9 @@
         cursor: pointer;
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:not(:active) {
+            background-color: var(--palette-primary-main);
         }
         &:active {
             background-color: var(--palette-secondary-light);
@@ -75,7 +77,6 @@
     }
     &__comment-btn {
         padding: 11px 20px;
-        background-color: var(--palette-primary-main);
         color: var(--palette-primary-text);
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -84,6 +85,9 @@
         border: none;
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:not(:active) {
+            background-color: var(--palette-primary-main);
         }
         &:active {
             background-color: var(--palette-secondary-light);
@@ -120,7 +124,6 @@
         justify-content: center;
         align-self: center;
         padding: 11px 20px;
-        background-color: var(--palette-primary-dark);
         color: var(--palette-primary-text);
         font-family: "Roboto", sans-serif;
         font-weight: 400;
@@ -136,6 +139,9 @@
         }
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:not(:active) {
+            background-color: var(--palette-primary-dark);
         }
         &:active {
             background-color: var(--palette-secondary-light);

@@ -78,9 +78,6 @@
     }
     &__title-text {
         color: var(--palette-primary-text);
-        @include media-breakpoint-down(xxl) {
-            white-space: normal;
-        }
     }
     &__desc {
         gap: 25px;

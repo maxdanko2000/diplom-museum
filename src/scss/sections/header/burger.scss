@@ -117,11 +117,20 @@
         align-items: center;
         border-radius: 25px;
         color: var(--palette-primary-text);
+        transition-duration: 0.3s;
         @include media-breakpoint-up(xxl) {
             padding: 10px 25px;
         }
         @include media-breakpoint-down(xxl) {
             padding: 10px 15px;
+        }
+        &:not(:hover) {
+            color: var(--palette-primary-text);
+            .burger-nav__link-arrow {
+                path {
+                    fill: var(--palette-primary-light);
+                }
+            }
         }
         &:hover {
             color: var(--palette-tertiary-text);

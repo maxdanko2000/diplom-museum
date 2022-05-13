@@ -192,8 +192,6 @@
         max-width: 220px;
         padding: 11px 87px;
         margin-top: 80px;
-        background-color: var(--palette-primary-dark);
-        color: var(--palette-primary-text);
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         font-size: 22px;
@@ -206,16 +204,22 @@
         @include media-breakpoint-down(s) {
             align-self: center;
         }
+        &:not(:active),
+        &:not(:hover) {
+            background-color: var(--palette-primary-dark);
+            color: var(--palette-primary-text);
+        }
         &:hover {
+            background-color: var( --palette-secondary-light);
+            color: var(--palette-primary-text);
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
         }
         &:active {
-            background-color: var(--palette-secondary-light);
+            background-color: var(--palette-tertiary-main);
+            color: var(--palette-secondary-text);
         }
     }
 }
-
-.title {}
 
 .tickets-field {
     position: relative;
@@ -258,9 +262,11 @@
         padding-right: 15px;
         padding-bottom: 12px;
         padding-left: 45px;
-        background-color: var(--palette-primary-light);
         cursor: pointer;
         transition-duration: 0.3s;
+        &:not(:hover) {
+            background-color: var(--palette-primary-light);
+        }
         &:hover {
             background-color: var(--palette-tertiary-main);
         }
@@ -309,10 +315,12 @@
         justify-content: center;
         width: 35px;
         height: 25px;
-        background-color: var(--palette-primary-main);
         cursor: pointer;
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:not(:active) {
+            background-color: var(--palette-primary-main);
         }
         &:active {
             background-color: var(--palette-secondary-light);
@@ -500,9 +508,6 @@
         margin-top: 5px;
         border: none;
         padding: 10px;
-        &:disabled {
-            background-color: var(--palette-primary-light);
-        }
     }
     &__back-container {
         max-width: 75px;

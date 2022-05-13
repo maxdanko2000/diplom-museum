@@ -1,9 +1,7 @@
 .admin {
-    &__container {}
     &__title {
         color: var(--palette-tertiary-text);
     }
-    &__body {}
 }
 
 .user-list {
@@ -160,15 +158,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var( --palette-primary-dark);
         border: none;
         padding: 11px 20px;
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
         font-weight: 300;
-        color: var(--palette-primary-text);
         cursor: pointer;
         transition-duration: 0.3s;
+        &:not(:hover),
+        &:not(:active) {
+            background-color: var( --palette-primary-dark);
+            color: var(--palette-primary-text);
+        }
         &:hover {
             background-color: var( --palette-secondary-light);
             color: var(--palette-primary-text);
@@ -220,6 +221,9 @@
     }
     &:after {
         transform: rotate(-45deg);
+    }
+    &:not(:active) {
+        opacity: 1;
     }
     &:active {
         opacity: 0.5;

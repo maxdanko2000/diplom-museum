@@ -145,7 +145,6 @@
     }
     &__btn {
         padding: 11px 28px;
-        background-color: var(--palette-primary-main);
         color: var(--palette-primary-text);
         border: none;
         border-radius: 2px;
@@ -162,6 +161,9 @@
         }
         &:hover {
             box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+        }
+        &:not(:active) {
+            background-color: var(--palette-primary-main);
         }
         &:active {
             background-color: var(--palette-secondary-light);
