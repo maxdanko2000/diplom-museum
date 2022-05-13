@@ -8,11 +8,8 @@
         @include media-breakpoint-up(xxl) {
             height: 1220px;
         }
-        @include media-breakpoint-between(xl, xxl) {
+        @include media-breakpoint-between(md, xxl) {
             height: 1000px;
-        }
-        @include media-breakpoint-between(md, xl) {
-            height: 800px;
         }
         @include media-breakpoint-down(md) {
             height: 600px;
@@ -48,18 +45,17 @@
 
 .body {
     &__column {
-        display: flex;
-        flex-direction: column;
+        display: grid;
         gap: 24px;
         width: 50%;
-        &:first-child,
-        &:last-child {
-            margin-top: 50px;
-        }
         @include media-breakpoint-down(xl) {
             &:last-child {
                 display: none;
             }
+        }
+        &:first-child,
+        &:last-child {
+            margin-top: 50px;
         }
     }
     &__column-image {

@@ -58,18 +58,16 @@
     z-index: 1;
     transition-duration: 0.3s;
     transform: scale(0);
-    @include media-breakpoint-up(xxl) {
-        height: 100%;
-    }
-    @include media-breakpoint-down(xxl) {}
     &__wrapper {
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
-        padding: 91px 30px;
         display: flex;
         justify-content: space-between;
         gap: 10px;
+        @include media-breakpoint-up(lg) {
+            padding: 91px 30px;
+        }
         @include media-breakpoint-down(lg) {
             flex-direction: column;
             padding: 80px 15px;
@@ -79,7 +77,9 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-        max-width: 400px;
+        @include media-breakpoint-up(lg) {
+            max-width: 400px;
+        }
         @include media-breakpoint-down(lg) {
             max-width: 100%;
         }
@@ -91,9 +91,11 @@
     }
     &__title {
         font-weight: 400;
-        font-size: 43px;
         letter-spacing: 0;
-        @include media-breakpoint-down(lg) {
+        @include media-breakpoint-up(lg) {
+            font-size: 43px;
+        }
+        @include media-breakpoint-between(sm, lg) {
             font-size: 38px;
         }
         @include media-breakpoint-down(sm) {
@@ -129,11 +131,13 @@
     &__overview {
         display: flex;
         flex-direction: column;
-        max-width: 530px;
         width: 100%;
-        padding: 25px 30px;
         border: 1px solid var(--palette-primary-main);
         position: relative;
+        @include media-breakpoint-up(lg) {
+            max-width: 530px;
+            padding: 25px 30px;
+        }
         @include media-breakpoint-down(lg) {
             max-width: 100%;
             padding: 20px 15px;
@@ -142,8 +146,10 @@
     &__overview-title {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        font-size: 32px;
         color: var(--palette-secondary-text);
+        @include media-breakpoint-up(sm) {
+            font-size: 32px;
+        }
         @include media-breakpoint-down(sm) {
             font-size: 28px;
         }
@@ -152,22 +158,26 @@
         display: flex;
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        font-size: 22px;
         color: var(--palette-primary-dark);
         margin-bottom: 10px;
+        @include media-breakpoint-up(sm) {
+            font-size: 22px;
+        }
         @include media-breakpoint-down(sm) {
             font-size: 18px;
         }
     }
     &__overview-image {
-        max-width: 150px;
-        max-height: 120px;
         width: 100%;
         height: 100%;
         object-fit: cover;
         position: absolute;
         top: 25px;
         right: 30px;
+        @include media-breakpoint-up(sm) {
+            max-width: 150px;
+            max-height: 120px;
+        }
         @include media-breakpoint-down(sm) {
             max-width: 120px;
             max-height: 96px;
@@ -179,7 +189,6 @@
     }
     &__btn-submit {
         display: flex;
-        align-self: flex-end;
         max-width: 220px;
         padding: 11px 87px;
         margin-top: 80px;
@@ -191,6 +200,9 @@
         text-align: center;
         transition-duration: 0.2s;
         border: none;
+        @include media-breakpoint-up(s) {
+            align-self: flex-end;
+        }
         @include media-breakpoint-down(s) {
             align-self: center;
         }
@@ -206,7 +218,6 @@
 .title {}
 
 .tickets-field {
-    // border: 1px solid var(--palette-primary-main);
     position: relative;
     width: 100%;
     &__toggler {
@@ -224,7 +235,6 @@
         font-weight: 400;
         font-size: 18px;
     }
-    &__icon {}
     &__arrow {
         transition-duration: 0.3s;
     }
@@ -289,7 +299,6 @@
             margin-left: 0;
         }
     }
-    &__row-price {}
     &__counter {
         display: flex;
     }
@@ -327,7 +336,6 @@
             height: 10px;
         }
     }
-    &__counter-decrease {}
     &__counter-field {
         width: 35px;
         height: 23px;
@@ -339,14 +347,14 @@
 }
 
 .overview {
-    &__row {}
-    &__row-icon {}
     &__row-text {
-        margin-left: 15px;
         font-family: "Roboto", sans-serif;
         font-weight: 300;
-        font-size: 18px;
         color: var(--palette-secondary-text);
+        @include media-breakpoint-up(sm) {
+            margin-left: 15px;
+            font-size: 18px;
+        }
         @include media-breakpoint-down(sm) {
             margin-left: 5px;
             font-size: 15px;
@@ -358,7 +366,9 @@
         align-items: center;
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        font-size: 22px;
+        @include media-breakpoint-up(sm) {
+            font-size: 22px;
+        }
         @include media-breakpoint-down(sm) {
             font-size: 18px;
         }
@@ -372,16 +382,21 @@
     }
     &__cards {
         position: relative;
-        width: 470px;
         margin-left: auto;
         margin-right: auto;
         margin-top: 15px;
+        @include media-breakpoint-up(md) {
+            width: 470px;
+            height: 210px;
+        }
         @include media-breakpoint-down(md) {
             width: 100%;
+            height: 440px;
         }
     }
     &__card {
         max-width: 360px;
+        max-height: 210px;
         width: 100%;
         height: 100%;
         display: flex;
@@ -389,27 +404,27 @@
         padding: 15px 20px;
         gap: 10px;
         border-radius: 5px;
+        @include media-breakpoint-up(md) {
+            position: absolute;
+        }
         @include media-breakpoint-down(md) {
             margin-left: auto;
             margin-right: auto;
+            position: relative;
         }
     }
     &__card:first-child {
         background-color: var(--palette-tertiary-light);
         z-index: 1;
+        top: 0;
+        left: 0;
     }
     &__card:last-child {
         background-color: var(--palette-tertiary-dark);
-        position: absolute;
         align-items: flex-end;
         justify-content: flex-end;
         top: 30px;
         right: 0;
-        z-index: -1;
-        @include media-breakpoint-down(md) {
-            position: relative;
-            height: 210px;
-        }
         &::before {
             content: "";
             position: absolute;
@@ -421,12 +436,6 @@
         }
     }
 }
-
-.date-text {}
-
-.time-text {}
-
-.ticket-type-text {}
 
 .row-age {
     &__container {
