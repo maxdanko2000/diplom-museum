@@ -62,8 +62,13 @@
                 display: none;
             }
             &:hover {
-                background-color: var(--palette-secondary-light);
+                background-color: var( --palette-secondary-light);
+                color: var(--palette-primary-text);
                 box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+            }
+            &:active {
+                background-color: var(--palette-tertiary-main);
+                color: var(--palette-secondary-text);
             }
         }
     }
@@ -97,6 +102,7 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    max-height: 700px;
     @include media-breakpoint-up(xl) {
         max-width: 1000px;
     }
@@ -114,7 +120,10 @@
         width: 500px;
         height: 100%;
         z-index: 2;
-        background: linear-gradient( 90deg, #000000 0%, rgba(0, 0, 0, 0.5) 16.19%, rgba(0, 0, 0, 0) 30.73%);
+        background: linear-gradient(90deg, #000, rgba(0, 0, 0, .5) 35.19%, transparent 100%);
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
     }
     &__images {
         display: flex;

@@ -1,12 +1,23 @@
 :root {
-  --palette-primary-main: #030303;
-  --palette-primary-dark: #710707;
-  --palette-primary-light: #ffffff;
-  --palette-secondary-light: #9d8665;
-  --palette-primary-text: #ffffff;
-  --palette-secondary-text: #030303;
-  --palette-tertiary-text: #9d8665;
-  --palette-tertiary-main: #e7e7e7;
-  --palette-tertiary-light: #bcbcbc;
-  --palette-tertiary-dark: #939393;
+    //colors
+    --palette-primary-main: #030303;
+    --palette-primary-dark: #710707;
+    --palette-primary-light: #ffffff;
+    --palette-secondary-light: #9d8665;
+    --palette-primary-text: #ffffff;
+    --palette-secondary-text: #030303;
+    --palette-tertiary-text: #9d8665;
+    --palette-tertiary-main: #e7e7e7;
+    --palette-tertiary-light: #bcbcbc;
+    --palette-tertiary-dark: #939393;
+    //fonts
+    --typography-fontWeightLight: 300;
+    --typography-fontWeightMedium: 500;
+    --typography-fontWeightBold: 700;
+    --typography-fontFamily: 'Roboto', sans-serif;
+    --typography-fontFamily-headings: 'Forum', serif;
+    //shadows
+    --shadows-1: 0 0 24px 0 var(--palette-primary-main);
+    --shadows-2: 0 0 24px 0 var(--palette-secondary-light);
+    --shadows-3: 0 0 24px 0 var(--palette-tertiary-text);
 }

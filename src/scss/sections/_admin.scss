@@ -1,6 +1,8 @@
 .admin {
     &__container {}
-    &__title {}
+    &__title {
+        color: var(--palette-tertiary-text);
+    }
     &__body {}
 }
 
@@ -9,10 +11,12 @@
     &__title {
         font-family: 'Roboto', sans-serif;
         font-weight: 400;
-        font-size: 32px;
         color: var(--palette-secondary-text);
         padding-bottom: 10px;
         border-bottom: 2px solid var(--palette-primary-dark);
+        @include media-breakpoint-up(xl) {
+            font-size: 32px;
+        }
         @include media-breakpoint-down(xl) {
             font-size: 28px;
         }
@@ -31,7 +35,9 @@
             background-color: var(--palette-primary-main);
             .user-list__data {
                 color: var(--palette-primary-text);
-                font-size: 22px;
+                @include media-breakpoint-up(xl) {
+                    font-size: 22px;
+                }
                 @include media-breakpoint-down(xl) {
                     font-size: 18px;
                 }
@@ -39,18 +45,20 @@
         }
     }
     &__data {
-        padding: 20px;
         color: var(--palette-secondary-text);
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        font-size: 20px;
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
+        }
         @include media-breakpoint-down(xl) {
             font-size: 16px;
         }
+        @include media-breakpoint-up(lg) {
+            padding: 20px;
+        }
         @include media-breakpoint-down(lg) {
             padding: 10px;
-            overflow: auto;
-            max-width: 40px;
         }
     }
 }
@@ -86,8 +94,13 @@
         align-items: center;
         justify-content: space-between;
         font-family: 'Roboto', sans-serif;
-        font-size: 20px;
         font-weight: 300;
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
+        }
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
     }
     &__field {
         max-width: 100px;
@@ -106,9 +119,6 @@
         background-color: var(--palette-tertiary-main);
         padding: 10px;
         border: 2px solid var(--palette-tertiary-main);
-        @include media-breakpoint-down(xl) {
-            font-size: 16px;
-        }
     }
 }
 
@@ -119,8 +129,10 @@
         background-color: var(--palette-primary-main);
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        font-size: 22px;
         color: var(--palette-primary-text);
+        @include media-breakpoint-up(xl) {
+            font-size: 22px;
+        }
         @include media-breakpoint-down(xl) {
             font-size: 16px;
         }
@@ -148,7 +160,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--palette-secondary-light);
+        background-color: var( --palette-primary-dark);
         border: none;
         padding: 11px 20px;
         font-family: 'Roboto', sans-serif;
@@ -158,11 +170,12 @@
         cursor: pointer;
         transition-duration: 0.3s;
         &:hover {
-            background-color: var( --palette-tertiary-main);
-            color: var(--palette-secondary-text);
+            background-color: var( --palette-secondary-light);
+            color: var(--palette-primary-text);
         }
         &:active {
-            background-color: var(--palette-tertiary-light);
+            background-color: var(--palette-tertiary-main);
+            color: var(--palette-secondary-text);
         }
     }
 }
