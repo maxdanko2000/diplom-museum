@@ -23,7 +23,7 @@
         height: 48px;
         transition-duration: 0.3s;
         &:hover {
-            box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+            box-shadow: var(--shadows-2);
         }
     }
     &__item-icon {

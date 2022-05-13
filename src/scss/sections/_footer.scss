@@ -16,7 +16,8 @@
         }
     }
     &__logo-title {
-        font-family: 'Forum', serif;
+        font-family: var(--typography-fontFamily-headings);
+        font-weight: var(--typography-fontWeightLight);
         text-transform: uppercase;
         letter-spacing: 2px;
         color: var(--palette-primary-text);
@@ -67,8 +68,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: "Roboto", sans-serif;
-        font-weight: 100;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         letter-spacing: 2px;
         border-radius: 25px;
         transition-duration: 0.3s;

@@ -41,6 +41,9 @@
     }
     &__cards-item {
         max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     &__card-link {
         display: flex;
@@ -82,8 +85,8 @@
     }
     &__card-title {
         position: relative;
-        font-family: "Forum", serif;
-        font-weight: 400;
+        font-family: var(--typography-fontFamily-headings);
+        font-weight: var(--typography-fontWeightLight);
         letter-spacing: 3px;
         text-transform: uppercase;
         color: var(--palette-secondary-text);
@@ -111,8 +114,8 @@
     }
     &__card-desc {
         margin-top: 10px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 100;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         line-height: 26px;
         color: var(--palette-secondary-text);
         @include media-breakpoint-up(xl) {

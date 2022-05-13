@@ -89,8 +89,8 @@
         display: none;
     }
     &__title {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightMedium);
         font-size: 28px;
         color: var(--palette-secondary-text);
         margin-bottom: 25px;
@@ -100,8 +100,8 @@
         height: 17px;
     }
     &__bar-title {
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 22px;
         white-space: nowrap;
         padding-top: 12.5px;
@@ -114,8 +114,8 @@
     flex-direction: column;
     width: 175px;
     &__title {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightMedium);
         color: var(--palette-secondary-text);
         @include media-breakpoint-down(xl) {
             text-align: center;
@@ -133,8 +133,8 @@
         text-align: center;
     }
     &__price-title {
-        font-family: "Roboto", sans-serif;
-        font-weight: 700;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightMedium);
         color: var(--palette-secondary-text);
         @include media-breakpoint-up(sm) {
             font-size: 28px;
@@ -148,8 +148,8 @@
         color: var(--palette-primary-text);
         border: none;
         border-radius: 2px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 22px;
         text-align: center;
         transition-duration: 0.2s;
@@ -160,7 +160,7 @@
             margin-top: 15px;
         }
         &:hover {
-            box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+            box-shadow: var(--shadows-2);
         }
         &:not(:active) {
             background-color: var(--palette-primary-main);
@@ -172,9 +172,8 @@
 }
 
 .amount-field-title {
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 300;
+    font-family: var(--typography-fontFamily);
+    font-weight: var(--typography-fontWeightLight);
     margin-bottom: 15px;
     @include media-breakpoint-up(sm) {
         font-size: 22px;

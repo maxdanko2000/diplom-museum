@@ -11,11 +11,10 @@
     --palette-tertiary-light: #bcbcbc;
     --palette-tertiary-dark: #939393;
     //fonts
-    --typography-fontWeightLight: 300;
-    --typography-fontWeightMedium: 500;
-    --typography-fontWeightBold: 700;
-    --typography-fontFamily: 'Roboto', sans-serif;
     --typography-fontFamily-headings: 'Forum', serif;
+    --typography-fontFamily: 'Roboto', sans-serif;
+    --typography-fontWeightLight: 300; //100-400
+    --typography-fontWeightMedium: 500; //500-900
     //shadows
     --shadows-1: 0 0 24px 0 var(--palette-primary-main);
     --shadows-2: 0 0 24px 0 var(--palette-secondary-light);

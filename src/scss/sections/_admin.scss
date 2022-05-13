@@ -7,8 +7,8 @@
 .user-list {
     margin-top: 40px;
     &__title {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 400;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         color: var(--palette-secondary-text);
         padding-bottom: 10px;
         border-bottom: 2px solid var(--palette-primary-dark);
@@ -44,8 +44,8 @@
     }
     &__data {
         color: var(--palette-secondary-text);
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         @include media-breakpoint-up(xl) {
             font-size: 20px;
         }
@@ -91,8 +91,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         @include media-breakpoint-up(xl) {
             font-size: 20px;
         }
@@ -125,8 +125,8 @@
         display: flex;
         padding: 10px;
         background-color: var(--palette-primary-main);
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         color: var(--palette-primary-text);
         @include media-breakpoint-up(xl) {
             font-size: 22px;
@@ -147,8 +147,8 @@
     &__value {
         display: flex;
         flex: 1 0 auto;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 20px;
         color: var(--palette-secondary-text);
     }
@@ -160,9 +160,9 @@
         justify-content: center;
         border: none;
         padding: 11px 20px;
-        font-family: 'Roboto', sans-serif;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 20px;
-        font-weight: 300;
         cursor: pointer;
         transition-duration: 0.3s;
         &:not(:hover),

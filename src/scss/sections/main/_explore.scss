@@ -62,8 +62,8 @@
     &__comparison-undertext {
         position: absolute;
         color: var(--palette-primary-text);
-        font-family: "Roboto";
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 16px;
         text-align: center;
     }
@@ -95,8 +95,8 @@
         }
     }
     &__desc-text {
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         line-height: 38px;
         color: var(--palette-primary-text);
         @include media-breakpoint-up(xxl) {

@@ -10,8 +10,8 @@
     display: flex;
     gap: 60px;
     &__desc-text {
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
+        font-family: var(--typography-fontFamily);
+        font-weight: var(--typography-fontWeightLight);
         font-size: 22px;
         line-height: 38px;
         color: var(--palette-secondary-text);

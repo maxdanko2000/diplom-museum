@@ -12,8 +12,8 @@
 
 .title {
     white-space: nowrap;
-    font-family: "Forum", serif;
-    font-weight: 400;
+    font-family: var(--typography-fontFamily-headings);
+    font-weight: var( --typography-fontWeightMedium);
     letter-spacing: 5px;
     text-transform: uppercase;
     @include media-breakpoint-up(xxl) {
