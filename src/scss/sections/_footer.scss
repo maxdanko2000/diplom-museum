@@ -95,7 +95,7 @@
         }
         &:hover {
             color: var(--palette-tertiary-text);
-            box-shadow: 0 0 24px 0 var(--palette-tertiary-text);
+            box-shadow: var(--shadows-3);
         }
     }
 }

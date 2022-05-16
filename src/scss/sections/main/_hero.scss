@@ -64,7 +64,7 @@
             &:hover {
                 background-color: var( --palette-secondary-light);
                 color: var(--palette-primary-text);
-                box-shadow: 0 0 24px 0 var(--palette-secondary-light);
+                box-shadow: var(--shadows-2);
             }
             &:active {
                 background-color: var(--palette-tertiary-main);

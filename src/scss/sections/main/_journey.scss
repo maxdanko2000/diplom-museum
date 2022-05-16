@@ -203,7 +203,7 @@
             cursor: pointer;
             transition-duration: 0.3s;
             &:hover {
-                box-shadow: 0 0 5px 0 var(--palette-primary-main);
+                box-shadow: var(--shadows-1);
             }
         }
         .swiper-pagination-bullet-active {
