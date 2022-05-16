@@ -1,0 +1,32 @@
+.register {
+    &__container {}
+    &__title {
+        color: var(--palette-tertiary-text);
+    }
+    &__body {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 60px;
+    }
+    &__field {}
+    &__field-icon {}
+    &__field-data {}
+    &__body-bottom {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__btn-signup {
+        background-color: var(--palette-primary-main);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    &__undertext-inner {}
+    &__undertext--link {}
+}

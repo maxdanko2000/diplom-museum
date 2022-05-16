@@ -126,6 +126,10 @@
             font-family: var(--typography-fontFamily);
             font-weight: var(--typography-fontWeightLight);
             font-size: 18px;
+            transition-duration: 0.3s;
+        }
+        &:focus::placeholder {
+            color: transparent;
         }
     }
     &__overview {
