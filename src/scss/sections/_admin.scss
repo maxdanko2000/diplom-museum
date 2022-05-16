@@ -7,13 +7,10 @@
 .user-list {
     margin-top: 40px;
     &__container {
-        // &::-webkit-scrollbar {
-        //     width: 0;
-        //     height: 0;
-        // }
-        @include media-breakpoint-down(lg) {
-            overflow: auto;
-        }
+        max-height: 575px;
+        margin-top: 20px;
+        overflow: scroll;
+        border: 1px solid var(--palette-primary-main);
     }
     &__title {
         font-family: var(--typography-fontFamily);
@@ -29,17 +26,19 @@
         }
     }
     &__table {
-        margin-top: 20px;
         width: 100%;
         text-align: center;
         border-spacing: 0px;
         border-collapse: collapse;
         border-radius: 5px;
-        border: 1px solid var(--palette-primary-main);
     }
     &__row {
         &:first-child {
+            position: sticky;
+            top: 0;
+            left: 0;
             background-color: var(--palette-primary-main);
+            z-index: 3;
             .user-list__data {
                 color: var(--palette-primary-text);
                 @include media-breakpoint-up(xl) {
