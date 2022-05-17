@@ -206,6 +206,16 @@
         padding: 5px;
       }
     }
+    &__btn-return {
+      transition-duration: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--palette-tertiary-main);
+      }
+      &:not(:hover) {
+        background-color: transparent;
+      }
+    }
     &__btn-close {
       font-size: 22px;
       display: flex;
