@@ -1,68 +1,68 @@
 .gallery {
-    position: relative;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--palette-primary-main);
+  &__container {
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+    }
+  }
+  &__title {
+    color: var(--palette-primary-text);
+  }
+  &__body {
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
     width: 100%;
     height: 100%;
-    background-color: var(--palette-primary-main);
-    &__container {
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 15%;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
-        }
+    max-height: 600px;
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      border-radius: 100px;
+      width: 5px;
     }
-    &__title {
-        color: var(--palette-primary-text);
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--palette-primary-dark);
+      border-radius: 100px;
     }
-    &__body {
-        overflow-y: scroll;
-        display: flex;
-        justify-content: center;
-        margin-top: 75px;
-        width: 100%;
-        height: 100%;
-        max-height: 600px;
-        &::-webkit-scrollbar {
-            -webkit-appearance: none;
-            border-radius: 100px;
-            width: 5px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: var(--palette-primary-dark);
-            border-radius: 100px;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: var(--palette-primary-main);
-        }
-        @include media-breakpoint-up(lg) {
-            gap: 36px;
-        }
-        @include media-breakpoint-down(lg) {
-            gap: 24px;
-        }
+    &::-webkit-scrollbar-track {
+      background-color: var(--palette-primary-main);
     }
+    @include media-breakpoint-up(lg) {
+      gap: 36px;
+    }
+    @include media-breakpoint-down(lg) {
+      gap: 24px;
+    }
+  }
 }
 
 .body {
-    &__column {
-        display: grid;
-        gap: 24px;
-        width: 50%;
-        @include media-breakpoint-down(xl) {
-            &:last-child {
-                display: none;
-            }
-        }
-        &:first-child,
-        &:last-child {
-            margin-top: 50px;
-        }
+  &__column {
+    display: grid;
+    gap: 24px;
+    width: 50%;
+    @include media-breakpoint-down(xl) {
+      &:last-child {
+        display: none;
+      }
     }
-    &__column-image {
-        width: 100%;
-        object-fit: cover;
+    &:first-child,
+    &:last-child {
+      margin-top: 50px;
     }
+  }
+  &__column-image {
+    width: 100%;
+    object-fit: cover;
+  }
 }

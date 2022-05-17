@@ -1,37 +1,37 @@
 import Swiper, { Navigation, Pagination } from "swiper";
 
 const swiper = new Swiper(".journey-slider-inner", {
-    modules: [Navigation, Pagination],
-    direction: "horizontal",
-    slidesPerView: 4,
-    spaceBetween: 80,
-    pagination: {
-        el: ".journey-slider__pagination",
-        clickable: true,
+  modules: [Navigation, Pagination],
+  direction: "horizontal",
+  slidesPerView: 4,
+  spaceBetween: 80,
+  pagination: {
+    el: ".journey-slider__pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".journey-slider__btn-next",
+    prevEl: ".journey-slider__btn-prev",
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 80,
     },
-    navigation: {
-        nextEl: ".journey-slider__btn-next",
-        prevEl: ".journey-slider__btn-prev",
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 120,
     },
-    breakpoints: {
-        1200: {
-            slidesPerView: 4,
-            spaceBetween: 80
-        },
-        992: {
-            slidesPerView: 3,
-            spaceBetween: 120
-        },
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 180
-        },
-        480: {
-            slidesPerView: 2,
-        },
-        320: {
-            slidesPerView: 1,
-            spaceBetween: 0
-        }
-    }
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 180,
+    },
+    480: {
+      slidesPerView: 2,
+    },
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 0,
+    },
+  },
 });

@@ -1,34 +1,36 @@
 .title-underline {
-    width: 100%;
-    display: flex;
-    border-bottom: 3px solid var(--palette-primary-dark);
-    @include media-breakpoint-up(lg) {
-        padding-bottom: 25px;
-    }
-    @include media-breakpoint-down(lg) {
-        padding-bottom: 20px;
-    }
+  display: flex;
+  width: 100%;
+  border-bottom: 3px solid var(--palette-primary-dark);
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 25px;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 20px;
+  }
 }
 
 .title {
-    white-space: nowrap;
-    font-family: var(--typography-fontFamily-headings);
-    font-weight: var( --typography-fontWeightMedium);
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    @include media-breakpoint-up(xxl) {
-        font-size: 70px;
-    }
-    @include media-breakpoint-between(xl, xxl) {
-        font-size: 60px;
-    }
-    @include media-breakpoint-between(md, xl) {
-        font-size: 45px;
-    }
-    @include media-breakpoint-between(sm, md) {
-        font-size: 40px;
-    }
-    @include media-breakpoint-down(sm) {
-        font-size: 28px;
-    }
+  font-family: var(--typography-fontFamily-headings);
+  font-weight: var(--typography-fontWeightMedium);
+  white-space: nowrap;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  @include media-breakpoint-up(xxl) {
+    font-size: 70px;
+  }
+  @include media-breakpoint-between(xl, xxl) {
+    font-size: 60px;
+  }
+  @include media-breakpoint-between(md, xl) {
+    font-size: 45px;
+  }
+  @include media-breakpoint-between(sm, md) {
+    font-size: 40px;
+  }
+  @include media-breakpoint-down(sm) {
+    font-size: 28px;
+  }
 }

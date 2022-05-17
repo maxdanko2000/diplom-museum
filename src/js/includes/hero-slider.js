@@ -12,6 +12,7 @@ const swiper = new Swiper(".hero-slider", {
     clickable: true,
     type: "fraction",
     renderFraction: function (currentClass, totalClass) {
+      // TODO
       return (
         '<span class="' +
         currentClass +
