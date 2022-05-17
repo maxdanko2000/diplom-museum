@@ -1,9 +1,9 @@
 <section class="profile">
-    <div class="profile__container section-container">
-        <h1 class="profile__title title">Profile</h1>
-        <div class="profile__body">
-            <div class="profile__left">
-                <label class="tickets-field__toggler" for="user-name">
+  <div class="profile__container section-container">
+    <h1 class="profile__title title">Profile</h1>
+    <div class="profile__body">
+      <div class="profile__left">
+        <label class="tickets-field__toggler" for="user-name">
           <svg
             fill="none"
             height="15"
@@ -24,7 +24,7 @@
             type="text"
           />
         </label>
-                <label class="tickets-field__toggler" for="user-password">
+        <label class="tickets-field__toggler" for="user-password">
           <svg height="15" viewBox="0 0 26.31 34.98" width="13" xmlns="http://www.w3.org/2000/svg">
             <g data-name="Layer 2">
               <path
@@ -41,7 +41,7 @@
             type="password"
           />
         </label>
-                <label class="tickets-field__toggler" for="user-email">
+        <label class="tickets-field__toggler" for="user-email">
           <svg
             fill="none"
             height="15"
@@ -62,7 +62,7 @@
             type="email"
           />
         </label>
-                <label class="tickets-field__toggler" for="user-phone">
+        <label class="tickets-field__toggler" for="user-phone">
           <svg
             fill="none"
             height="15"
@@ -75,7 +75,6 @@
               fill="#030303"
             />
           </svg>
-
           <input
             autocomplete="off"
             class="tickets-form__field"
@@ -84,19 +83,148 @@
             type="tel"
           />
         </label>
-                <form class="profile__comment">
-                    <span class="profile__comment-title">Give feedback</span>
-                    <textarea class="profile__comment-field" cols="30" id="" name="" placeholder="Write something..."></textarea>
-                    <button class="profile__comment-btn" type="submit">Send</button>
-                </form>
+        <form class="profile__comment">
+          <span class="profile__comment-title">Give feedback</span>
+          <textarea
+            class="profile__comment-field"
+            cols="30"
+            id=""
+            name=""
+            placeholder="Write something..."
+          ></textarea>
+          <button class="profile__comment-btn" type="submit">Send</button>
+        </form>
+      </div>
+      <div class="profile-center">
+        <span class="profile-center__title">Tickets</span>
+        <div class="profile-center__container">
+          <input id="ticket-list-toggler" type="checkbox" />
+          <form action="" class="profile-ticket-list">
+            <div class="profile-ticket-list__container">
+              <div class="profile-ticket-list__table-container">
+                <table class="profile-ticket-list__table">
+                  <tbody>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">№</td>
+                      <td class="profile-ticket-list__table-data">Type</td>
+                      <td class="profile-ticket-list__table-data">Age(Discount)</td>
+                      <td class="profile-ticket-list__table-data">Date</td>
+                      <td class="profile-ticket-list__table-data">Time</td>
+                      <td class="profile-ticket-list__table-data">Amount</td>
+                      <td class="profile-ticket-list__table-data">Price(€)</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">
+                        Return ticket
+                      </td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                      <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <label class="profile-ticket-list__btn-close" for="ticket-list-toggler">x</label>
             </div>
-            <div class="profile__center">
-                <span class="profile__center-title">Tickets</span>
-                <div class="profile__center-container">
-                    <input id="ticket-list-toggler" type="checkbox" />
-                    <label class="center__item center__item-modal" for="ticket-list-toggler">
+          </form>
+          <label class="profile-center__item profile-center__item-modal" for="ticket-list-toggler">
             <svg
-              class="center__item-icon"
+              class="profile-center__item-icon"
               height="64"
               viewBox="0 0 64 64"
               width="64"
@@ -109,153 +237,37 @@
                 d="M33.586 26.414c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828l2 2zM37.586 30.414l2 2c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828z"
               />
             </svg>
-            <span class="center__item-text">Purchased</span>
-            <span class="center__item-value purchased">10</span>
+            <span class="profile-center__item-text">Purchased</span>
+            <span class="profile-center__item-value purchased">10</span>
           </label>
-                    <form action="" class="profile-ticket-list">
-                        <div class="profile-ticket-list__container">
-                            <div class="profile-ticket-list__table-container">
-                                <table class="profile-ticket-list__table">
-                                    <tbody>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">№</td>
-                                            <td class="profile-ticket-list__table-data">Type</td>
-                                            <td class="profile-ticket-list__table-data">Age(Discount)</td>
-                                            <td class="profile-ticket-list__table-data">Date</td>
-                                            <td class="profile-ticket-list__table-data">Time</td>
-                                            <td class="profile-ticket-list__table-data">Amount</td>
-                                            <td class="profile-ticket-list__table-data">Price(€)</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">
-                                                Return ticket
-                                            </td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                        <tr class="profile-ticket-list__table-row">
-                                            <td class="profile-ticket-list__table-data">1</td>
-                                            <td class="profile-ticket-list__table-data">Temporary exhibition</td>
-                                            <td class="profile-ticket-list__table-data">Basic</td>
-                                            <td class="profile-ticket-list__table-data">Friday, August 19</td>
-                                            <td class="profile-ticket-list__table-data">12:12</td>
-                                            <td class="profile-ticket-list__table-data">2</td>
-                                            <td class="profile-ticket-list__table-data">40</td>
-                                            <td class="profile-ticket-list__table-data btn-return-ticket">Return</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <label class="profile-ticket-list__btn-close" for="ticket-list-toggler">x</label>
-                        </div>
-                    </form>
-                    <div class="center__item">
-                        <svg class="center__item-icon" enable-background="new 0 0 15.207 10.854" height="64" viewBox="0 0 15.207 10.854" width="64" xmlns="http://www.w3.org/2000/svg">
+          <div class="profile-center__item">
+            <svg
+              class="profile-center__item-icon"
+              enable-background="new 0 0 15.207 10.854"
+              height="64"
+              viewBox="0 0 15.207 10.854"
+              width="64"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
                 d="M11.707,0h-4v1h4c1.378,0,2.5,1.122,2.5,2.5S13.085,6,11.707,6H1.914l3.146-3.146L4.354,2.146L0,6.5l4.354,4.354  l0.707-0.707L1.914,7h9.793c1.93,0,3.5-1.57,3.5-3.5S13.637,0,11.707,0z"
               />
             </svg>
-                        <span class="center__item-text">Returned</span>
-                        <span class="center__item-value returned">0</span>
-                    </div>
-                </div>
-            </div>
-            <div class="profile__right">
-                <div class="profile__avatar">
-                    <input class="profile__upload-img" id="upload-img" type="file" />
-                    <img alt="" class="profile__avatar-img" src="./img/user/user.png" />
-                    <label class="profile__avatar-btn" for="upload-img"> Upload picture </label>
-                </div>
-                <a class="profile__link" href="register-page.html">Delete account</a>
-                <a class="profile__link" href="login-page.html">Log out</a>
-            </div>
+            <span class="profile-center__item-text">Returned</span>
+            <span class="profile-center__item-value returned">0</span>
+          </div>
         </div>
-        <a class="profile__link" href="index.html">Back to Louvre</a>
+      </div>
+      <div class="profile__right">
+        <div class="profile__avatar">
+          <input class="profile__upload-img" id="upload-img" type="file" />
+          <img alt="" class="profile__avatar-img" src="./img/user/user.png" />
+          <label class="profile__avatar-btn" for="upload-img"> Upload picture </label>
+        </div>
+        <a class="profile__link" href="register-page.html">Delete account</a>
+        <a class="profile__link" href="login-page.html">Log out</a>
+      </div>
     </div>
+    <a class="profile__link" href="index.html">Back to Louvre</a>
+  </div>
 </section>

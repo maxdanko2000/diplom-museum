@@ -21,18 +21,16 @@
       }
     }
   }
-  &:checked ~ .main {
-    .hero {
-      &__title {
-        @include media-breakpoint-down(xl) {
-          transform: translateX(-100%);
-        }
+  &:checked ~ .main .hero {
+    &__title {
+      @include media-breakpoint-down(xl) {
+        transform: translateX(-100%);
       }
-      @include media-breakpoint-down(md) {
-        overflow-y: hidden;
-        &__container {
-          opacity: 0;
-        }
+    }
+    @include media-breakpoint-down(md) {
+      overflow-y: hidden;
+      &__container {
+        opacity: 0;
       }
     }
   }
