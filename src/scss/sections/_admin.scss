@@ -158,7 +158,6 @@
             font-size: 16px;
         }
     }
-    &__list {}
     &__list-item {
         display: flex;
         align-items: center;
@@ -174,7 +173,6 @@
         flex: 1 0 auto;
         color: var(--palette-secondary-text);
     }
-    &__remove-icon {}
     &__add-btn {
         font-size: 20px;
         font-weight: var(--typography-fontWeightLight);

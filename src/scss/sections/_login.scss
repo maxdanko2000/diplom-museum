@@ -1,5 +1,4 @@
 .login {
-    &__container {}
     &__title {
         color: var(--palette-tertiary-text);
     }
@@ -12,10 +11,6 @@
         gap: 40px;
         margin-top: 60px;
     }
-    &__field-data {}
-    &__field-text {}
-    &__field {}
-    &__field-icon {}
     &__body-bottom {
         width: 100%;
         margin-top: 40px;
@@ -29,8 +24,6 @@
     &__btn-reset {
         background-color: var(--palette-primary-dark);
     }
-    &__undertext-inner {}
-    &__undertext--link {}
 }
 
 .auth-undertext-inner {
@@ -93,8 +86,6 @@
         padding: 5px 10px;
     }
 }
-
-.auth-field-text {}
 
 .auth-field-data {
     // TODO

@@ -99,8 +99,6 @@
     }
 }
 
-.btn-return-ticket {}
-
 .profile {
     &__upload-img {
         display: none;
@@ -274,7 +272,6 @@
             box-shadow: var(--shadows-1);
         }
     }
-    &__item-modal {}
     &__item-text {
         font-size: 20px;
         font-weight: var(--typography-fontWeightLight);
