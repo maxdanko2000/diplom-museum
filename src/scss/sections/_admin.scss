@@ -1,290 +1,252 @@
 .admin {
-  &__title {
-    color: var(--palette-tertiary-text);
-  }
+    &__title {
+        color: var(--palette-tertiary-text);
+    }
 }
 
 .user-list {
-  margin-top: 40px;
-
-  &__container {
-    overflow-y: scroll;
-    max-height: 575px;
-    margin-top: 20px;
-    border: 1px solid var(--palette-primary-main);
-
-    &::-webkit-scrollbar {
-      width: 5px;
-      border-radius: 100px;
-      -webkit-appearance: none;
+    margin-top: 40px;
+    &__container {
+        overflow-y: scroll;
+        max-height: 575px;
+        margin-top: 20px;
+        border: 1px solid var(--palette-primary-main);
+        &::-webkit-scrollbar {
+            width: 5px;
+            border-radius: 100px;
+            -webkit-appearance: none;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 100px;
+            background-color: var(--palette-primary-dark);
+        }
+        &::-webkit-scrollbar-track {
+            background-color: var(--palette-primary-main);
+        }
     }
-
-    &::-webkit-scrollbar-thumb {
-      border-radius: 100px;
-      background-color: var(--palette-primary-dark);
-    }
-
-    &::-webkit-scrollbar-track {
-      background-color: var(--palette-primary-main);
-    }
-  }
-
-  &__title {
-    font-family: var(--typography-fontFamily);
-    font-weight: var(--typography-fontWeightLight);
-    padding-bottom: 10px;
-    color: var(--palette-secondary-text);
-    border-bottom: 2px solid var(--palette-primary-dark);
-    @include media-breakpoint-up(xl) {
-      font-size: 32px;
-    }
-    @include media-breakpoint-down(xl) {
-      font-size: 28px;
-    }
-  }
-
-  &__table {
-    width: 100%;
-    border-spacing: 0px;
-    border-collapse: collapse;
-    text-align: center;
-    border-radius: 5px;
-  }
-
-  &__row {
-    &:first-child {
-      position: sticky;
-      z-index: 3;
-      top: 0;
-      left: 0;
-      background-color: var(--palette-primary-main);
-
-      .user-list__data {
-        color: var(--palette-primary-text);
+    &__title {
+        font-weight: var(--typography-fontWeightLight);
+        padding-bottom: 10px;
+        color: var(--palette-secondary-text);
+        border-bottom: 2px solid var(--palette-primary-dark);
         @include media-breakpoint-up(xl) {
-          font-size: 22px;
+            font-size: 32px;
         }
         @include media-breakpoint-down(xl) {
-          font-size: 18px;
+            font-size: 28px;
         }
-      }
     }
-  }
-
-  &__data {
-    font-family: var(--typography-fontFamily);
-    font-weight: var(--typography-fontWeightLight);
-    color: var(--palette-secondary-text);
-    @include media-breakpoint-up(xl) {
-      font-size: 20px;
+    &__table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        text-align: center;
+        border-radius: 5px;
     }
-    @include media-breakpoint-down(xl) {
-      font-size: 16px;
+    &__row {
+        &:first-child {
+            position: sticky;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            background-color: var(--palette-primary-main);
+            .user-list__data {
+                color: var(--palette-primary-text);
+                @include media-breakpoint-up(xl) {
+                    font-size: 22px;
+                }
+                @include media-breakpoint-down(xl) {
+                    font-size: 18px;
+                }
+            }
+        }
     }
-    @include media-breakpoint-up(lg) {
-      padding: 20px;
+    &__data {
+        font-weight: var(--typography-fontWeightLight);
+        color: var(--palette-secondary-text);
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
+        }
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 20px;
+        }
+        @include media-breakpoint-down(lg) {
+            padding: 10px;
+        }
     }
-    @include media-breakpoint-down(lg) {
-      padding: 10px;
-    }
-  }
 }
 
 .edit-ticket {
-  margin-top: 40px;
-
-  &__data {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 300px;
-    border-right: 1px solid var(--palette-primary-main);
-    border-bottom: 1px solid var(--palette-primary-main);
-    border-left: 1px solid var(--palette-primary-main);
-  }
-
-  &__body {
-    display: flex;
-    margin-top: 20px;
-    gap: 60px;
-    @include media-breakpoint-up(xl) {
-      justify-content: space-between;
+    margin-top: 40px;
+    &__data {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 300px;
+        border-right: 1px solid var(--palette-primary-main);
+        border-bottom: 1px solid var(--palette-primary-main);
+        border-left: 1px solid var(--palette-primary-main);
     }
-    @include media-breakpoint-down(xl) {
-      justify-content: center;
+    &__body {
+        display: flex;
+        margin-top: 20px;
+        gap: 60px;
+        @include media-breakpoint-up(xl) {
+            justify-content: space-between;
+        }
+        @include media-breakpoint-down(xl) {
+            justify-content: center;
+        }
+        @include media-breakpoint-down(lg) {
+            flex-wrap: wrap;
+        }
     }
-    @include media-breakpoint-down(lg) {
-      flex-wrap: wrap;
+    &__price-container {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
     }
-  }
-
-  &__price-container {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    padding: 10px;
-    gap: 10px;
-  }
-
-  &__price-inner {
-    font-family: var(--typography-fontFamily);
-    font-weight: var(--typography-fontWeightLight);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    @include media-breakpoint-up(xl) {
-      font-size: 20px;
+    &__price-inner {
+        font-weight: var(--typography-fontWeightLight);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
+        }
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
     }
-    @include media-breakpoint-down(xl) {
-      font-size: 16px;
+    &__field {
+        max-width: 100px;
+        padding: 10px;
+        cursor: text;
+        text-align: center;
+        all: unset;
     }
-  }
-
-  &__field {
-    max-width: 100px;
-    padding: 10px;
-    cursor: text;
-    text-align: center;
-    all: unset;
-  }
 }
 
 .price-inner {
-  &__title {
-    display: flex;
-    align-items: center;
-    flex: 1 0 auto;
-    padding: 10px;
-    border: 2px solid var(--palette-tertiary-main);
-    background-color: var(--palette-tertiary-main);
-  }
+    &__title {
+        display: flex;
+        align-items: center;
+        flex: 1 0 auto;
+        padding: 10px;
+        border: 2px solid var(--palette-tertiary-main);
+        background-color: var(--palette-tertiary-main);
+    }
 }
 
 .data {
-  &__title {
-    font-family: var(--typography-fontFamily);
-    font-weight: var(--typography-fontWeightLight);
-    display: flex;
-    padding: 10px;
-    color: var(--palette-primary-text);
-    background-color: var(--palette-primary-main);
-    @include media-breakpoint-up(xl) {
-      font-size: 22px;
+    &__title {
+        font-weight: var(--typography-fontWeightLight);
+        display: flex;
+        padding: 10px;
+        color: var(--palette-primary-text);
+        background-color: var(--palette-primary-main);
+        @include media-breakpoint-up(xl) {
+            font-size: 22px;
+        }
+        @include media-breakpoint-down(xl) {
+            font-size: 16px;
+        }
     }
-    @include media-breakpoint-down(xl) {
-      font-size: 16px;
+    &__list {}
+    &__list-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 400px;
+        padding: 10px;
+        gap: 20px;
     }
-  }
-
-  &__list {
-  }
-
-  &__list-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 400px;
-    padding: 10px;
-    gap: 20px;
-  }
-
-  &__value {
-    font-family: var(--typography-fontFamily);
-    font-size: 20px;
-    font-weight: var(--typography-fontWeightLight);
-    display: flex;
-    flex: 1 0 auto;
-    color: var(--palette-secondary-text);
-  }
-
-  &__remove-icon {
-  }
-
-  &__add-btn {
-    font-family: var(--typography-fontFamily);
-    font-size: 20px;
-    font-weight: var(--typography-fontWeightLight);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 11px 20px;
-    cursor: pointer;
-    transition-duration: 0.3s;
-    border: none;
-
-    &:not(:hover),
-    &:not(:active) {
-      color: var(--palette-primary-text);
-      background-color: var(--palette-primary-dark);
+    &__value {
+        font-size: 20px;
+        font-weight: var(--typography-fontWeightLight);
+        display: flex;
+        flex: 1 0 auto;
+        color: var(--palette-secondary-text);
     }
-
-    &:hover {
-      color: var(--palette-primary-text);
-      background-color: var(--palette-secondary-light);
+    &__remove-icon {}
+    &__add-btn {
+        font-size: 20px;
+        font-weight: var(--typography-fontWeightLight);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 11px 20px;
+        cursor: pointer;
+        transition-duration: 0.3s;
+        border: none;
+        &:not(:hover),
+        &:not(:active) {
+            color: var(--palette-primary-text);
+            background-color: var(--palette-primary-dark);
+        }
+        &:hover {
+            color: var(--palette-primary-text);
+            background-color: var(--palette-secondary-light);
+        }
+        &:active {
+            color: var(--palette-secondary-text);
+            background-color: var(--palette-tertiary-main);
+        }
     }
-
-    &:active {
-      color: var(--palette-secondary-text);
-      background-color: var(--palette-tertiary-main);
-    }
-  }
 }
 
 .data-btn {
-  cursor: pointer;
-  transition-duration: 0.3s;
-
-  .data-btn-remove {
-    pointer-events: none;
-  }
-
-  &:hover {
-    background-color: var(--palette-tertiary-main);
-  }
-
-  &:active {
-    background-color: var(--palette-tertiary-light);
-  }
+    cursor: pointer;
+    transition-duration: 0.3s;
+    .data-btn-remove {
+        pointer-events: none;
+    }
+    &:hover {
+        background-color: var(--palette-tertiary-main);
+    }
+    &:active {
+        background-color: var(--palette-tertiary-light);
+    }
 }
 
 .data-btn-remove {
-  position: relative;
-  display: flex;
-  width: 20px;
-  height: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  cursor: pointer;
-  transition-duration: 0.2s;
-
-  &::before,
-  &:after {
-    position: absolute;
-    z-index: 1;
-    top: 8px;
-    right: -1px;
-    width: 22px;
-    height: 3px;
-    content: "";
-    border-radius: 5px;
-    background-color: var(--palette-primary-main);
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    transform: rotate(-45deg);
-  }
-
-  &:not(:active) {
-    opacity: 1;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
+    position: relative;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    &::before,
+    &:after {
+        position: absolute;
+        z-index: 1;
+        top: 8px;
+        right: -1px;
+        width: 22px;
+        height: 3px;
+        content: "";
+        border-radius: 5px;
+        background-color: var(--palette-primary-main);
+    }
+    &::before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+    &:not(:active) {
+        opacity: 1;
+    }
+    &:active {
+        opacity: 0.5;
+    }
 }

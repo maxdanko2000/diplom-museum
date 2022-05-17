@@ -94,7 +94,6 @@
         display: flex;
     }
     &__list-link {
-        font-family: var(--typography-fontFamily);
         font-size: 22px;
         font-weight: var(--typography-fontWeightLight);
         display: flex;
@@ -143,7 +142,6 @@
         align-items: center;
     }
     &__link {
-        font-family: var(--typography-fontFamily);
         font-size: 22px;
         font-weight: var(--typography-fontWeightLight);
         width: 100%;
