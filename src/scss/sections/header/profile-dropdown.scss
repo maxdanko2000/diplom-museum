@@ -11,12 +11,11 @@
       transform: scaleY(1);
     }
   }
-
   &__toggler-menu {
     display: flex;
     padding: 15px;
     transition-duration: 0.3s;
-    border: 1px solid white;
+    border: 1px solid var(--palette-primary-light);
     border-radius: 5px;
     &:not(:hover) {
       background-color: transparent;
