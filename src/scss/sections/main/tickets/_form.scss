@@ -117,7 +117,6 @@
     &__field {
         height: 100%;
         display: flex;
-        all: unset;
         cursor: text;
         margin-left: 15px;
         &::placeholder {
@@ -345,7 +344,6 @@
     &__counter-field {
         width: 35px;
         height: 23px;
-        all: unset;
         border-top: 1px solid var(--palette-primary-main);
         border-bottom: 1px solid var(--palette-primary-main);
         text-align: center;

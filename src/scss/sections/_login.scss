@@ -88,19 +88,10 @@
 }
 
 .auth-field-data {
-    // TODO
     width: 100%;
-    all: unset;
     margin-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    &:focus::placeholder {
-        color: transparent;
-    }
-    &::placeholder {
-        color: var(--palette-secondary-text);
-        transition-duration: 0.3s;
-    }
 }
 
 .auth-btn {
