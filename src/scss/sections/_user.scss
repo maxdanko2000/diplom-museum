@@ -1,8 +1,9 @@
 #ticket-list-toggler {
   display: none;
-  &:checked ~ .profile-ticket-list {
-    // TODO
-    transform: scale(1);
+  &:checked ~ .profile {
+    &-ticket-list {
+      transform: scale(1);
+    }
   }
 }
 

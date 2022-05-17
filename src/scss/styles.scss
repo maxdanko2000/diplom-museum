@@ -12,9 +12,11 @@
 // Blocks
 @import "blocks/socials";
 @import "blocks/title";
+
 //Sections
 @import "sections/header/header";
 @import "sections/header/burger.scss";
+@import "sections/header/profile-dropdown.scss";
 //Main page
 @import "sections/main/main";
 @import "sections/main/hero";

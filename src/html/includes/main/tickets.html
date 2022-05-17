@@ -1,66 +1,85 @@
 <section class="tickets" id="tickets">
-    <div class="tickets__container section-container">
-        <div class="tickets__title title-underline">
-            <h2 class="tickets__title-text title">buy tickets</h2>
-        </div>
-        <div class="tickets__body">
-            <img alt="" class="tickets__body-img" loading="lazy" src="./img/tickets/main-image-tickets.webp" />
-            <div class="tickets-type">
-                <span class="tickets-type__title">Ticket Type</span>
-                <label class="tickets-type__bar-title" for="permanent">
+  <div class="tickets__container section-container">
+    <div class="tickets__title title-underline">
+      <h2 class="tickets__title-text title">buy tickets</h2>
+    </div>
+    <div class="tickets__body">
+      <img
+        alt=""
+        class="tickets__body-img"
+        loading="lazy"
+        src="./img/tickets/main-image-tickets.webp"
+      />
+      <div class="tickets-type">
+        <span class="tickets-type__title">Ticket Type</span>
+        <label class="tickets-type__bar-title" for="permanent">
           <input checked class="tickets-type__bar" id="permanent" name="ticket-type" type="radio" />
           Permanent exhibition
         </label>
-                <label class="tickets-type__bar-title" for="temporary">
+        <label class="tickets-type__bar-title" for="temporary">
           <input class="tickets-type__bar" id="temporary" name="ticket-type" type="radio" />
           Temporary exhibition
         </label>
-                <label class="tickets-type__bar-title" for="combined">
+        <label class="tickets-type__bar-title" for="combined">
           <input class="tickets-type__bar" id="combined" name="ticket-type" type="radio" />
           Combined Admission
         </label>
-            </div>
-            <div class="tickets-amount">
-                <p class="tickets-amount__title">Amount</p>
-                <div class="tickets-amount__col">
-                    <label class="amount-field-title" for="amount-top-value">Basic 18+</label>
-                    <div class="amount-field-row">
-                        <span class="amount-field-row__decrease"></span>
-                        <input class="amount-field-row__value" id="amount-top-value" type="number" value="1" />
-                        <span class="amount-field-row__increase"></span>
-                    </div>
-                </div>
-                <div class="tickets-amount__col">
-                    <label class="amount-field-title" for="amount-top-value">Senior 65+</label>
-                    <div class="amount-field-row">
-                        <span class="amount-field-row__decrease"></span>
-                        <input class="amount-field-row__value" id="amount-bottom-value" type="number" value="1" />
-                        <span class="amount-field-row__increase"></span>
-                    </div>
-                </div>
-                <div class="tickets-amount__price">
-                    <span class="tickets-amount__price-title">Total <span class="tickets-amount__price-value">30</span>€</span>
-                </div>
-                <label class="tickets-amount__btn" for="tickets-form-toggler">Buy Now</label>
-            </div>
+      </div>
+      <div class="tickets-amount">
+        <p class="tickets-amount__title">Amount</p>
+        <div class="tickets-amount__col">
+          <label class="amount-field-title" for="amount-top-value">Basic 18+</label>
+          <div class="amount-field-row">
+            <span class="amount-field-row__decrease"></span>
+            <input class="amount-field-row__value" id="amount-top-value" type="number" value="1" />
+            <span class="amount-field-row__increase"></span>
+          </div>
         </div>
-        <input id="tickets-form-toggler" type="checkbox" />
-        <form action="" class="tickets-form">
-            <label class="tickets-form-close" for="tickets-form-toggler"></label>
-            <div class="tickets-form__wrapper">
-                <div class="tickets-form__left">
-                    <svg class="tickets-form__logo-image" fill="none" height="41" viewBox="0 0 49 26" width="85" xmlns="http://www.w3.org/2000/svg">
+        <div class="tickets-amount__col">
+          <label class="amount-field-title" for="amount-top-value">Senior 65+</label>
+          <div class="amount-field-row">
+            <span class="amount-field-row__decrease"></span>
+            <input
+              class="amount-field-row__value"
+              id="amount-bottom-value"
+              type="number"
+              value="1"
+            />
+            <span class="amount-field-row__increase"></span>
+          </div>
+        </div>
+        <div class="tickets-amount__price">
+          <span class="tickets-amount__price-title"
+            >Total <span class="tickets-amount__price-value">30</span>€</span
+          >
+        </div>
+        <label class="tickets-amount__btn" for="tickets-form-toggler">Buy Now</label>
+      </div>
+    </div>
+    <input id="tickets-form-toggler" type="checkbox" />
+    <form action="" class="tickets-form">
+      <label class="tickets-form-close" for="tickets-form-toggler"></label>
+      <div class="tickets-form__wrapper">
+        <div class="tickets-form__left">
+          <svg
+            class="tickets-form__logo-image"
+            fill="none"
+            height="41"
+            viewBox="0 0 49 26"
+            width="85"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               d="M49 26H0L24.5 0L49 26ZM13.3075 13.1309L16.6442 16.6702L19.981 13.1309L16.6442 9.58115L13.3075 13.1309ZM16.6442 25.0052L19.981 21.466L16.6442 17.9162L13.3075 21.466L16.6442 25.0052ZM32.4083 25.0052L35.745 21.466L32.4083 17.9162L29.019 21.466L32.4083 25.0052ZM28.4673 5.40314C28.4473 5.43762 28.4207 5.46941 28.3885 5.49738C27.3507 6.6178 26.2997 7.73822 25.2357 8.84817C25.1437 8.94241 25.2357 9.00524 25.2357 9.08901L28.3097 12.356L28.4542 12.4921L31.7909 8.96335L28.4673 5.40314ZM8.78847 25.0052L8.91984 24.8691L11.9938 21.6126C12.0428 21.5717 12.0702 21.5173 12.0702 21.4607C12.0702 21.4042 12.0428 21.3498 11.9938 21.3089C11.0611 20.3456 10.1547 19.3613 9.23512 18.3874L8.78847 17.9162L5.45174 21.466L8.78847 25.0052ZM17.2354 8.95288L20.5721 12.4921L20.6772 12.3979L23.8169 9.06806C23.922 8.95288 23.8169 8.89005 23.8169 8.80628L20.7429 5.56021L20.6115 5.42408L17.2354 8.95288ZM17.2354 17.3298L20.5721 20.8691L20.7429 20.7016C21.7413 19.6545 22.7528 18.6073 23.7643 17.4869C23.7926 17.4663 23.8152 17.4412 23.8307 17.4133C23.8461 17.3853 23.8541 17.3551 23.8541 17.3246C23.8541 17.2941 23.8461 17.2639 23.8307 17.2359C23.8152 17.208 23.7926 17.1829 23.7643 17.1623C22.8185 16.1675 21.8727 15.1728 20.9399 14.1675L20.5721 13.7906L17.2354 17.3298ZM32.9995 17.3298L36.3362 20.8691L39.6729 17.3298L36.3362 13.7906L32.9995 17.3298ZM28.4673 13.7801V13.8534L25.3013 17.2147C25.1962 17.3089 25.2357 17.3717 25.3013 17.4555L28.244 20.5969C28.3228 20.6911 28.4147 20.7853 28.5198 20.8901L31.8566 17.3508L28.4673 13.7801ZM12.7295 20.8482C12.7453 20.8175 12.7675 20.7892 12.7952 20.7644L15.9611 17.4031C16.0531 17.2984 15.9611 17.2461 15.9611 17.1623L12.8477 13.8953C12.8069 13.8484 12.7583 13.8061 12.7032 13.7696L9.37962 17.2984L12.7295 20.8482ZM32.3558 16.6597L35.6925 13.1204L32.3558 9.59162L29.019 13.1309L32.3558 16.6597ZM24.4737 8.28272L27.8105 4.74346L24.5263 1.27749H24.4606L21.2552 4.71204C21.2354 4.73712 21.2249 4.76616 21.2249 4.79581C21.2249 4.82546 21.2354 4.8545 21.2552 4.87958L24.4737 8.28272ZM24.4737 16.6597L27.8105 13.1204L24.5 9.58115L21.1633 13.1309L24.4737 16.6597ZM24.4737 25.0366L27.8105 21.4974L24.4737 17.9476L21.1633 21.466L24.4737 25.0366ZM40.2378 25.0366L43.5745 21.4974L40.2509 17.9791H40.1853L36.9668 21.3613C36.8617 21.4764 36.9668 21.5288 36.9668 21.6021L39.5941 24.4398L40.2378 25.0366ZM1.89169 25.2356H7.88204L4.91314 22.0942L1.89169 25.2356ZM41.1705 25.2356H47.1083L44.1394 22.0942L41.1705 25.2356ZM23.5542 25.2356L20.5721 22.0942L17.5901 25.2356H23.5542ZM33.3147 25.2356H39.2525L36.2836 22.0942L33.3147 25.2356ZM31.3968 25.2356L28.4279 22.0942L25.459 25.2356H31.3968ZM15.6327 25.2356L12.6638 22.0942L9.69491 25.2356H15.6327Z"
               fill="white"
             />
           </svg>
-                    <h2 class="tickets-form__title title">Booking tickets</h2>
-                    <span class="tickets-form__subtitle">Tour to Louvre</span>
-                    <div class="tickets-form__term">
-                        <div class="tickets-field">
-                            <input id="select-date" type="checkbox" />
-                            <label class="tickets-field__toggler" for="select-date">
+          <h2 class="tickets-form__title title">Booking tickets</h2>
+          <span class="tickets-form__subtitle">Tour to Louvre</span>
+          <div class="tickets-form__term">
+            <div class="tickets-field">
+              <input id="select-date" type="checkbox" />
+              <label class="tickets-field__toggler" for="select-date">
                 <svg
                   class="tickets-field__icon"
                   fill="none"
@@ -93,15 +112,15 @@
                   />
                 </svg>
               </label>
-                            <ul class="tickets-field__droplist">
-                                <li class="tickets-field__droplist-item">01.01.2022</li>
-                                <li class="tickets-field__droplist-item">01.01.2022</li>
-                                <li class="tickets-field__droplist-item">01.01.2022</li>
-                            </ul>
-                        </div>
-                        <div class="tickets-field">
-                            <input id="select-time" type="checkbox" />
-                            <label class="tickets-field__toggler" for="select-time">
+              <ul class="tickets-field__droplist">
+                <li class="tickets-field__droplist-item">01.01.2022</li>
+                <li class="tickets-field__droplist-item">01.01.2022</li>
+                <li class="tickets-field__droplist-item">01.01.2022</li>
+              </ul>
+            </div>
+            <div class="tickets-field">
+              <input id="select-time" type="checkbox" />
+              <label class="tickets-field__toggler" for="select-time">
                 <svg
                   fill="none"
                   height="15"
@@ -130,14 +149,14 @@
                   />
                 </svg>
               </label>
-                            <ul class="tickets-field__droplist">
-                                <li class="tickets-field__droplist-item">12:12</li>
-                                <li class="tickets-field__droplist-item">12:12</li>
-                                <li class="tickets-field__droplist-item">12:12</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <label class="tickets-field__toggler" for="username">
+              <ul class="tickets-field__droplist">
+                <li class="tickets-field__droplist-item">12:12</li>
+                <li class="tickets-field__droplist-item">12:12</li>
+                <li class="tickets-field__droplist-item">12:12</li>
+              </ul>
+            </div>
+          </div>
+          <label class="tickets-field__toggler" for="username">
             <svg
               fill="none"
               height="15"
@@ -158,7 +177,7 @@
               type="text"
             />
           </label>
-                    <label class="tickets-field__toggler" for="email">
+          <label class="tickets-field__toggler" for="email">
             <svg
               fill="none"
               height="11"
@@ -179,7 +198,7 @@
               type="text"
             />
           </label>
-                    <label class="tickets-field__toggler" for="phone">
+          <label class="tickets-field__toggler" for="phone">
             <svg
               fill="none"
               height="23"
@@ -200,9 +219,9 @@
               type="text"
             />
           </label>
-                    <div class="tickets-field">
-                        <input id="select-ticket-type" type="checkbox" />
-                        <label class="tickets-field__toggler" for="select-ticket-type">
+          <div class="tickets-field">
+            <input id="select-ticket-type" type="checkbox" />
+            <label class="tickets-field__toggler" for="select-ticket-type">
               <svg
                 fill="none"
                 height="15"
@@ -232,16 +251,17 @@
                 />
               </svg>
             </label>
-                        <ul class="tickets-field__droplist">
-                            <li class="tickets-field__droplist-item">Permanent exhibition</li>
-                            <li class="tickets-field__droplist-item">Temporary exhibition</li>
-                            <li class="tickets-field__droplist-item">Combined Admission</li>
-                        </ul>
-                    </div>
-                    <div class="tickets__entry">
-                        <span class="entry__title">Entry ticket</span>
-                        <div class="entry__row">
-                            <label class="entry__row-text" for=""><span class="tickets-field__text">Basic 18+</span> (<span
+            <ul class="tickets-field__droplist">
+              <li class="tickets-field__droplist-item">Permanent exhibition</li>
+              <li class="tickets-field__droplist-item">Temporary exhibition</li>
+              <li class="tickets-field__droplist-item">Combined Admission</li>
+            </ul>
+          </div>
+          <div class="tickets__entry">
+            <span class="entry__title">Entry ticket</span>
+            <div class="entry__row">
+              <label class="entry__row-text" for=""
+                ><span class="tickets-field__text">Basic 18+</span> (<span
                   class="entry__row-price price-basic"
                   >20</span
                 >
@@ -355,16 +375,22 @@
                     Card number
                     <input class="card__inner-field" id="" type="number" />
                   </label>
-                            <label class="card__text-field" for="">
+                  <label class="card__text-field" for="">
                     Expiration date
                     <div class="card__container">
                       <input class="card__inner-field" id="" placeholder="03" type="number" />
                       <input class="card__inner-field" id="" placeholder="2022" type="number" />
                     </div>
                   </label>
-                        </div>
-                        <div class="card-types">
-                            <svg fill="none" height="16" viewBox="0 0 55 16" width="55" xmlns="http://www.w3.org/2000/svg">
+                </div>
+                <div class="card-types">
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 55 16"
+                    width="55"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M10.4473 8.24151L8.93656 1.39011C8.82708 0.992881 8.56961 0.646367 8.21147 0.414266C7.85334 0.182165 7.41862 0.0800903 6.98723 0.126791H0.0610828L0 0.439826C5.39466 1.67613 8.96316 4.65929 10.4473 8.24151Z"
                       fill="#F68A0A"
@@ -386,7 +412,13 @@
                       fill="#004A89"
                     />
                   </svg>
-                            <svg fill="none" height="32" viewBox="0 0 53 32" width="53" xmlns="http://www.w3.org/2000/svg">
+                  <svg
+                    fill="none"
+                    height="32"
+                    viewBox="0 0 53 32"
+                    width="53"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       clip-rule="evenodd"
                       d="M26.6103 27.8515C29.499 30.5248 33.2837 32.006 37.2103 31.9999C41.4094 31.9666 45.4252 30.2664 48.3827 27.2699C51.3403 24.2734 52.9999 20.2234 52.9999 16.0024C52.9999 11.7814 51.3403 7.73136 48.3827 4.73487C45.4252 1.73837 41.4094 0.0382433 37.2103 0.00490554C33.284 -0.00180684 29.4993 1.47867 26.6103 4.15135C24.9669 5.65197 23.6537 7.48142 22.7551 9.52223C21.8565 11.563 21.3923 13.7701 21.3923 16.0019C21.3923 18.2337 21.8565 20.4408 22.7551 22.4816C23.6537 24.5225 24.9669 26.3519 26.6103 27.8525V27.8515Z"
@@ -424,26 +456,26 @@
                       fill-rule="evenodd"
                     />
                   </svg>
-                        </div>
-                    </div>
-                    <label class="card__text-field" for="">
+                </div>
+              </div>
+              <label class="card__text-field" for="">
                 Cardholder name
                 <input class="card__inner-field" id="card-inner-field" type="text" />
               </label>
-                </div>
-                <div class="overview__card">
-                    <div class="card__back-container">
-                        <label class="card__text-field" for="">
+            </div>
+            <div class="overview__card">
+              <div class="card__back-container">
+                <label class="card__text-field" for="">
                   CVC/CVV
                   <input class="card__inner-field" id="card-inner-field" name="" type="number" />
                 </label>
-                        <p class="card__text-field">The last 3 or 4 digits on back of the card</p>
-                    </div>
-                </div>
+                <p class="card__text-field">The last 3 or 4 digits on back of the card</p>
+              </div>
             </div>
-            <button class="tickets-form__btn-submit" type="submit">Book</button>
-    </div>
-    </div>
+          </div>
+          <button class="tickets-form__btn-submit" type="submit">Book</button>
+        </div>
+      </div>
     </form>
-    </div>
+  </div>
 </section>

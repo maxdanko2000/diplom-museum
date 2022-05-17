@@ -1,207 +1,207 @@
 .hero {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--palette-primary-main);
+  &__container {
+    display: flex;
+    justify-content: flex-end;
     position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: var(--palette-primary-main);
-    &__container {
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__title {
+    transition: 0.5s;
+    z-index: 3;
+    @include media-breakpoint-up(md) {
+      position: absolute;
+      top: 25%;
+      left: 20px;
+    }
+    @include media-breakpoint-down(md) {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .btn {
+      align-items: center;
+      justify-content: center;
+      margin-top: 55px;
+      font-weight: var(--typography-fontWeightLight);
+      font-size: 22px;
+      letter-spacing: 2px;
+      border: none;
+      border-radius: 10px;
+      background-color: var(--palette-primary-dark);
+      color: var(--palette-primary-text);
+      transition-duration: 0.3s;
+      @include media-breakpoint-up(xl) {
+        padding: 25px 64px;
+      }
+      @include media-breakpoint-between(lg, xl) {
+        padding: 20px 50px;
+      }
+      @include media-breakpoint-up(lg) {
+        max-width: 360px;
+      }
+      @include media-breakpoint-down(lg) {
+        max-width: 320px;
+        padding: 15px 40px;
+      }
+      @include media-breakpoint-up(md) {
         display: flex;
-        justify-content: flex-end;
-        position: relative;
-        @include media-breakpoint-down(md) {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
-    &__title {
-        transition: 0.5s;
-        z-index: 3;
-        @include media-breakpoint-up(md) {
-            position: absolute;
-            top: 25%;
-            left: 20px;
-        }
-        @include media-breakpoint-down(md) {
-            position: relative;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .btn {
-            align-items: center;
-            justify-content: center;
-            margin-top: 55px;
-            font-weight: var(--typography-fontWeightLight);
-            font-size: 22px;
-            letter-spacing: 2px;
-            border: none;
-            border-radius: 10px;
-            background-color: var(--palette-primary-dark);
-            color: var(--palette-primary-text);
-            transition-duration: 0.3s;
-            @include media-breakpoint-up(xl) {
-                padding: 25px 64px;
-            }
-            @include media-breakpoint-between(lg, xl) {
-                padding: 20px 50px;
-            }
-            @include media-breakpoint-up(lg) {
-                max-width: 360px;
-            }
-            @include media-breakpoint-down(lg) {
-                max-width: 320px;
-                padding: 15px 40px;
-            }
-            @include media-breakpoint-up(md) {
-                display: flex;
-            }
-            @include media-breakpoint-down(md) {
-                display: none;
-            }
-            &:hover {
-                background-color: var(--palette-secondary-light);
-                color: var(--palette-primary-text);
-                box-shadow: var(--shadows-2);
-            }
-            &:active {
-                background-color: var(--palette-tertiary-main);
-                color: var(--palette-secondary-text);
-            }
-        }
-    }
-    &__title-text {
+      }
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+      &:hover {
+        background-color: var(--palette-secondary-light);
         color: var(--palette-primary-text);
+        box-shadow: var(--shadows-2);
+      }
+      &:active {
+        background-color: var(--palette-tertiary-main);
+        color: var(--palette-secondary-text);
+      }
     }
-    &__title-desc {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        font-weight: var(--typography-fontWeightLight);
-        letter-spacing: 2px;
-        color: var(--palette-primary-text);
-        @include media-breakpoint-up(xl) {
-            font-size: 28px;
-        }
-        @include media-breakpoint-between(md, xl) {
-            font-size: 23px;
-        }
-        @include media-breakpoint-between(sm, md) {
-            font-size: 20px;
-        }
-        @include media-breakpoint-down(sm) {
-            font-size: 16px;
-        }
+  }
+  &__title-text {
+    color: var(--palette-primary-text);
+  }
+  &__title-desc {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: var(--typography-fontWeightLight);
+    letter-spacing: 2px;
+    color: var(--palette-primary-text);
+    @include media-breakpoint-up(xl) {
+      font-size: 28px;
     }
+    @include media-breakpoint-between(md, xl) {
+      font-size: 23px;
+    }
+    @include media-breakpoint-between(sm, md) {
+      font-size: 20px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
+    }
+  }
 }
 
 .hero-slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    max-height: 700px;
-    @include media-breakpoint-up(xl) {
-        max-width: 1000px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  max-height: 700px;
+  @include media-breakpoint-up(xl) {
+    max-width: 1000px;
+  }
+  @include media-breakpoint-between(md, xl) {
+    max-width: 700px;
+  }
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.5) 35.19%, transparent 100%);
+    @include media-breakpoint-down(md) {
+      display: none;
     }
-    @include media-breakpoint-between(md, xl) {
-        max-width: 700px;
+  }
+  &__images {
+    display: flex;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    width: 100%;
+    z-index: 1;
+  }
+  &__next,
+  &__prev {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      svg {
+        path {
+          filter: brightness(0.5);
+        }
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--palette-primary-main);
+    z-index: 4;
+    @include media-breakpoint-up(md) {
+      width: 60%;
     }
     @include media-breakpoint-down(md) {
-        max-width: 100%;
+      width: 100%;
     }
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 500px;
-        height: 100%;
-        z-index: 2;
-        background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.5) 35.19%, transparent 100%);
-        @include media-breakpoint-down(md) {
-            display: none;
-        }
+    @include media-breakpoint-up(sm) {
+      gap: 20px;
     }
-    &__images {
-        display: flex;
-        height: 100%;
-        position: relative;
-        transition-property: transform;
-        width: 100%;
-        z-index: 1;
+    @include media-breakpoint-down(sm) {
+      gap: 10px;
     }
-    &__next,
-    &__prev {
-        padding: 10px;
-        cursor: pointer;
-        &:hover {
-            svg {
-                path {
-                    filter: brightness(0.5);
-                }
-            }
-        }
+  }
+  &__pagination {
+    max-width: 60px;
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    font-weight: var(--typography-fontWeightLight);
+    color: var(--palette-primary-text);
+    @include media-breakpoint-up(xl) {
+      font-size: 22px;
     }
-    &__nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        background-color: var(--palette-primary-main);
-        z-index: 4;
-        @include media-breakpoint-up(md) {
-            width: 60%;
-        }
-        @include media-breakpoint-down(md) {
-            width: 100%;
-        }
-        @include media-breakpoint-up(sm) {
-            gap: 20px;
-        }
-        @include media-breakpoint-down(sm) {
-            gap: 10px;
-        }
+    @include media-breakpoint-between(sm, xl) {
+      font-size: 20px;
     }
-    &__pagination {
-        max-width: 60px;
-        display: flex;
-        gap: 5px;
-        justify-content: space-between;
-        font-weight: var(--typography-fontWeightLight);
-        color: var(--palette-primary-text);
-        @include media-breakpoint-up(xl) {
-            font-size: 22px;
-        }
-        @include media-breakpoint-between(sm, xl) {
-            font-size: 20px;
-        }
-        @include media-breakpoint-down(sm) {
-            font-size: 16px;
-        }
+    @include media-breakpoint-down(sm) {
+      font-size: 16px;
     }
-    &__arrows {
-        display: flex;
+  }
+  &__arrows {
+    display: flex;
+  }
+  &__scroll {
+    height: 8px;
+    background-color: var(--palette-primary-light);
+    border-radius: 5px;
+    max-width: 600px;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      .swiper-scrollbar-drag {
+        filter: brightness(0.7);
+      }
     }
-    &__scroll {
-        height: 8px;
-        background-color: var(--palette-primary-light);
-        border-radius: 5px;
-        max-width: 600px;
-        width: 100%;
-        cursor: pointer;
-        &:hover {
-            .swiper-scrollbar-drag {
-                filter: brightness(0.7);
-            }
-        }
-        .swiper-scrollbar-drag {
-            height: 100%;
-            background-color: var(--palette-primary-dark);
-            border-radius: 5px;
-        }
+    .swiper-scrollbar-drag {
+      height: 100%;
+      background-color: var(--palette-primary-dark);
+      border-radius: 5px;
     }
+  }
 }

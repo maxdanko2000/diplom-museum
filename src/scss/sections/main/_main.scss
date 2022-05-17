@@ -1,27 +1,27 @@
 .section-container {
-    max-width: 1480px;
-    margin-left: auto;
-    margin-right: auto;
-    @include media-breakpoint-up(xl) {
-        padding: 75px 20px;
-    }
-    @include media-breakpoint-between(lg, xl) {
-        padding: 60px 20px;
-    }
-    @include media-breakpoint-between(sm, lg) {
-        padding: 40px 20px;
-    }
-    @include media-breakpoint-down(sm) {
-        padding: 36px 20px;
-    }
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  @include media-breakpoint-up(xl) {
+    padding: 75px 20px;
+  }
+  @include media-breakpoint-between(lg, xl) {
+    padding: 60px 20px;
+  }
+  @include media-breakpoint-between(sm, lg) {
+    padding: 40px 20px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 36px 20px;
+  }
 }
 
 input {
-    &:focus::placeholder {
-        color: transparent;
-    }
-    &::placeholder {
-        color: var(--palette-secondary-text);
-        transition-duration: 0.3s;
-    }
+  &:focus::placeholder {
+    color: transparent;
+  }
+  &::placeholder {
+    color: var(--palette-secondary-text);
+    transition-duration: 0.3s;
+  }
 }
