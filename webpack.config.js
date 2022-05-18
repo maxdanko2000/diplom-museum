@@ -100,6 +100,10 @@ const config = {
           to: "./img",
         },
         {
+          from: "./src/video",
+          to: "./video",
+        },
+        {
           from: "./src/uploads",
           to: "./uploads",
         },

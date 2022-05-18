@@ -58,7 +58,7 @@
     </div>
     <input id="tickets-form-toggler" type="checkbox" />
     <form action="" class="tickets-form">
-      <label class="tickets-form-close" for="tickets-form-toggler"></label>
+      <label class="tickets-form__btn-close" for="tickets-form-toggler"></label>
       <div class="tickets-form__wrapper">
         <div class="tickets-form__left">
           <svg
@@ -77,9 +77,8 @@
           <h2 class="tickets-form__title title">Booking tickets</h2>
           <span class="tickets-form__subtitle">Tour to Louvre</span>
           <div class="tickets-form__term">
-            <div class="tickets-field">
-              <input id="select-date" type="checkbox" />
-              <label class="tickets-field__toggler" for="select-date">
+            <div class="tickets-form__field">
+              <div class="tickets-form__field-toggler">
                 <svg
                   class="tickets-field__icon"
                   fill="none"
@@ -97,9 +96,9 @@
                     fill="#030303"
                   />
                 </svg>
-                <span class="tickets-field__text">Date</span>
+                <span class="tickets-form__field-text">Date</span>
                 <svg
-                  class="tickets-field__arrow"
+                  class="tickets-form__field-arrow"
                   fill="none"
                   height="17"
                   viewBox="0 0 17 17"
@@ -111,16 +110,15 @@
                     fill="#030303"
                   />
                 </svg>
-              </label>
-              <ul class="tickets-field__droplist">
-                <li class="tickets-field__droplist-item">01.01.2022</li>
-                <li class="tickets-field__droplist-item">01.01.2022</li>
-                <li class="tickets-field__droplist-item">01.01.2022</li>
+              </div>
+              <ul class="tickets-form__droplist">
+                <li class="tickets-form__droplist-item">01.01.2022</li>
+                <li class="tickets-form__droplist-item">01.01.2022</li>
+                <li class="tickets-form__droplist-item">01.01.2022</li>
               </ul>
             </div>
-            <div class="tickets-field">
-              <input id="select-time" type="checkbox" />
-              <label class="tickets-field__toggler" for="select-time">
+            <div class="tickets-form__field">
+              <div class="tickets-form__field-toggler" for="select-time">
                 <svg
                   fill="none"
                   height="15"
@@ -133,10 +131,9 @@
                     fill="#030303"
                   />
                 </svg>
-
-                <span class="tickets-field__text">Time</span>
+                <span class="tickets-form__field-text">Time</span>
                 <svg
-                  class="tickets-field__arrow"
+                  class="tickets-form__field-arrow"
                   fill="none"
                   height="17"
                   viewBox="0 0 17 17"
@@ -148,15 +145,15 @@
                     fill="#030303"
                   />
                 </svg>
-              </label>
-              <ul class="tickets-field__droplist">
-                <li class="tickets-field__droplist-item">12:12</li>
-                <li class="tickets-field__droplist-item">12:12</li>
-                <li class="tickets-field__droplist-item">12:12</li>
+              </div>
+              <ul class="tickets-form__droplist">
+                <li class="tickets-form__droplist-item">12:12</li>
+                <li class="tickets-form__droplist-item">12:12</li>
+                <li class="tickets-form__droplist-item">12:12</li>
               </ul>
             </div>
           </div>
-          <label class="tickets-field__toggler" for="username">
+          <label class="tickets-form__field-toggler" for="username">
             <svg
               fill="none"
               height="15"
@@ -171,13 +168,13 @@
             </svg>
             <input
               autocomplete="off"
-              class="tickets-form__field"
+              class="tickets-form__field-inner"
               id="username"
               placeholder="Name"
               type="text"
             />
           </label>
-          <label class="tickets-field__toggler" for="email">
+          <label class="tickets-form__field-toggler" for="email">
             <svg
               fill="none"
               height="11"
@@ -192,13 +189,13 @@
             </svg>
             <input
               autocomplete="off"
-              class="tickets-form__field"
+              class="tickets-form__field-inner"
               id="email"
               placeholder="E-mail"
               type="text"
             />
           </label>
-          <label class="tickets-field__toggler" for="phone">
+          <label class="tickets-form__field-toggler" for="phone">
             <svg
               fill="none"
               height="23"
@@ -213,15 +210,14 @@
             </svg>
             <input
               autocomplete="off"
-              class="tickets-form__field"
+              class="tickets-form__field-inner"
               id="phone"
               placeholder="Phone"
               type="text"
             />
           </label>
-          <div class="tickets-field">
-            <input id="select-ticket-type" type="checkbox" />
-            <label class="tickets-field__toggler" for="select-ticket-type">
+          <div class="tickets-form__field">
+            <div class="tickets-form__field-toggler" for="select-ticket-type">
               <svg
                 fill="none"
                 height="15"
@@ -236,9 +232,9 @@
                   fill-rule="evenodd"
                 />
               </svg>
-              <span class="tickets-field__text">Ticket type</span>
+              <span class="tickets-form__field-text">Ticket type</span>
               <svg
-                class="tickets-field__arrow"
+                class="tickets-form__field-arrow"
                 fill="none"
                 height="17"
                 viewBox="0 0 17 17"
@@ -250,49 +246,48 @@
                   fill="#030303"
                 />
               </svg>
-            </label>
-            <ul class="tickets-field__droplist">
-              <li class="tickets-field__droplist-item">Permanent exhibition</li>
-              <li class="tickets-field__droplist-item">Temporary exhibition</li>
-              <li class="tickets-field__droplist-item">Combined Admission</li>
+            </div>
+            <ul class="tickets-form__droplist">
+              <li class="tickets-form__droplist-item">Permanent exhibition</li>
+              <li class="tickets-form__droplist-item">Temporary exhibition</li>
+              <li class="tickets-form__droplist-item">Combined Admission</li>
             </ul>
           </div>
-          <div class="tickets__entry">
-            <span class="entry__title">Entry ticket</span>
-            <div class="entry__row">
-              <label class="entry__row-text" for=""
-                ><span class="tickets-field__text">Basic 18+</span> (<span
-                  class="entry__row-price price-basic"
+          <div class="tickets-form__entry">
+            <span class="tickets-form__entry-title title">Entry ticket</span>
+            <div class="tickets-form__entry-row">
+              <label class="tickets-form__entry-text" for=""
+                ><span class="tickets-form__field-text">Basic 18+</span> (<span
+                  class="tickets-form__entry-price price-basic"
                   >20</span
-                >
-                €)</label
-              >
-              <div class="entry__counter">
-                <span class="entry__counter-decrease"></span>
-                <input class="entry__counter-field" type="text" value="1" />
-                <span class="entry__counter-increase"></span>
+                >€)
+              </label>
+              <div class="tickets-form__counter">
+                <span class="tickets-form__counter-decrease"></span>
+                <input class="tickets-form__counter-field" type="text" value="1" />
+                <span class="tickets-form__counter-increase"></span>
               </div>
             </div>
-            <div class="entry__row">
-              <label class="entry__row-text" for=""
-                ><span class="tickets-field__text">Senior 65+</span> (<span
-                  class="entry__row-price price-senior"
+            <div class="tickets-form__entry-row">
+              <label class="tickets-form__entry-text" for=""
+                ><span class="tickets-form__field-text">Senior 65+</span> (<span
+                  class="tickets-form__entry-price price-senior"
                   >10</span
                 >
                 €)</label
               >
-              <div class="entry__counter">
-                <span class="entry__counter-decrease"></span>
-                <input class="entry__counter-field" type="text" value="1" />
-                <span class="entry__counter-increase"></span>
+              <div class="tickets-form__counter">
+                <span class="tickets-form__counter-decrease"></span>
+                <input class="tickets-form__counter-field" type="text" value="1" />
+                <span class="tickets-form__counter-increase"></span>
               </div>
             </div>
           </div>
         </div>
-        <div class="tickets-form__overview">
-          <img alt="" class="tickets-form__overview-image" src="./img/form/overview-image.jpg" />
-          <h2 class="tickets-form__overview-title">Overview</h2>
-          <span class="tickets-form__overview-subtitle">Tour to Louvre</span>
+        <div class="overview">
+          <img alt="" class="overview__image" src="./img/form/overview-image.jpg" />
+          <h2 class="overview__title">Overview</h2>
+          <span class="overview__subtitle">Tour to Louvre</span>
           <div class="overview__row">
             <svg
               class="overview__row-icon"
@@ -345,45 +340,55 @@
             </svg>
             <span class="overview__row-text ticket-type-text">Temporary exhibition</span>
           </div>
-          <div class="overview__row-age">
-            <div class="row-age__container">
-              <span class="row-age__count">2</span>
-              <span class="row-age__count-text"
-                >Basic (<span class="row-age__count-price price-basic">20</span>€)</span
+          <div class="overview-age">
+            <div class="overview-age__container">
+              <span class="overview-age__count">2</span>
+              <span class="overview-age__count-text"
+                >Basic (<span class="overview-age__count-price price-basic">20</span>€)</span
               >
             </div>
-            <span class="row-age__total-price total-price-basic">40</span>€
+            <span class="overview-age__total-price total-price-basic">40</span>€
           </div>
-          <div class="overview__row-age">
-            <div class="row-age__container">
-              <span class="row-age__count">2</span>
-              <span class="row-age__count-text"
-                >Senior (<span class="row-age__count-price price-senior">10</span>€)</span
+          <div class="overview-age">
+            <div class="overview-age__container">
+              <span class="overview-age__count">2</span>
+              <span class="overview-age__count-text"
+                >Senior (<span class="overview-age__count-price price-senior">10</span>€)</span
               >
             </div>
-            <span class="row-age__total-price total-price-senior">20</span>€
+            <span class="overview-age__total-price total-price-senior">20</span>€
           </div>
-          <div class="overview__total-summ">
-            <span class="total-summ__text">Total:</span>
-            <span class="total-summ__price">60</span>€
+          <div class="overview-total">
+            <span class="overview-total__text">Total:</span>
+            <span class="overview-total__price">60</span>€
           </div>
-          <div class="overview__cards">
-            <div class="overview__card">
-              <div class="card__top-container">
-                <div class="card__top-left-container">
-                  <label class="card__text-field" for="">
+          <div class="overview-cards">
+            <div class="overview-cards__item">
+              <div class="overview-cards__top">
+                <div class="overview-cards__top-left">
+                  <label class="overview-cards__text-field" for="">
                     Card number
-                    <input class="card__inner-field" id="" type="number" />
+                    <input class="overview-cards__inner-field" id="" type="number" />
                   </label>
-                  <label class="card__text-field" for="">
+                  <label class="overview-cards__text-field" for="">
                     Expiration date
-                    <div class="card__container">
-                      <input class="card__inner-field" id="" placeholder="03" type="number" />
-                      <input class="card__inner-field" id="" placeholder="2022" type="number" />
+                    <div class="overview-cards__container">
+                      <input
+                        class="overview-cards__inner-field"
+                        id="card-date-month"
+                        placeholder="03"
+                        type="number"
+                      />
+                      <input
+                        class="overview-cards__inner-field"
+                        id="card-date-year"
+                        placeholder="2022"
+                        type="number"
+                      />
                     </div>
                   </label>
                 </div>
-                <div class="card-types">
+                <div class="overview-cards__top-right">
                   <svg
                     fill="none"
                     height="16"
@@ -458,22 +463,27 @@
                   </svg>
                 </div>
               </div>
-              <label class="card__text-field" for="">
+              <label class="overview-cards__text-field" for="">
                 Cardholder name
-                <input class="card__inner-field" id="card-inner-field" type="text" />
+                <input class="overview-cards__inner-field" id="card-inner-field" type="text" />
               </label>
             </div>
-            <div class="overview__card">
-              <div class="card__back-container">
-                <label class="card__text-field" for="">
+            <div class="overview-cards__item">
+              <div class="overview-cards__item-back">
+                <label class="overview-cards__text-field" for="">
                   CVC/CVV
-                  <input class="card__inner-field" id="card-inner-field" name="" type="number" />
+                  <input
+                    class="overview-cards__inner-field"
+                    id="card-inner-field"
+                    name=""
+                    type="number"
+                  />
                 </label>
-                <p class="card__text-field">The last 3 or 4 digits on back of the card</p>
+                <p class="overview-cards__text-field">The last 3 or 4 digits on back of the card</p>
               </div>
             </div>
           </div>
-          <button class="tickets-form__btn-submit" type="submit">Book</button>
+          <button class="overview__btn-submit" type="submit">Book</button>
         </div>
       </div>
     </form>

@@ -63,14 +63,6 @@
   }
 }
 
-[type="radio"] {
-  transition-duration: 0.3s;
-  border-color: var(--palette-primary-dark);
-  &:checked {
-    filter: brightness(0);
-  }
-}
-
 .tickets-type {
   align-items: flex-start;
   flex: 1 0 auto;

@@ -43,37 +43,35 @@
     width: 32px;
     height: 23px;
     margin: 10px 20px;
-  }
-  &__buns {
     @include media-breakpoint-up(xl) {
       display: none;
     }
-    @include media-breakpoint-down(xl) {
-      display: flex;
+  }
+  &__buns {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    transition-duration: 0.3s;
+    opacity: 1;
+    background-color: var(--palette-primary-light);
+    &::before,
+    &::after {
       position: absolute;
-      top: 0;
-      left: 0;
+      right: 0;
       width: 32px;
       height: 3px;
+      content: "";
       transition-duration: 0.3s;
-      opacity: 1;
       background-color: var(--palette-primary-light);
-      &::before,
-      &::after {
-        position: absolute;
-        right: 0;
-        width: 32px;
-        height: 3px;
-        content: "";
-        transition-duration: 0.3s;
-        background-color: var(--palette-primary-light);
-      }
-      &::before {
-        top: 10px;
-      }
-      &::after {
-        top: 20px;
-      }
+    }
+    &::before {
+      top: 10px;
+    }
+    &::after {
+      top: 20px;
     }
   }
   &-menu {
