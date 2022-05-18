@@ -112,6 +112,7 @@
       height: 100%;
       border: 2px solid var(--palette-primary-main);
       border-radius: 50%;
+      transition-duration: 0.3s;
     }
     &:hover::before {
       border-color: var(--palette-tertiary-light);
@@ -185,6 +186,7 @@
     font-weight: var(--typography-fontWeightLight);
     font-size: 22px;
     text-align: center;
+    white-space: nowrap;
     transition-duration: 0.2s;
     @include media-breakpoint-up(md) {
       margin-top: 40px;
