@@ -1,11 +1,11 @@
-const divisor = document.querySelector(".explore__comparison-divisor");
-
-function comparing() {
-  // TODO
-  let slideValue = document.querySelector(".explore__comparison-divisor").value;
-  document.querySelector(
-    ".explore__comparison-after"
-  ).style.clipPath = `polygon(0 0,${slideValue}% 0, ${slideValue}% 100%, 0 100%`;
+const afterImg = document.querySelector(".explore__comparison-after");
+export class Comparison {
+  constructor() {}
+  compare() {
+    return () => {
+      let slideValue = document.querySelector(".explore__comparison-divisor").value;
+      afterImg.style.clipPath = `polygon(0 0,${slideValue}% 0, ${slideValue}% 100%, 0 100%`;
+    };
+  }
 }
-
-divisor.addEventListener("input", comparing);
+// function compare() {}
