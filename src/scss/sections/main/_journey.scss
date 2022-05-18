@@ -122,7 +122,6 @@
     &__play-bar,
     &__volume-bar {
       width: 100%;
-      cursor: pointer;
 
       @include media-breakpoint-up(md) {
         height: 15px;
