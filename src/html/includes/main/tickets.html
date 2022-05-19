@@ -172,6 +172,7 @@
               id="username"
               placeholder="Name"
               type="text"
+              required
             />
           </label>
           <label class="tickets-form__field-toggler" for="email">
@@ -193,6 +194,8 @@
               id="email"
               placeholder="E-mail"
               type="text"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              required
             />
           </label>
           <label class="tickets-form__field-toggler" for="phone">
@@ -213,7 +216,9 @@
               class="tickets-form__field-inner"
               id="phone"
               placeholder="Phone"
-              type="text"
+              type="tel"
+              required
+              pattern="[0-9]{10,12}"
             />
           </label>
           <div class="tickets-form__field">
@@ -264,7 +269,7 @@
               </label>
               <div class="tickets-form__counter">
                 <span class="tickets-form__counter-decrease"></span>
-                <input class="tickets-form__counter-field" type="text" value="1" />
+                <input class="tickets-form__counter-field" type="number" value="1" max="999" />
                 <span class="tickets-form__counter-increase"></span>
               </div>
             </div>
@@ -278,7 +283,7 @@
               >
               <div class="tickets-form__counter">
                 <span class="tickets-form__counter-decrease"></span>
-                <input class="tickets-form__counter-field" type="text" value="1" />
+                <input class="tickets-form__counter-field" type="number" value="1" max="999" />
                 <span class="tickets-form__counter-increase"></span>
               </div>
             </div>
@@ -368,7 +373,13 @@
                 <div class="overview-cards__top-left">
                   <label class="overview-cards__text-field" for="">
                     Card number
-                    <input class="overview-cards__inner-field" id="" type="number" />
+                    <input
+                      class="overview-cards__inner-field"
+                      id=""
+                      type="text"
+                      required
+                      pattern="[0-9]{16,16}"
+                    />
                   </label>
                   <label class="overview-cards__text-field" for="">
                     Expiration date
@@ -377,13 +388,17 @@
                         class="overview-cards__inner-field"
                         id="card-date-month"
                         placeholder="03"
-                        type="number"
+                        type="text"
+                        pattern="[0-9]{2,2}"
+                        required
                       />
                       <input
                         class="overview-cards__inner-field"
                         id="card-date-year"
                         placeholder="2022"
-                        type="number"
+                        type="text"
+                        pattern="[0-9]{4,5}"
+                        required
                       />
                     </div>
                   </label>
@@ -465,18 +480,25 @@
               </div>
               <label class="overview-cards__text-field" for="">
                 Cardholder name
-                <input class="overview-cards__inner-field" id="card-inner-field" type="text" />
+                <input
+                  class="overview-cards__inner-field"
+                  id="card-inner-field"
+                  type="text"
+                  pattern="[A-Za-z]{3,30}"
+                  required
+                />
               </label>
             </div>
             <div class="overview-cards__item">
               <div class="overview-cards__item-back">
-                <label class="overview-cards__text-field" for="">
+                <label class="overview-cards__text-field" for="card-inner-field">
                   CVC/CVV
                   <input
                     class="overview-cards__inner-field"
                     id="card-inner-field"
-                    name=""
-                    type="number"
+                    type="text"
+                    pattern="[0-9]{3,3}"
+                    required
                   />
                 </label>
                 <p class="overview-cards__text-field">The last 3 or 4 digits on back of the card</p>

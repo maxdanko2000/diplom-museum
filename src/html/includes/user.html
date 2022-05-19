@@ -22,6 +22,7 @@
             id="user-name"
             placeholder="Name"
             type="text"
+            maxlength="20"
           />
         </label>
         <label class="tickets-form__field-toggler" for="user-password">
@@ -39,6 +40,7 @@
             id="user-password"
             placeholder="Password"
             type="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           />
         </label>
         <label class="tickets-form__field-toggler" for="user-email">
@@ -60,6 +62,7 @@
             id="user-email"
             placeholder="Email"
             type="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </label>
         <label class="tickets-form__field-toggler" for="user-phone">
@@ -81,6 +84,7 @@
             id="user-phone"
             placeholder="Phone"
             type="tel"
+            pattern="[0-9]{10,12}"
           />
         </label>
         <form class="profile__comment">

@@ -17,6 +17,14 @@
 }
 
 input {
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.3s;
+  &:valid {
+    border-color: transparent;
+  }
+  &:invalid {
+    border-color: var(--palette-primary-dark);
+  }
   &:focus::placeholder {
     color: transparent;
   }

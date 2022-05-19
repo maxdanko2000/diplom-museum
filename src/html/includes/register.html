@@ -22,6 +22,8 @@
           placeholder="Username"
           id="username"
           autocomplete="off"
+          maxlength="20"
+          required
         />
       </label>
       <label class="register__field input-field" for="email">
@@ -44,6 +46,8 @@
           placeholder="Email"
           id="email"
           autocomplete="off"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          required
         />
       </label>
       <label class="register__field input-field" for="password">
@@ -66,6 +70,8 @@
           type="password"
           placeholder="Password"
           id="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          required
         />
       </label>
       <label class="register__field input-field" for="password-confirm">
@@ -85,6 +91,8 @@
           type="password"
           placeholder="Confirm password"
           id="password-confirm"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          required
         />
       </label>
       <div class="register__body-bottom">
