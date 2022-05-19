@@ -99,6 +99,24 @@
         <span class="profile-center__title">Tickets</span>
         <div class="profile-center__container">
           <input id="ticket-list-toggler" type="checkbox" />
+          <label class="profile-center__item" for="ticket-list-toggler">
+            <svg
+              class="profile-center__item-icon"
+              height="64"
+              viewBox="0 0 64 64"
+              width="64"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M.586 41.414l5.344 5.343a2 2 0 0 0 2.828 0A5.959 5.959 0 0 1 13 45c3.309 0 6 2.691 6 6a5.964 5.964 0 0 1-1.758 4.243 2 2 0 0 0 0 2.828l5.344 5.343c.391.391.902.586 1.414.586s1.024-.195 1.414-.586l38-38a1.996 1.996 0 0 0 0-2.828l-5.344-5.343a2 2 0 0 0-2.828 0A5.959 5.959 0 0 1 51 19c-3.309 0-6-2.691-6-6 0-1.603.625-3.109 1.758-4.243a2 2 0 0 0 0-2.828L41.414.586a2 2 0 0 0-2.828 0l-38 38a1.996 1.996 0 0 0 0 2.828zM26 18.828l1.586 1.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 0 0 0-2.828L28.828 16 40 4.828l2.656 2.655A9.935 9.935 0 0 0 41 13c0 5.514 4.486 10 10 10a9.928 9.928 0 0 0 5.516-1.655L59.171 24 48 35.172l-1.586-1.586a2 2 0 1 0-2.828 2.828L45.172 38 24 59.172l-2.656-2.655A9.935 9.935 0 0 0 23 51c0-5.514-4.486-10-10-10a9.928 9.928 0 0 0-5.516 1.655L4.829 40 26 18.828z"
+              />
+              <path
+                d="M33.586 26.414c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828l2 2zM37.586 30.414l2 2c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828z"
+              />
+            </svg>
+            <span class="profile-center__item-text">Purchased</span>
+            <span class="profile-center__item-value purchased">10</span>
+          </label>
           <form action="" class="profile-ticket-list">
             <div class="profile-ticket-list__container">
               <div class="profile-ticket-list__table-container">
@@ -240,25 +258,8 @@
               <label class="profile-ticket-list__btn-close" for="ticket-list-toggler">x</label>
             </div>
           </form>
-          <label class="profile-center__item profile-center__item-modal" for="ticket-list-toggler">
-            <svg
-              class="profile-center__item-icon"
-              height="64"
-              viewBox="0 0 64 64"
-              width="64"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M.586 41.414l5.344 5.343a2 2 0 0 0 2.828 0A5.959 5.959 0 0 1 13 45c3.309 0 6 2.691 6 6a5.964 5.964 0 0 1-1.758 4.243 2 2 0 0 0 0 2.828l5.344 5.343c.391.391.902.586 1.414.586s1.024-.195 1.414-.586l38-38a1.996 1.996 0 0 0 0-2.828l-5.344-5.343a2 2 0 0 0-2.828 0A5.959 5.959 0 0 1 51 19c-3.309 0-6-2.691-6-6 0-1.603.625-3.109 1.758-4.243a2 2 0 0 0 0-2.828L41.414.586a2 2 0 0 0-2.828 0l-38 38a1.996 1.996 0 0 0 0 2.828zM26 18.828l1.586 1.586c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 0 0 0-2.828L28.828 16 40 4.828l2.656 2.655A9.935 9.935 0 0 0 41 13c0 5.514 4.486 10 10 10a9.928 9.928 0 0 0 5.516-1.655L59.171 24 48 35.172l-1.586-1.586a2 2 0 1 0-2.828 2.828L45.172 38 24 59.172l-2.656-2.655A9.935 9.935 0 0 0 23 51c0-5.514-4.486-10-10-10a9.928 9.928 0 0 0-5.516 1.655L4.829 40 26 18.828z"
-              />
-              <path
-                d="M33.586 26.414c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828l2 2zM37.586 30.414l2 2c.39.391.902.586 1.414.586s1.024-.195 1.414-.586a2 2 0 000-2.828l-2-2a2 2 0 10-2.828 2.828z"
-              />
-            </svg>
-            <span class="profile-center__item-text">Purchased</span>
-            <span class="profile-center__item-value purchased">10</span>
-          </label>
-          <div class="profile-center__item">
+          <input type="checkbox" id="returned-ticket-list-toggler" />
+          <label class="profile-center__item" for="returned-ticket-list-toggler">
             <svg
               class="profile-center__item-icon"
               enable-background="new 0 0 15.207 10.854"
@@ -272,7 +273,56 @@
               />
             </svg>
             <span class="profile-center__item-text">Returned</span>
-            <span class="profile-center__item-value returned">0</span>
+            <span class="profile-center__item-value returned">3</span>
+          </label>
+          <div class="profile-returned-list">
+            <div class="profile-ticket-list__container">
+              <div class="profile-ticket-list__table-container">
+                <table class="profile-ticket-list__table">
+                  <tbody>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">№</td>
+                      <td class="profile-ticket-list__table-data">Type</td>
+                      <td class="profile-ticket-list__table-data">Age(Discount)</td>
+                      <td class="profile-ticket-list__table-data">Date</td>
+                      <td class="profile-ticket-list__table-data">Time</td>
+                      <td class="profile-ticket-list__table-data">Amount</td>
+                      <td class="profile-ticket-list__table-data">Price(€)</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                    </tr>
+                    <tr class="profile-ticket-list__table-row">
+                      <td class="profile-ticket-list__table-data">1</td>
+                      <td class="profile-ticket-list__table-data">Temporary exhibition</td>
+                      <td class="profile-ticket-list__table-data">Basic</td>
+                      <td class="profile-ticket-list__table-data">Friday, August 19</td>
+                      <td class="profile-ticket-list__table-data">12:12</td>
+                      <td class="profile-ticket-list__table-data">2</td>
+                      <td class="profile-ticket-list__table-data">40</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <label class="profile-ticket-list__btn-close" for="returned-ticket-list-toggler"
+                >x</label
+              >
+            </div>
           </div>
         </div>
       </div>
