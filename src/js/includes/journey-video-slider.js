@@ -1,6 +1,6 @@
-import Swiper, { Navigation, Pagination } from "swiper";
+import { Navigation, Pagination } from "swiper";
 
-const swiper = new Swiper(".journey-slider-inner", {
+export const journeyOptions = {
   modules: [Navigation, Pagination],
   direction: "horizontal",
   slidesPerView: 4,
@@ -34,4 +34,4 @@ const swiper = new Swiper(".journey-slider-inner", {
       spaceBetween: 80,
     },
   },
-});
+};

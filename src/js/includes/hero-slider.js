@@ -1,6 +1,6 @@
-import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from "swiper";
+import { Navigation, Pagination, Scrollbar, Autoplay, EffectFade } from "swiper";
 
-const swiper = new Swiper(".hero-slider", {
+export const heroOptions = {
   modules: [Navigation, Pagination, Scrollbar, Autoplay, EffectFade],
   direction: "horizontal",
   autoplay: { delay: 3000 },
@@ -13,15 +13,7 @@ const swiper = new Swiper(".hero-slider", {
     type: "fraction",
     renderFraction: function (currentClass, totalClass) {
       // TODO
-      return (
-        '<span class="' +
-        currentClass +
-        '"></span>' +
-        "|" +
-        '<span class="' +
-        totalClass +
-        '"></span>'
-      );
+      return `<span class="${currentClass}"></span>|<span class="${totalClass}"></span>`;
     },
   },
 
@@ -34,4 +26,4 @@ const swiper = new Swiper(".hero-slider", {
     el: ".hero-slider__scroll",
     draggable: true,
   },
-});
+};
