@@ -37,6 +37,7 @@ button {
 .input-undertext-inner {
   font-weight: var(--typography-fontWeightMedium);
   color: var(--palette-secondary-text);
+  text-align: center;
   @include media-breakpoint-up(xl) {
     font-size: 22px;
   }

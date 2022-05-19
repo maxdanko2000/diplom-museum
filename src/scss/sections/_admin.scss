@@ -2,8 +2,9 @@
   &__title {
     color: var(--palette-tertiary-text);
   }
-
-  &__body {
+  &__container {
+    display: flex;
+    flex-direction: column;
   }
 
   &__users {
