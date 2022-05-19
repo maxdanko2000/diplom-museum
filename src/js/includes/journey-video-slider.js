@@ -16,22 +16,22 @@ const swiper = new Swiper(".journey-slider-inner", {
   breakpoints: {
     1200: {
       slidesPerView: 4,
-      spaceBetween: 80,
     },
     992: {
       slidesPerView: 3,
-      spaceBetween: 120,
+      spaceBetween: 60,
     },
-    768: {
+    620: {
       slidesPerView: 2,
-      spaceBetween: 180,
+      spaceBetween: 100,
     },
     480: {
       slidesPerView: 2,
+      spaceBetween: 200,
     },
     320: {
       slidesPerView: 1,
-      spaceBetween: 0,
+      spaceBetween: 80,
     },
   },
 });
