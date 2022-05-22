@@ -3,6 +3,7 @@ import { heroOptions } from "./includes/hero-slider.js";
 import { Comparison } from "./includes/explore-comparison";
 import { journeyOptions } from "./includes/journey-video-slider.js";
 import "./includes/form-func.js";
+import "./includes/journey-video.js";
 // import { Form } from "./includes/form-class.js";
 
 import "./includes/form.js";
