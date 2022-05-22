@@ -69,7 +69,6 @@ function toggleFullScreen() {
 }
 
 fullScreenBtn.addEventListener("click", toggleFullScreen);
-
 volumeBar.addEventListener("input", moveVolumeThumb);
 volumeToggler.addEventListener("click", toggleVolume);
 playBar.addEventListener("click", videoChangeTime);
