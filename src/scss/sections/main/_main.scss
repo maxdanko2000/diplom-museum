@@ -32,6 +32,10 @@ input {
     color: var(--palette-secondary-text);
     transition-duration: 0.3s;
   }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 }
 
 .text-marker {

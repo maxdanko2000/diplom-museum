@@ -30,35 +30,40 @@
         <div class="tickets-amount__col">
           <label class="amount-field-title" for="amount-top-value">Basic 18+</label>
           <div class="amount-field-row">
-            <span class="amount-field-row__decrease"></span>
-            <input class="amount-field-row__value" id="amount-top-value" type="number" value="1" />
-            <span class="amount-field-row__increase"></span>
+            <span class="amount-field-row__decrease counter-decrease"></span>
+            <input
+              class="amount-field-row__value basic-price"
+              id="amount-top-value"
+              type="number"
+              value="0"
+            />
+            <span class="amount-field-row__increase counter-increase"></span>
           </div>
         </div>
         <div class="tickets-amount__col">
           <label class="amount-field-title" for="amount-top-value">Senior 65+</label>
           <div class="amount-field-row">
-            <span class="amount-field-row__decrease"></span>
+            <span class="amount-field-row__decrease counter-decrease"></span>
             <input
-              class="amount-field-row__value"
+              class="amount-field-row__value senior-price"
               id="amount-bottom-value"
               type="number"
-              value="1"
+              value="0"
             />
-            <span class="amount-field-row__increase"></span>
+            <span class="amount-field-row__increase counter-increase"></span>
           </div>
         </div>
         <div class="tickets-amount__price">
           <span class="tickets-amount__price-title"
-            >Total <span class="tickets-amount__price-value">30</span>€</span
+            >Total <span class="tickets-amount__price-value total-price">0</span>€</span
           >
         </div>
-        <label class="tickets-amount__btn" for="tickets-form-toggler">Buy Now</label>
+        <div class="tickets-amount__btn open-form-btn">Buy Now</div>
       </div>
     </div>
     <input id="tickets-form-toggler" type="checkbox" />
     <form action="" class="tickets-form">
-      <label class="tickets-form__btn-close" for="tickets-form-toggler"></label>
+      <div class="tickets-form__btn-close open-form-btn"></div>
       <div class="tickets-form__wrapper">
         <div class="tickets-form__left">
           <svg
@@ -78,7 +83,7 @@
           <span class="tickets-form__subtitle">Tour to Louvre</span>
           <div class="tickets-form__term">
             <div class="tickets-form__field">
-              <div class="tickets-form__field-toggler droplist-toggler">
+              <div class="tickets-form__field-toggler droplist-toggler-btn">
                 <svg
                   class="tickets-field__icon"
                   fill="none"
@@ -96,7 +101,7 @@
                     fill="#030303"
                   />
                 </svg>
-                <span class="tickets-form__field-text">Date</span>
+                <span class="tickets-form__field-text field-text">Date</span>
                 <svg
                   class="tickets-form__field-arrow"
                   fill="none"
@@ -110,15 +115,36 @@
                     fill="#030303"
                   />
                 </svg>
+                <ul class="tickets-form__droplist droplist-date">
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="date"
+                      readonly
+                      value="2022-01-01"
+                    />
+                  </li>
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="date"
+                      readonly
+                      value="2022-02-02"
+                    />
+                  </li>
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="date"
+                      readonly
+                      value="2022-03-03"
+                    />
+                  </li>
+                </ul>
               </div>
-              <ul class="tickets-form__droplist">
-                <li class="tickets-form__droplist-item">01.01.2022</li>
-                <li class="tickets-form__droplist-item">01.01.2022</li>
-                <li class="tickets-form__droplist-item">01.01.2022</li>
-              </ul>
             </div>
             <div class="tickets-form__field">
-              <div class="tickets-form__field-toggler droplist-toggler" for="select-time">
+              <div class="tickets-form__field-toggler droplist-toggler-btn">
                 <svg
                   fill="none"
                   height="15"
@@ -131,7 +157,7 @@
                     fill="#030303"
                   />
                 </svg>
-                <span class="tickets-form__field-text">Time</span>
+                <span class="tickets-form__field-text field-text">Time</span>
                 <svg
                   class="tickets-form__field-arrow"
                   fill="none"
@@ -145,12 +171,33 @@
                     fill="#030303"
                   />
                 </svg>
+                <ul class="tickets-form__droplist droplist-time">
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="time"
+                      value="12:12"
+                      readonly
+                    />
+                  </li>
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="time"
+                      value="13:13"
+                      readonly
+                    />
+                  </li>
+                  <li class="tickets-form__droplist-item">
+                    <input
+                      class="tickets-form__droplist-field"
+                      type="time"
+                      value="14:14"
+                      readonly
+                    />
+                  </li>
+                </ul>
               </div>
-              <ul class="tickets-form__droplist">
-                <li class="tickets-form__droplist-item">12:12</li>
-                <li class="tickets-form__droplist-item">12:12</li>
-                <li class="tickets-form__droplist-item">12:12</li>
-              </ul>
             </div>
           </div>
           <label class="tickets-form__field-toggler" for="username">
@@ -223,7 +270,7 @@
             />
           </label>
           <div class="tickets-form__field">
-            <div class="tickets-form__field-toggler droplist-toggler" for="select-ticket-type">
+            <div class="tickets-form__field-toggler droplist-toggler-btn" for="select-ticket-type">
               <svg
                 fill="none"
                 height="15"
@@ -238,7 +285,7 @@
                   fill-rule="evenodd"
                 />
               </svg>
-              <span class="tickets-form__field-text">Ticket type</span>
+              <span class="tickets-form__field-text field-text">Ticket type</span>
               <svg
                 class="tickets-form__field-arrow"
                 fill="none"
@@ -252,12 +299,33 @@
                   fill="#030303"
                 />
               </svg>
+              <ul class="tickets-form__droplist droplist-tickets">
+                <li class="tickets-form__droplist-item">
+                  <input
+                    class="tickets-form__droplist-field"
+                    type="text"
+                    value="Permanent exhibition"
+                    readonly
+                  />
+                </li>
+                <li class="tickets-form__droplist-item">
+                  <input
+                    class="tickets-form__droplist-field"
+                    type="text"
+                    value="Temporary exhibition"
+                    readonly
+                  />
+                </li>
+                <li class="tickets-form__droplist-item">
+                  <input
+                    class="tickets-form__droplist-field"
+                    type="text"
+                    value="Combined Admission"
+                    readonly
+                  />
+                </li>
+              </ul>
             </div>
-            <ul class="tickets-form__droplist">
-              <li class="tickets-form__droplist-item">Permanent exhibition</li>
-              <li class="tickets-form__droplist-item">Temporary exhibition</li>
-              <li class="tickets-form__droplist-item">Combined Admission</li>
-            </ul>
           </div>
           <div class="tickets-form__entry">
             <span class="tickets-form__entry-title title">Entry ticket</span>
@@ -269,9 +337,15 @@
                 >€)
               </label>
               <div class="tickets-form__counter">
-                <span class="tickets-form__counter-decrease"></span>
-                <input class="tickets-form__counter-field" type="number" value="1" max="999" />
-                <span class="tickets-form__counter-increase"></span>
+                <span class="tickets-form__counter-decrease counter-decrease"></span>
+                <input
+                  class="tickets-form__counter-field basic-price"
+                  type="number"
+                  value="0"
+                  max="999"
+                  min="0"
+                />
+                <span class="tickets-form__counter-increase counter-increase"></span>
               </div>
             </div>
             <div class="tickets-form__entry-row">
@@ -283,9 +357,15 @@
                 €)</label
               >
               <div class="tickets-form__counter">
-                <span class="tickets-form__counter-decrease"></span>
-                <input class="tickets-form__counter-field" type="number" value="1" max="999" />
-                <span class="tickets-form__counter-increase"></span>
+                <span class="tickets-form__counter-decrease counter-decrease"></span>
+                <input
+                  class="tickets-form__counter-field senior-price"
+                  type="number"
+                  value="0"
+                  max="999"
+                  min="0"
+                />
+                <span class="tickets-form__counter-increase counter-increase"></span>
               </div>
             </div>
           </div>
@@ -353,7 +433,7 @@
                 >Basic (<span class="overview-age__count-price price-basic">20</span>€)</span
               >
             </div>
-            <span class="overview-age__total-price total-price-basic">40</span>€
+            <span class="overview-age__total-price total-price-basic">0</span>€
           </div>
           <div class="overview-age">
             <div class="overview-age__container">
@@ -362,11 +442,11 @@
                 >Senior (<span class="overview-age__count-price price-senior">10</span>€)</span
               >
             </div>
-            <span class="overview-age__total-price total-price-senior">20</span>€
+            <span class="overview-age__total-price total-price-senior">0</span>€
           </div>
           <div class="overview-total">
             <span class="overview-total__text">Total:</span>
-            <span class="overview-total__price">60</span>€
+            <span class="overview-total__price total-price">0</span>€
           </div>
           <div class="overview-cards">
             <div class="overview-cards__item">
@@ -380,6 +460,7 @@
                       type="text"
                       required
                       pattern="[0-9]{16,16}"
+                      autocomplete="off"
                     />
                   </label>
                   <label class="overview-cards__text-field" for="">
@@ -391,6 +472,7 @@
                         placeholder="03"
                         type="text"
                         pattern="[0-9]{2,2}"
+                        autocomplete="off"
                         required
                       />
                       <input
@@ -399,6 +481,7 @@
                         placeholder="2022"
                         type="text"
                         pattern="[0-9]{4,5}"
+                        autocomplete="off"
                         required
                       />
                     </div>
@@ -486,6 +569,7 @@
                   id="card-inner-field"
                   type="text"
                   pattern="[A-Za-z]{3,30}"
+                  autocomplete="off"
                   required
                 />
               </label>
@@ -499,6 +583,7 @@
                     id="card-inner-field"
                     type="text"
                     pattern="[0-9]{3,3}"
+                    autocomplete="off"
                     required
                   />
                 </label>

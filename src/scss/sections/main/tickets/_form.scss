@@ -1,13 +1,12 @@
-#tickets-form-toggler {
-  display: none;
-  &:checked {
-    ~ .tickets-form {
-      transform: scale(1);
+.tickets-form {
+  &__field-toggler:hover & {
+    &__droplist {
+      transform: scaleY(1);
+    }
+    &__field-arrow {
+      transform: rotate(180deg);
     }
   }
-}
-
-.tickets-form {
   width: 100%;
   background-color: var(--palette-primary-light);
   position: absolute;
@@ -120,7 +119,13 @@
     flex: 1 0 auto;
     margin-left: 15px;
     font-weight: var(--typography-fontWeightLight);
-    font-size: 18px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 18px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 12px;
+    }
   }
 
   &__droplist {
@@ -137,10 +142,11 @@
   &__droplist-item {
     display: flex;
     align-items: center;
+    justify-content: center;
     border-bottom: 1px solid var(--palette-primary-main);
     border-left: 1px solid var(--palette-primary-main);
     border-right: 1px solid var(--palette-primary-main);
-    padding: 12px 15px 12px 45px;
+
     cursor: pointer;
     transition-duration: 0.3s;
     &:not(:hover) {
@@ -151,6 +157,19 @@
     }
   }
 
+  &__droplist-field {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 15px;
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+    border: none;
+  }
+
   &__field-inner {
     height: 100%;
     display: flex;
@@ -159,8 +178,13 @@
     &::placeholder {
       color: var(--palette-primary-main);
       font-weight: var(--typography-fontWeightLight);
-      font-size: 18px;
       transition-duration: 0.3s;
+      @include media-breakpoint-up(sm) {
+        font-size: 18px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 12px;
+      }
     }
     &:focus::placeholder {
       color: transparent;
