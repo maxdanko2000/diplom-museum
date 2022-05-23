@@ -5,6 +5,7 @@ import { journeyOptions } from "./includes/journey-video-slider.js";
 import { JourneyVideo } from "./includes/journey-video.js";
 import { Form } from "./includes/form.js";
 import { User } from "./includes/user.js";
+import { Register } from "./includes/register.js";
 
 //Explore
 new Comparison().comparing();
@@ -25,3 +26,5 @@ new Form().decrease();
 new Form().selectValue();
 //User
 new User().imagePreview();
+//Register
+new Register().authorize();

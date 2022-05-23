@@ -19,6 +19,7 @@
         <input
           class="register__field-data input-field-data"
           type="text"
+          name="name"
           placeholder="Username"
           id="username"
           autocomplete="off"
@@ -44,6 +45,7 @@
         <input
           class="register__field-data input-field-data"
           type="email"
+          name="email"
           placeholder="Email"
           id="email"
           autocomplete="off"
@@ -69,6 +71,7 @@
         <input
           class="register__field-data input-field-data"
           type="password"
+          name="password"
           placeholder="Password"
           id="password"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
@@ -97,7 +100,7 @@
         />
       </label>
       <div class="register__body-bottom">
-        <button class="register__btn-signup input-btn" type="submit">Sign up</button>
+        <button id="btn-register" class="register__btn-signup input-btn">Sign up</button>
       </div>
       <span class="register__undertext-inner input-undertext-inner"
         >Already have an account?

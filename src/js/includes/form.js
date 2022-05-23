@@ -50,6 +50,7 @@ export class Form {
       });
     }
   }
+
   decrease() {
     for (const btnDecrease of this.btnDecreases) {
       btnDecrease.addEventListener("click", (e) => {
@@ -85,6 +86,7 @@ export class Form {
       });
     }
   }
+
   selectValue() {
     for (const ticketTypeItem of this.ticketTypeList) {
       ticketTypeItem.addEventListener("click", (e) => {

@@ -4,7 +4,8 @@ export class User {
     this.sampleImg = document.querySelector(".profile__avatar-img");
   }
   imagePreview() {
-    this.btnLoadImage.addEventListener("change", (event) => {
+    this.btnLoadImage?.addEventListener("change", (event) => {
+      console.log(event.target.files);
       if (event.target.files.length > 0) {
         const src = URL.createObjectURL(event.target.files[0]);
         this.sampleImg.src = src;
