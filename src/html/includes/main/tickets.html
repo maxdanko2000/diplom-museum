@@ -14,15 +14,15 @@
         <span class="tickets-type__title">Ticket Type</span>
         <label class="tickets-type__bar-title" for="permanent">
           <input checked class="tickets-type__bar" id="permanent" name="ticket-type" type="radio" />
-          Permanent exhibition
+          <span class="tickets-type__text">Permanent exhibition</span>
         </label>
         <label class="tickets-type__bar-title" for="temporary">
           <input class="tickets-type__bar" id="temporary" name="ticket-type" type="radio" />
-          Temporary exhibition
+          <span class="tickets-type__text">Temporary exhibition</span>
         </label>
         <label class="tickets-type__bar-title" for="combined">
           <input class="tickets-type__bar" id="combined" name="ticket-type" type="radio" />
-          Combined Admission
+          <span class="tickets-type__text">Combined Admission</span>
         </label>
       </div>
       <div class="tickets-amount">
@@ -58,12 +58,12 @@
             >Total <span class="tickets-amount__price-value total-price">0</span>€</span
           >
         </div>
-        <div class="tickets-amount__btn open-form-btn">Buy Now</div>
+        <label class="tickets-amount__btn open-form-btn" for="tickets-form-toggler">Buy Now</label>
       </div>
     </div>
     <input id="tickets-form-toggler" type="checkbox" />
     <form action="" class="tickets-form">
-      <div class="tickets-form__btn-close open-form-btn"></div>
+      <label class="tickets-form__btn-close open-form-btn" for="tickets-form-toggler"></label>
       <div class="tickets-form__wrapper">
         <div class="tickets-form__left">
           <svg
@@ -285,7 +285,7 @@
                   fill-rule="evenodd"
                 />
               </svg>
-              <span class="tickets-form__field-text field-text">Ticket type</span>
+              <span class="tickets-form__field-text field-text tickets-type-text">Ticket type</span>
               <svg
                 class="tickets-form__field-arrow"
                 fill="none"
@@ -392,7 +392,7 @@
                 fill="#030303"
               />
             </svg>
-            <span class="overview__row-text date-text">Friday, August 19</span>
+            <span class="overview__row-text date-text">Date</span>
           </div>
           <div class="overview__row">
             <svg
@@ -408,7 +408,7 @@
                 fill="#030303"
               />
             </svg>
-            <span class="overview__row-text time-text">16 : 30</span>
+            <span class="overview__row-text time-text">Time</span>
           </div>
           <div class="overview__row">
             <svg
@@ -424,7 +424,7 @@
                 fill="black"
               />
             </svg>
-            <span class="overview__row-text ticket-type-text">Temporary exhibition</span>
+            <span class="overview__row-text tickets-type-text">Ticket type</span>
           </div>
           <div class="overview-age">
             <div class="overview-age__container">

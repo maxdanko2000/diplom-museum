@@ -4,6 +4,7 @@ export const journeyOptions = {
   modules: [Navigation, Pagination],
   direction: "horizontal",
   slidesPerView: 4,
+  loop: true,
   spaceBetween: 80,
   pagination: {
     el: ".journey-slider__pagination",

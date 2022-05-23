@@ -100,7 +100,7 @@ function selectValue() {
   }
 }
 
-toggleForm();
-increase();
-decrease();
-selectValue();
+// toggleForm();
+// increase();
+// decrease();
+// selectValue();
