@@ -4,6 +4,7 @@ import { Comparison } from "./includes/explore-comparison";
 import { journeyOptions } from "./includes/journey-video-slider.js";
 import { JourneyVideo } from "./includes/journey-video.js";
 import { Form } from "./includes/form.js";
+import { User } from "./includes/user.js";
 
 //Explore
 new Comparison().comparing();
@@ -22,3 +23,5 @@ new Swiper(".journey-slider-inner", Object.assign(journeyOptions));
 new Form().increase();
 new Form().decrease();
 new Form().selectValue();
+//User
+new User().imagePreview();
