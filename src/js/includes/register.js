@@ -1,47 +1,50 @@
 export class Register {
   constructor() {
-    this.usernameField = document.getElementById("username");
-    this.emailField = document.getElementById("email");
-    this.passwordField = document.getElementById("password");
-    this.passwordConfirmField = document.getElementById("password-confirm");
+    this.usernameField = document.getElementById("register-username");
+    this.emailField = document.getElementById("register-email");
+    this.passwordField = document.getElementById("register-password");
+    this.passwordConfirmField = document.getElementById("register-password-confirm");
     this.btnRegister = document.getElementById("btn-register");
+    this.formEl = document.getElementById("register-form");
   }
-  authorize() {
+  register() {
     let id = 0;
     const users = [];
-    this.btnRegister.addEventListener("click", (e) => {
+    let user = {};
+    this.formEl?.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (
-        this.isValid(this.usernameField.value) &&
-        this.isValid(this.emailField.value) &&
-        this.isValid(this.passwordField.value) &&
-        this.passwordConfirmField.value === this.passwordField.value
-      ) {
-        let user = {
-          id: id,
-          name: `${this.usernameField.value}`,
-          password: `${this.passwordField.value}`,
-          email: `${this.emailField.value}`,
-        };
-        id++;
-        this.usernameField.value = "";
-        this.emailField.value = "";
-        this.passwordField.value = "";
-        this.passwordConfirmField.value = "";
-        this.btnRegister.disabled = true;
-        users.push(user);
-        console.log(users);
-        console.log("Success");
+      if (this.passwordConfirmField.value === this.passwordField.value) {
+        if (!this.isRegister(users)) {
+          user = {
+            id: id,
+            name: `${this.usernameField.value}`,
+            password: `${this.passwordField.value}`,
+            email: `${this.emailField.value}`,
+          };
+
+          id++;
+          this.btnRegister.disabled = true;
+          users.push(user);
+          alert(`User: ${user.name} successfully register! Please sign in.`);
+          this.clearFields();
+          this.btnRegister.disabled = false;
+        } else {
+          alert("User with current name already register!");
+        }
       } else {
-        this.usernameField.value = "";
-        this.emailField.value = "";
-        this.passwordField.value = "";
-        this.passwordConfirmField.value = "";
-        console.log("Failed");
+        alert("Passwords do not match!");
       }
     });
   }
-  isValid(value) {
-    return value.length > 0;
+
+  clearFields() {
+    this.usernameField.value = "";
+    this.emailField.value = "";
+    this.passwordField.value = "";
+    this.passwordConfirmField.value = "";
+  }
+
+  isRegister(array) {
+    return array.filter((item) => item.name === this.usernameField.value).length > 0;
   }
 }

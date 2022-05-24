@@ -1,7 +1,7 @@
 <section class="login">
   <div class="login__container section-container">
     <h1 class="login__title title">Login</h1>
-    <form action="" class="login__body">
+    <form action="" class="login__body" id="login-form">
       <label class="login__field input-field" for="username">
         <svg
           class="login__field-icon"
@@ -20,7 +20,7 @@
           class="login__field-data input-field-data"
           type="text"
           placeholder="Username"
-          id="username"
+          id="login-username"
           autocomplete="off"
           maxlength="20"
           required
@@ -45,13 +45,12 @@
           class="login__field-data input-field-data"
           type="password"
           placeholder="Password"
-          id="password"
+          id="login-password"
           required
         />
       </label>
       <div class="login__body-bottom">
-        <a class="login__btn-signin input-btn" href="index.html">Sign in</a>
-        <button class="login__btn-reset input-btn">Reset</button>
+        <button type="submit" class="login__btn-signin input-btn" id="btn-login">Sign in</button>
       </div>
       <span class="login__undertext-inner input-undertext-inner"
         >Not on Sign in yet?

@@ -1,7 +1,7 @@
 <section class="register">
   <div class="register__container section-container">
     <h1 class="register__title title">Register</h1>
-    <form action="" class="register__body">
+    <form action="" class="register__body" id="register-form">
       <label class="register__field input-field" for="username">
         <svg
           class="register__field-icon"
@@ -21,7 +21,7 @@
           type="text"
           name="name"
           placeholder="Username"
-          id="username"
+          id="register-username"
           autocomplete="off"
           maxlength="20"
           pattern="[a-zA-Z0-9]{5,20}"
@@ -47,7 +47,7 @@
           type="email"
           name="email"
           placeholder="Email"
-          id="email"
+          id="register-email"
           autocomplete="off"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           required
@@ -73,7 +73,7 @@
           type="password"
           name="password"
           placeholder="Password"
-          id="password"
+          id="register-password"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           required
         />
@@ -94,7 +94,7 @@
           class="register__field-data input-field-data"
           type="password"
           placeholder="Confirm password"
-          id="password-confirm"
+          id="register-password-confirm"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           required
         />

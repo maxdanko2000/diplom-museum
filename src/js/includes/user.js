@@ -5,7 +5,6 @@ export class User {
   }
   imagePreview() {
     this.btnLoadImage?.addEventListener("change", (event) => {
-      console.log(event.target.files);
       if (event.target.files.length > 0) {
         const src = URL.createObjectURL(event.target.files[0]);
         this.sampleImg.src = src;
