@@ -2,7 +2,7 @@ import Swiper from "swiper";
 import { heroOptions } from "./includes/hero-slider.js";
 import { Comparison } from "./includes/explore-comparison";
 import { journeyOptions } from "./includes/journey-video-slider.js";
-import { JourneyVideo } from "./includes/journey-video.js";
+import { JourneyVideo } from "./includes/journey-video-player.js";
 import { Form } from "./includes/form.js";
 import { User } from "./includes/user.js";
 import { Register } from "./includes/register.js";
@@ -14,7 +14,7 @@ new Comparison().comparing();
 new Swiper(".hero-slider", Object.assign(heroOptions));
 //Journey Video
 new JourneyVideo().initVideo();
-new JourneyVideo().startStopVideo();
+new JourneyVideo().toggleVideo();
 new JourneyVideo().toggleVolume();
 new JourneyVideo().moveVolumeThumb();
 new JourneyVideo().videoChangeTime();

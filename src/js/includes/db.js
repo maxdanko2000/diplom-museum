@@ -1,7 +1,7 @@
 export const usersList = [
   {
     id: 0,
-    name: "admin",
+    username: "admin",
     password: "admin",
     email: "",
     phone: "",
@@ -9,10 +9,10 @@ export const usersList = [
   },
   {
     id: 1,
-    name: "max",
-    password: "max",
-    email: "max@gmail.com",
-    phone: "+375331111111",
+    username: "maxmax",
+    password: "Maxim123",
+    email: "m@m.ru",
+    phone: "375331111111",
     isAdmin: false,
   },
 ];

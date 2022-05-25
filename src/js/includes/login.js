@@ -1,4 +1,5 @@
 import { usersList } from "./db";
+import { isAuth } from "./utils";
 export class Login {
   constructor() {
     this.userNameField = document.getElementById("login-username");
@@ -7,37 +8,32 @@ export class Login {
     this.loginForm = document.getElementById("login-form");
   }
   authorize() {
-    this.loginForm.addEventListener("submit", (e) => {
+    this.loginForm?.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (this.isAuthorize()) {
-        console.log("Authorized");
+      if (isAuth(usersList, this.userNameField.value, this.passwordField.value)) {
         if (this.isAdmin()) {
           alert("Welcome SENSEI");
+          this.clearFields();
         } else {
-          alert(`Welcome ${this.userNameField.value}`);
+          alert(`Welcome ${this.userNameField.value}!`);
+          this.clearFields();
         }
       } else {
-        console.log("Please register");
+        alert("Please register!");
       }
     });
   }
+
   clearFields() {
     this.userNameField.value = "";
     this.passwordField.value = "";
   }
 
-  isAuthorize() {
-    console.log();
-    return (
-      usersList.filter(
-        (item) =>
-          item.name === this.userNameField.value && item.password === this.passwordField.value
-      ).length > 0
-    );
-  }
-
   isAdmin() {
-    for (const item of usersList) {
-    }
+    if (this.userNameField.value === "admin" && this.passwordField.value === "admin") {
+      for (const item of usersList) {
+        return item.isAdmin;
+      }
+    } else return false;
   }
 }

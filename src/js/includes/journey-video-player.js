@@ -25,24 +25,24 @@ export class JourneyVideo {
     });
   }
 
-  startStopVideo() {
+  toggleVideo() {
     this.mainPlayBtn?.addEventListener(
       "click",
       () => {
-        this.toggleVideo();
+        this.turnVideo();
       },
       false
     );
     this.playBtn?.addEventListener(
       "click",
       () => {
-        this.toggleVideo();
+        this.turnVideo();
       },
       false
     );
   }
 
-  toggleVideo() {
+  turnVideo() {
     let isPlaying =
       this.videoEl.currentTime > 0 &&
       !this.videoEl.paused &&

@@ -12,7 +12,6 @@ export const heroOptions = {
     clickable: true,
     type: "fraction",
     renderFraction: function (currentClass, totalClass) {
-      // TODO
       return `<span class="${currentClass}"></span>|<span class="${totalClass}"></span>`;
     },
   },
