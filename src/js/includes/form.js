@@ -1,3 +1,5 @@
+import { priceList } from "./db";
+
 export class Form {
   constructor() {
     this.listItems = document.querySelectorAll(".tickets-form__droplist>li>input");
@@ -16,37 +18,42 @@ export class Form {
     this.resultPrice = 0;
   }
 
+  updateDataFields(e) {
+    const pricesBasic = document.querySelectorAll(".basic-price");
+    const pricesSenior = document.querySelectorAll(".senior-price");
+
+    if (e.path[1].children[1].value < 0) {
+      e.path[1].children[1].value = 0;
+    }
+
+    if (this.formOpenBtn.checked) {
+      pricesBasic[0].value = pricesBasic[1].value;
+      pricesSenior[0].value = pricesSenior[1].value;
+      this.totalAgeCounters[0].innerHTML = pricesBasic[1].value;
+      this.totalAgeCounters[1].innerHTML = pricesSenior[1].value;
+    } else {
+      pricesBasic[1].value = pricesBasic[0].value;
+      pricesSenior[1].value = pricesSenior[0].value;
+      this.totalAgeCounters[0].innerHTML = pricesBasic[0].value;
+      this.totalAgeCounters[1].innerHTML = pricesSenior[0].value;
+    }
+
+    this.resultPrice =
+      +pricesBasic[0].value * +priceList.basic + +pricesSenior[0].value * +priceList.senior;
+
+    for (const totalPrice of this.totalPrices) {
+      totalPrice.innerHTML = `${this.resultPrice}`;
+    }
+
+    this.basicTotalPrice.innerHTML = `${+pricesBasic[0].value * +priceList.basic}`;
+    this.seniorTotalPrice.innerHTML = `${+pricesSenior[0].value * +priceList.senior}`;
+  }
+
   increase() {
     for (const btnIncrease of this.btnIncreases) {
       btnIncrease.addEventListener("click", (e) => {
-        const pricesBasic = document.querySelectorAll(".basic-price");
-        const pricesSenior = document.querySelectorAll(".senior-price");
         e.path[1].children[1].value++;
-
-        if (e.path[1].children[1].value < 0) {
-          e.path[1].children[1].value = 0;
-        }
-
-        if (this.formOpenBtn.checked) {
-          pricesBasic[0].value = pricesBasic[1].value;
-          pricesSenior[0].value = pricesSenior[1].value;
-          this.totalAgeCounters[0].innerHTML = pricesBasic[1].value;
-          this.totalAgeCounters[1].innerHTML = pricesSenior[1].value;
-        } else {
-          pricesBasic[1].value = pricesBasic[0].value;
-          pricesSenior[1].value = pricesSenior[0].value;
-          this.totalAgeCounters[0].innerHTML = pricesBasic[0].value;
-          this.totalAgeCounters[1].innerHTML = pricesSenior[0].value;
-        }
-
-        this.resultPrice = (+pricesBasic[0].value * 2 + +pricesSenior[0].value) * 10;
-
-        for (const totalPrice of this.totalPrices) {
-          totalPrice.innerHTML = `${this.resultPrice}`;
-        }
-
-        this.basicTotalPrice.innerHTML = `${+pricesBasic[0].value * 20}`;
-        this.seniorTotalPrice.innerHTML = `${+pricesSenior[0].value * 10}`;
+        this.updateDataFields(e);
       });
     }
   }
@@ -54,35 +61,8 @@ export class Form {
   decrease() {
     for (const btnDecrease of this.btnDecreases) {
       btnDecrease.addEventListener("click", (e) => {
-        const pricesBasic = document.querySelectorAll(".basic-price");
-        const pricesSenior = document.querySelectorAll(".senior-price");
-
         e.path[1].children[1].value--;
-
-        if (e.path[1].children[1].value < 0) {
-          e.path[1].children[1].value = 0;
-        }
-
-        if (this.formOpenBtn.checked) {
-          pricesBasic[0].value = pricesBasic[1].value;
-          pricesSenior[0].value = pricesSenior[1].value;
-          this.totalAgeCounters[0].innerHTML = pricesBasic[1].value;
-          this.totalAgeCounters[1].innerHTML = pricesSenior[1].value;
-        } else {
-          pricesBasic[1].value = pricesBasic[0].value;
-          pricesSenior[1].value = pricesSenior[0].value;
-          this.totalAgeCounters[0].innerHTML = pricesBasic[0].value;
-          this.totalAgeCounters[1].innerHTML = pricesSenior[0].value;
-        }
-
-        this.resultPrice = (+pricesBasic[0].value * 2 + +pricesSenior[0].value) * 10;
-
-        for (const totalPrice of this.totalPrices) {
-          totalPrice.innerHTML = `${this.resultPrice}`;
-        }
-
-        this.basicTotalPrice.innerHTML = `${+pricesBasic[0].value * 20}`;
-        this.seniorTotalPrice.innerHTML = `${+pricesSenior[0].value * 10}`;
+        this.updateDataFields(e);
       });
     }
   }

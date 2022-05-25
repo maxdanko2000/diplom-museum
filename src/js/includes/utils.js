@@ -3,3 +3,9 @@ export function isAuth(array, username, password) {
     array.filter((item) => item.username === username && item.password === password).length > 0
   );
 }
+
+export function removeFromTable(e) {
+  e.path[1].style.display = "none";
+  console.log("removed");
+  return this;
+}

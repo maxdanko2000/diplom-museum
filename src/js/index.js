@@ -7,6 +7,7 @@ import { Form } from "./includes/form.js";
 import { User } from "./includes/user.js";
 import { Register } from "./includes/register.js";
 import { Login } from "./includes/login.js";
+import { Admin } from "./includes/admin.js";
 
 //Explore
 new Comparison().comparing();
@@ -27,6 +28,15 @@ new Form().decrease();
 new Form().selectValue();
 //User
 new User().imagePreview();
+new User().returnTicket();
+//Admin
+if (document.location.pathname === "/admin-page.html") {
+  new Admin().updateData();
+  new Admin().loadData();
+  new Admin().addDate();
+  new Admin().addTime();
+}
+
 //Register
 new Register().register();
 //Login
