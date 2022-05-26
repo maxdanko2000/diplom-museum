@@ -12,7 +12,7 @@ export class Register {
   }
   register() {
     let id = 0;
-    this.formEl?.addEventListener("submit", (e) => {
+    this.formEl.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.passwordConfirmField.value === this.passwordField.value) {
         if (!isAuth(usersList, this.usernameField.value, this.passwordField.value)) {

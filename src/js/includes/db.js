@@ -15,6 +15,14 @@ export const usersList = [
     phone: "375331111111",
     isAdmin: false,
   },
+  {
+    id: 2,
+    username: "vladislav",
+    password: "Vladsensei2022",
+    email: "v@m.ru",
+    phone: "375332222222",
+    isAdmin: false,
+  },
 ];
 
 export const ticketList = [
@@ -46,9 +54,12 @@ export const ticketList = [
 
 export const dateList = ["2022-01-01", "2022-02-02", "2022-03-03", "2022-04-04", "2022-05-05"];
 export const timeList = ["12:12", "13:13", "14:14", "15:15", "16:16"];
-export const priceList = [
-  {
-    basic: 20,
-    senior: 10,
-  },
-];
+export const priceList = {
+  basic: 20,
+  senior: 10,
+};
+
+localStorage.setItem(usersList, JSON.stringify(usersList));
+localStorage.setItem(dateList, JSON.stringify(dateList));
+localStorage.setItem(timeList, JSON.stringify(timeList));
+localStorage.setItem(priceList, JSON.stringify(priceList));

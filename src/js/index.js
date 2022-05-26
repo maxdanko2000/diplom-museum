@@ -9,35 +9,46 @@ import { Register } from "./includes/register.js";
 import { Login } from "./includes/login.js";
 import { Admin } from "./includes/admin.js";
 
-//Explore
-new Comparison().comparing();
-//Hero
-new Swiper(".hero-slider", Object.assign(heroOptions));
-//Journey Video
-new JourneyVideo().initVideo();
-new JourneyVideo().toggleVideo();
-new JourneyVideo().toggleVolume();
-new JourneyVideo().moveVolumeThumb();
-new JourneyVideo().videoChangeTime();
-new JourneyVideo().toggleFullScreen();
-new JourneyVideo().progressLoop();
-new Swiper(".journey-slider-inner", Object.assign(journeyOptions));
-//Tickets form
-new Form().increase();
-new Form().decrease();
-new Form().selectValue();
-//User
-new User().imagePreview();
-new User().returnTicket();
-//Admin
-if (document.location.pathname === "/admin-page.html") {
-  new Admin().updateData();
-  new Admin().loadData();
-  new Admin().addDate();
-  new Admin().addTime();
+if (document.location.pathname === "/" || document.location.pathname === "/index.html") {
+  //Explore
+  new Comparison().comparing();
+  //Hero
+  new Swiper(".hero-slider", Object.assign(heroOptions));
+  //Journey Video
+  new JourneyVideo().initVideo();
+  new JourneyVideo().toggleVideo();
+  new JourneyVideo().toggleVolume();
+  new JourneyVideo().moveVolumeThumb();
+  new JourneyVideo().videoChangeTime();
+  new JourneyVideo().toggleFullScreen();
+  new JourneyVideo().progressLoop();
+  new Swiper(".journey-slider-inner", Object.assign(journeyOptions));
+  //Tickets form
+  new Form().increase();
+  new Form().decrease();
+  new Form().selectValue();
 }
 
-//Register
-new Register().register();
-//Login
-new Login().authorize();
+if (document.location.pathname === "/user-page.html") {
+  new User().imagePreview();
+  new User().returnTicket();
+}
+
+if (document.location.pathname === "/admin-page.html") {
+  new Admin().init();
+  new Admin().updateData();
+  new Admin().addDate();
+  new Admin().addTime();
+  new Admin().removeDate();
+  new Admin().removeTime();
+  new Admin().removeUser();
+  new Admin().updatePrice();
+}
+
+if (document.location.pathname === "/register-page.html") {
+  new Register().register();
+}
+
+if (document.location.pathname === "/login-page.html") {
+  new Login().authorize();
+}

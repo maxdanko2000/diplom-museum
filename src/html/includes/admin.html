@@ -4,9 +4,9 @@
     <div class="admin__body">
       <div class="admin__users">
         <h2 class="admin__users-title">User list</h2>
-        <div class="admin__users-container">
-          <table class="admin__table">
-            <tr class="admin__table-row">
+        <form class="admin__users-container">
+          <table id="admin-user-list" class="admin__table">
+            <tr class="admin__table-row admin__table-row--heading">
               <th class="admin__table-data">ID</th>
               <th class="admin__table-data">Username</th>
               <th class="admin__table-data">Password</th>
@@ -14,19 +14,8 @@
               <th class="admin__table-data">Phone</th>
               <th class="admin__table-data">Delete</th>
             </tr>
-            <tr class="admin__table-row">
-              <td class="admin__table-data">1</td>
-              <td class="admin__table-data">User1312123131</td>
-              <td class="admin__table-data">qwerty1234</td>
-              <td class="admin__table-data">user@mail.ru</td>
-              <td class="admin__table-data">+375339999999</td>
-
-              <td class="admin__table-data admin__data-btn">
-                <span class="admin__btn-remove"></span>
-              </td>
-            </tr>
           </table>
-        </div>
+        </form>
       </div>
       <div class="admin-tickets admin-edit-ticket">
         <h2 class="admin__users-title">Ticket</h2>
@@ -50,7 +39,7 @@
                 <span class="admin-tickets__price-title">Basic 18+(€)</span>
                 <input
                   class="admin-tickets__price-field"
-                  id="basic-price"
+                  id="admin-basic-price"
                   type="number"
                   value="20"
                 />
@@ -59,7 +48,7 @@
                 <span class="admin-tickets__price-title">Senior 65+(€)</span>
                 <input
                   class="admin-tickets__price-field"
-                  id="senior-price"
+                  id="admin-senior-price"
                   type="number"
                   value="10"
                 />

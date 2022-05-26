@@ -8,7 +8,7 @@ export class Login {
     this.loginForm = document.getElementById("login-form");
   }
   authorize() {
-    this.loginForm?.addEventListener("submit", (e) => {
+    this.loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       if (isAuth(usersList, this.userNameField.value, this.passwordField.value)) {
         if (this.isAdmin()) {

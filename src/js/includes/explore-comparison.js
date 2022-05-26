@@ -5,7 +5,7 @@ export class Comparison {
   }
 
   comparing() {
-    this.divisor?.addEventListener("input", () => {
+    this.divisor.addEventListener("input", () => {
       let slideValue = this.divisor.value;
       this.afterImg.style.clipPath = `polygon(0 0,${slideValue}% 0, ${slideValue}% 100%, 0 100%`;
       return this.afterImg;

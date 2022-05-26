@@ -20,20 +20,20 @@ export class JourneyVideo {
   }
 
   initVideo() {
-    this.videoEl?.addEventListener("canplaythrough", () => {
+    this.videoEl.addEventListener("canplaythrough", () => {
       this.videoEl.volume = this.volumeBar.value;
     });
   }
 
   toggleVideo() {
-    this.mainPlayBtn?.addEventListener(
+    this.mainPlayBtn.addEventListener(
       "click",
       () => {
         this.turnVideo();
       },
       false
     );
-    this.playBtn?.addEventListener(
+    this.playBtn.addEventListener(
       "click",
       () => {
         this.turnVideo();
@@ -62,7 +62,7 @@ export class JourneyVideo {
   }
 
   toggleVolume() {
-    this.volumeToggler?.addEventListener("click", () => {
+    this.volumeToggler.addEventListener("click", () => {
       if (this.videoEl.volume === 0) {
         this.videoEl.volume = this.volumeBar.value;
         this.volumeIcon.style.display = "block";
@@ -76,7 +76,7 @@ export class JourneyVideo {
   }
 
   moveVolumeThumb() {
-    this.volumeBar?.addEventListener("click", () => {
+    this.volumeBar.addEventListener("click", () => {
       this.videoEl.volume = this.volumeBar.value;
       if (this.videoEl.volume === 0) {
         this.volumeIcon.style.display = "none";
@@ -89,14 +89,14 @@ export class JourneyVideo {
   }
 
   videoChangeTime() {
-    this.playBar?.addEventListener("input", () => {
+    this.playBar.addEventListener("input", () => {
       const current = (this.playBar.value * this.videoEl.duration) / 100;
       this.videoEl.currentTime = current;
     });
   }
 
   toggleFullScreen() {
-    this.fullScreenBtn?.addEventListener("click", () => {
+    this.fullScreenBtn.addEventListener("click", () => {
       if (!document.fullscreenElement) {
         this.videoPlayer.requestFullscreen();
       } else {
@@ -110,7 +110,7 @@ export class JourneyVideo {
   progressLoop() {
     setInterval(() => {
       if (this.videoEl) {
-        this.playBar.value = Math.round((this.videoEl.currentTime / this?.videoEl.duration) * 100);
+        this.playBar.value = Math.round((this.videoEl.currentTime / this.videoEl.duration) * 100);
       }
     });
   }
