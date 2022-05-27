@@ -72,8 +72,8 @@ export class Admin {
         btnRemove.addEventListener("click", (e) => {
           const currentValue = e.target.parentNode.childNodes[1].value;
           e.target.parentNode.style.display = "none";
-          //----------
-
+          const result = this.arrDate.filter((item) => !(item === currentValue));
+          this.arrDate = result;
           localStorage.setItem(this.arrDate, JSON.stringify(this.arrDate));
         });
       }
@@ -97,8 +97,8 @@ export class Admin {
         btnRemove.addEventListener("click", (e) => {
           const currentValue = e.target.parentNode.childNodes[1].value;
           e.target.parentNode.style.display = "none";
-          //----------
-
+          const result = this.arrTime.filter((item) => !(item === currentValue));
+          this.arrTime = result;
           localStorage.setItem(this.arrTime, JSON.stringify(this.arrTime));
         });
       }
@@ -120,10 +120,10 @@ export class Admin {
     for (const btnDeleteUser of this.btnDeleteUserList) {
       btnDeleteUser.addEventListener("click", (e) => {
         e.path[1].style.display = "none";
-        //----------
-
-        let result = this.arrUser.filter((item) => +item.id !== +e.path[1].childNodes[1].innerHTML);
-
+        const result = this.arrUser.filter(
+          (item) => !(+item.id === +e.path[1].childNodes[1].innerHTML)
+        );
+        this.arrUser = result;
         localStorage.setItem(this.arrUser, JSON.stringify(this.arrUser));
       });
     }
