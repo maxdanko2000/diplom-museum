@@ -53,3 +53,5 @@ if (document.location.pathname === "/register-page.html") {
 if (document.location.pathname === "/login-page.html") {
   new Login().authorize();
 }
+
+// new Login().renderBtnList();

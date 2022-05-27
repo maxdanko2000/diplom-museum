@@ -1,5 +1,3 @@
-import { dateList, priceList, timeList, usersList } from "./db";
-
 export class Admin {
   constructor() {
     this.adminForm = document.getElementById("admin-form");
