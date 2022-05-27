@@ -10,15 +10,15 @@ export class Admin {
     this.selectTimeField = document.getElementById("select-time-field");
     this.btnAddDate = document.getElementById("btn-add-date");
     this.btnAddTime = document.getElementById("btn-add-time");
-    this.btnRemoveList;
-    this.btnDeleteUserList;
-    this.arrDate = JSON.parse(localStorage.getItem(dateList));
-    this.arrTime = JSON.parse(localStorage.getItem(timeList));
-    this.arrPrice = JSON.parse(localStorage.getItem(priceList));
-    this.arrUser = JSON.parse(localStorage.getItem(usersList));
+    this.btnRemoveList = document.querySelectorAll(".admin__btn-remove");
+    this.btnDeleteUserList = document.querySelectorAll(".admin__data-btn");
     this.basicPriceInput = document.getElementById("admin-basic-price");
     this.seniorPriceInput = document.getElementById("admin-senior-price");
     this.btnUpdatePrice = document.getElementById("btn-update-price");
+    this.arrDate = JSON.parse(localStorage.getItem("dateList"));
+    this.arrTime = JSON.parse(localStorage.getItem("timeList"));
+    this.arrPrice = JSON.parse(localStorage.getItem("priceList"));
+    this.arrUser = JSON.parse(localStorage.getItem("usersList"));
   }
 
   init() {
@@ -59,50 +59,45 @@ export class Admin {
     this.btnAddDate.addEventListener("click", (e) => {
       if (this.selectDateField.value) {
         this.arrDate.push(this.selectDateField.value);
-        localStorage.setItem(this.arrDate, JSON.stringify(this.arrDate));
+        localStorage.setItem("dateList", JSON.stringify(this.arrDate));
         e.path[1].childNodes[3].innerHTML += this.itemWrap(this.selectDateField.value);
       }
     });
   }
 
   removeDate() {
-    this.adminDateList.addEventListener("mouseover", () => {
-      this.btnRemoveList = document.querySelectorAll(".admin__btn-remove");
-      for (const btnRemove of this.btnRemoveList) {
-        btnRemove.addEventListener("click", (e) => {
-          const currentValue = e.target.parentNode.childNodes[1].value;
-          e.target.parentNode.style.display = "none";
-          const result = this.arrDate.filter((item) => !(item === currentValue));
-          this.arrDate = result;
-          localStorage.setItem(this.arrDate, JSON.stringify(this.arrDate));
-        });
-      }
-    });
+    for (const btnRemove of this.btnRemoveList) {
+      btnRemove.addEventListener("click", (e) => {
+        const currentValue = e.target.parentNode.childNodes[1].value;
+        e.target.parentNode.style.display = "none";
+        console.log(currentValue);
+        const result = this.arrDate.filter((item) => !(item === currentValue));
+        this.arrDate = result;
+        localStorage.setItem("dateList", JSON.stringify(this.arrDate));
+      });
+    }
   }
 
   addTime() {
     this.btnAddTime.addEventListener("click", (e) => {
       if (this.selectTimeField.value) {
         this.arrTime.push(this.selectTimeField.value);
-        localStorage.setItem(this.arrTime, JSON.stringify(this.arrTime));
+        localStorage.setItem("timeList", JSON.stringify(this.arrTime));
         e.path[1].childNodes[3].innerHTML += this.itemWrap(this.selectTimeField.value);
       }
     });
   }
 
   removeTime() {
-    this.adminTimeList.addEventListener("mouseover", () => {
-      this.btnRemoveList = document.querySelectorAll(".admin__btn-remove");
-      for (const btnRemove of this.btnRemoveList) {
-        btnRemove.addEventListener("click", (e) => {
-          const currentValue = e.target.parentNode.childNodes[1].value;
-          e.target.parentNode.style.display = "none";
-          const result = this.arrTime.filter((item) => !(item === currentValue));
-          this.arrTime = result;
-          localStorage.setItem(this.arrTime, JSON.stringify(this.arrTime));
-        });
-      }
-    });
+    for (const btnRemove of this.btnRemoveList) {
+      btnRemove.addEventListener("click", (e) => {
+        const currentValue = e.target.parentNode.childNodes[1].value;
+        e.target.parentNode.style.display = "none";
+        const result = this.arrTime.filter((item) => !(item === currentValue));
+        this.arrTime = result;
+        localStorage.setItem("timeList", JSON.stringify(this.arrTime));
+      });
+    }
   }
 
   updatePrice() {
@@ -110,13 +105,12 @@ export class Admin {
       if (this.basicPriceInput.value && this.seniorPriceInput) {
         this.arrPrice.basic = this.basicPriceInput.value;
         this.arrPrice.senior = this.seniorPriceInput.value;
-        localStorage.setItem(this.arrPrice, JSON.stringify(this.arrPrice));
+        localStorage.setItem("priceList", JSON.stringify(this.arrPrice));
       }
     });
   }
 
   removeUser() {
-    this.btnDeleteUserList = document.querySelectorAll(".admin__data-btn");
     for (const btnDeleteUser of this.btnDeleteUserList) {
       btnDeleteUser.addEventListener("click", (e) => {
         e.path[1].style.display = "none";
@@ -124,7 +118,7 @@ export class Admin {
           (item) => !(+item.id === +e.path[1].childNodes[1].innerHTML)
         );
         this.arrUser = result;
-        localStorage.setItem(this.arrUser, JSON.stringify(this.arrUser));
+        localStorage.setItem("usersList", JSON.stringify(this.arrUser));
       });
     }
   }

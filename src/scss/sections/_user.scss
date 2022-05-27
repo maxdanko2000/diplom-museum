@@ -41,8 +41,9 @@
     }
   }
   &__left {
-    display: grid;
+    display: flex;
     gap: 20px;
+    flex-direction: column;
   }
   &__avatar {
     display: flex;
@@ -179,7 +180,7 @@
       background-color: var(--palette-primary-light);
     }
     &__table-row {
-      &:first-child {
+      &--heading {
         position: sticky;
         top: 0;
         left: 0;

@@ -52,13 +52,11 @@
   }
 
   &__table-row {
-    &:first-child {
+    &--heading {
       position: sticky;
       z-index: 3;
       top: 0;
       left: 0;
-    }
-    &--heading {
       background-color: var(--palette-primary-main);
       .admin__table-data {
         color: var(--palette-primary-text);

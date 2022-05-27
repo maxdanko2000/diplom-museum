@@ -30,6 +30,7 @@ if (document.location.pathname === "/" || document.location.pathname === "/index
 }
 
 if (document.location.pathname === "/user-page.html") {
+  new User().loadData();
   new User().imagePreview();
   new User().returnTicket();
 }

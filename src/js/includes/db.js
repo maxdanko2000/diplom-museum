@@ -25,7 +25,7 @@ export const usersList = [
   },
 ];
 
-export const ticketList = [
+export const ticketsList = [
   {
     id: 1,
     type: "Temporary exhibition",
@@ -59,7 +59,8 @@ export const priceList = {
   senior: 10,
 };
 
-localStorage.setItem(usersList, JSON.stringify(usersList));
-localStorage.setItem(dateList, JSON.stringify(dateList));
-localStorage.setItem(timeList, JSON.stringify(timeList));
-localStorage.setItem(priceList, JSON.stringify(priceList));
+localStorage.setItem("usersList", JSON.stringify(usersList));
+localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+localStorage.setItem("dateList", JSON.stringify(dateList));
+localStorage.setItem("timeList", JSON.stringify(timeList));
+localStorage.setItem("priceList", JSON.stringify(priceList));
