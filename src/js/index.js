@@ -26,9 +26,11 @@ if (document.location.pathname === "/" || document.location.pathname === "/index
   new JourneyVideo().progressLoop();
   new Swiper(".journey-slider-inner", Object.assign(journeyOptions));
   //Tickets form
-  // new Form().increase();
-  // new Form().decrease();
-  // new Form().selectValue();
+  new Form().buyTicket();
+  new Form().toggleForm();
+  new Form().increase();
+  new Form().decrease();
+  new Form().selectValue();
 }
 
 if (document.location.pathname === "/user-page.html") {
@@ -37,18 +39,19 @@ if (document.location.pathname === "/user-page.html") {
   new User().imagePreview();
   new User().returnTicket();
   new User().userLogOut();
+  new User().deleteAccount();
 }
 
 if (document.location.pathname === "/admin-page.html") {
   render();
   new Admin().init();
   new Admin().updateData();
-  // new Admin().addDate();
-  // new Admin().addTime();
-  // new Admin().removeDate();
-  // new Admin().removeTime();
-  // new Admin().removeUser();
-  // new Admin().updatePrice();
+  new Admin().addDate();
+  new Admin().addTime();
+  new Admin().removeDate();
+  new Admin().removeTime();
+  new Admin().removeUser();
+  new Admin().updatePrice();
   new Admin().adminLogOut();
 }
 

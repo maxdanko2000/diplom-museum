@@ -1,32 +1,101 @@
-import { priceList } from "./db";
+import { dateList, timeList } from "./db";
 
 export class Form {
   constructor() {
     this.listItems = document.querySelectorAll(".tickets-form__droplist>li>input");
+
     this.droplistFieldList = document.querySelectorAll(".field-text");
+
     this.btnIncreases = document.querySelectorAll(".counter-increase");
     this.btnDecreases = document.querySelectorAll(".counter-decrease");
+
     this.totalPrices = document.querySelectorAll(".total-price");
+
     this.basicTotalPrice = document.querySelector(".total-price-basic");
     this.seniorTotalPrice = document.querySelector(".total-price-senior");
+
     this.form = document.querySelector(".tickets-form");
-    this.formOpenBtn = document.getElementById("tickets-form-toggler");
+
+    this.formCloseBtn = document.getElementById("close-form-btn");
+    this.formOpenBtn = document.getElementById("open-form-btn");
+    this.formOpenToggler = document.getElementById("tickets-form-toggler");
+
     this.ticketTypeList = document.querySelectorAll(".tickets-type__bar");
     this.ticketTypeTexts = document.querySelectorAll(".tickets-type-text");
+
     this.totalAgeCounters = document.querySelectorAll(".overview-age__count");
+
     this.overviewTextList = document.querySelectorAll(".overview__row-text");
+
     this.resultPrice = 0;
+
+    this.auth = JSON.parse(localStorage.getItem("auth"));
+
+    this.localPrice = JSON.parse(localStorage.getItem("priceList"));
+
+    this.priceBasicText = document.querySelectorAll(".price-basic");
+    this.priceSeniorText = document.querySelectorAll(".price-senior");
+
+    this.localDateList = JSON.parse(localStorage.getItem("dateList"));
+    this.localTimeList = JSON.parse(localStorage.getItem("timeList"));
+    this.dropListDate = document.getElementById("form-droplist-date");
+    this.dropListTime = document.getElementById("form-droplist-time");
+  }
+
+  buyTicket() {
+    this.form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      alert("Ticket purchased successfully!");
+    });
+  }
+
+  toggleForm() {
+    this.formCloseBtn.addEventListener("click", () => {
+      console.log(0);
+      this.form.classList.remove("tickets-form__visible");
+    });
+
+    this.formOpenBtn.addEventListener("click", () => {
+      console.log(1);
+      if (this.auth.isAdmin === false && this.auth.isAuth === false) {
+        alert("Please authorize!");
+        document.location.pathname = "/login-page.html";
+      } else {
+        this.form.classList.add("tickets-form__visible");
+
+        // localStorage.setItem("dateList", JSON.stringify(dateList));
+
+        for (const date of this.localDateList) {
+          this.dropListDate.innerHTML += this.dateWrap(date);
+        }
+
+        // localStorage.setItem("timeList", JSON.stringify(timeList));
+
+        for (const time of this.localTimeList) {
+          this.dropListTime.innerHTML += this.dateWrap(time);
+        }
+
+        for (const basicPriceText of this.priceBasicText) {
+          basicPriceText.innerHTML = this.localPrice.basic;
+        }
+        for (const seniorPriceText of this.priceSeniorText) {
+          seniorPriceText.innerHTML = this.localPrice.senior;
+        }
+      }
+    });
   }
 
   updateDataFields(e) {
     const pricesBasic = document.querySelectorAll(".basic-price");
     const pricesSenior = document.querySelectorAll(".senior-price");
 
+    console.log();
     if (e.path[1].children[1].value < 0) {
       e.path[1].children[1].value = 0;
     }
 
-    if (this.formOpenBtn.checked) {
+    if (this.formOpenToggler.checked) {
       pricesBasic[0].value = pricesBasic[1].value;
       pricesSenior[0].value = pricesSenior[1].value;
       this.totalAgeCounters[0].innerHTML = pricesBasic[1].value;
@@ -39,14 +108,28 @@ export class Form {
     }
 
     this.resultPrice =
-      +pricesBasic[0].value * +priceList.basic + +pricesSenior[0].value * +priceList.senior;
+      +pricesBasic[0].value * +this.localPrice.basic +
+      +pricesSenior[0].value * +this.localPrice.senior;
 
     for (const totalPrice of this.totalPrices) {
       totalPrice.innerHTML = `${this.resultPrice}`;
     }
 
-    this.basicTotalPrice.innerHTML = `${+pricesBasic[0].value * +priceList.basic}`;
-    this.seniorTotalPrice.innerHTML = `${+pricesSenior[0].value * +priceList.senior}`;
+    this.basicTotalPrice.innerHTML = `${+pricesBasic[0].value * +this.localPrice.basic}`;
+    this.seniorTotalPrice.innerHTML = `${+pricesSenior[0].value * +this.localPrice.senior}`;
+  }
+
+  dateWrap(data) {
+    return `
+    <li class="tickets-form__droplist-item">
+      <input
+      class="tickets-form__droplist-field"
+      type="text"
+      readonly
+      value="${data}"
+      />
+      </li>
+      `;
   }
 
   increase() {

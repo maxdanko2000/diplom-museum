@@ -1,11 +1,11 @@
-#tickets-form-toggler {
-  display: none;
-  &:checked {
-    ~ .tickets-form {
-      transform: scale(1);
-    }
-  }
-}
+// #tickets-form-toggler {
+//   display: none;
+//   &:checked {
+//     ~ .tickets-form {
+//       transform: scale(1);
+//     }
+//   }
+// }
 
 .tickets {
   width: 100%;

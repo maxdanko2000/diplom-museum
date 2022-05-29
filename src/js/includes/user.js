@@ -26,14 +26,28 @@ export class User {
     this.usersList = JSON.parse(localStorage.getItem("usersList"));
 
     this.authLogin = JSON.parse(localStorage.getItem("auth"));
+
+    this.btnDeleteAccount = document.getElementById("btn-delete-account");
   }
 
   loadData() {
     this.userDataForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      const usersList = JSON.parse(localStorage.getItem("usersList"));
+      for (const user of usersList) {
+        if (user.username === this.authLogin.login) {
+          console.log(this.authLogin.login);
+          user.username = this.userNameField.value;
+          user.password = this.userPasswordField.value;
+          user.email = this.userEmailFiled.value;
+          user.phone = this.userPhoneFiled.value;
+          localStorage.setItem("usersList", JSON.stringify(usersList));
+          this.authLogin.login = this.userNameField.value;
+          localStorage.setItem("auth", JSON.stringify(this.authLogin));
+        }
+      }
     });
     for (const ticketItem of this.arrTickets) {
-      console.log(this.arrTickets);
       this.tableTickets.innerHTML += this.ticketWrap(
         ticketItem.id,
         ticketItem.type,
@@ -81,6 +95,14 @@ export class User {
   userLogOut() {
     this.userBtnLogOut.addEventListener("click", () => {
       new Login().logOut();
+    });
+  }
+
+  deleteAccount() {
+    this.btnDeleteAccount.addEventListener("click", () => {
+      const result = this.usersList.filter((user) => user.username !== this.authLogin.login);
+      localStorage.setItem("usersList", JSON.stringify(result));
+      document.location.pathname = "/login-page.html";
     });
   }
 

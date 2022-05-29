@@ -58,12 +58,21 @@
             >Total <span class="tickets-amount__price-value total-price">0</span>€</span
           >
         </div>
-        <label class="tickets-amount__btn open-form-btn" for="tickets-form-toggler">Buy Now</label>
+        <label
+          id="open-form-btn"
+          class="tickets-amount__btn open-form-btn"
+          for="tickets-form-toggler"
+          >Buy Now</label
+        >
       </div>
     </div>
     <input id="tickets-form-toggler" type="checkbox" />
     <form action="" class="tickets-form">
-      <label class="tickets-form__btn-close open-form-btn" for="tickets-form-toggler"></label>
+      <label
+        id="close-form-btn"
+        class="tickets-form__btn-close open-form-btn"
+        for="tickets-form-toggler"
+      ></label>
       <div class="tickets-form__wrapper">
         <div class="tickets-form__left">
           <svg
@@ -115,32 +124,7 @@
                     fill="#030303"
                   />
                 </svg>
-                <ul class="tickets-form__droplist droplist-date">
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="date"
-                      readonly
-                      value="2022-01-01"
-                    />
-                  </li>
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="date"
-                      readonly
-                      value="2022-02-02"
-                    />
-                  </li>
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="date"
-                      readonly
-                      value="2022-03-03"
-                    />
-                  </li>
-                </ul>
+                <ul id="form-droplist-date" class="tickets-form__droplist droplist-date"></ul>
               </div>
             </div>
             <div class="tickets-form__field">
@@ -171,32 +155,7 @@
                     fill="#030303"
                   />
                 </svg>
-                <ul class="tickets-form__droplist droplist-time">
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="time"
-                      value="12:12"
-                      readonly
-                    />
-                  </li>
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="time"
-                      value="13:13"
-                      readonly
-                    />
-                  </li>
-                  <li class="tickets-form__droplist-item">
-                    <input
-                      class="tickets-form__droplist-field"
-                      type="time"
-                      value="14:14"
-                      readonly
-                    />
-                  </li>
-                </ul>
+                <ul id="form-droplist-time" class="tickets-form__droplist droplist-time"></ul>
               </div>
             </div>
           </div>
@@ -216,7 +175,7 @@
             <input
               autocomplete="off"
               class="tickets-form__field-inner"
-              id="username"
+              id="tickets-form-username"
               placeholder="Name"
               type="text"
               maxlength="20"
@@ -239,7 +198,7 @@
             <input
               autocomplete="off"
               class="tickets-form__field-inner"
-              id="email"
+              id="tickets-form-email"
               placeholder="E-mail"
               type="text"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
@@ -262,7 +221,7 @@
             <input
               autocomplete="off"
               class="tickets-form__field-inner"
-              id="phone"
+              id="tickets-form-phone"
               placeholder="Phone"
               type="tel"
               required
@@ -333,7 +292,7 @@
               <label class="tickets-form__entry-text" for=""
                 ><span class="tickets-form__field-text">Basic 18+</span> (<span
                   class="tickets-form__entry-price price-basic"
-                  >20</span
+                ></span
                 >€)
               </label>
               <div class="tickets-form__counter">
@@ -352,8 +311,7 @@
               <label class="tickets-form__entry-text" for=""
                 ><span class="tickets-form__field-text">Senior 65+</span> (<span
                   class="tickets-form__entry-price price-senior"
-                  >10</span
-                >
+                ></span>
                 €)</label
               >
               <div class="tickets-form__counter">
@@ -430,7 +388,7 @@
             <div class="overview-age__container">
               <span class="overview-age__count">2</span>
               <span class="overview-age__count-text"
-                >Basic (<span class="overview-age__count-price price-basic">20</span>€)</span
+                >Basic (<span class="overview-age__count-price price-basic"></span>€)</span
               >
             </div>
             <span class="overview-age__total-price total-price-basic">0</span>€
@@ -439,7 +397,7 @@
             <div class="overview-age__container">
               <span class="overview-age__count">2</span>
               <span class="overview-age__count-text"
-                >Senior (<span class="overview-age__count-price price-senior">10</span>€)</span
+                >Senior (<span class="overview-age__count-price price-senior"></span>€)</span
               >
             </div>
             <span class="overview-age__total-price total-price-senior">0</span>€

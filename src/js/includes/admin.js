@@ -1,6 +1,5 @@
 import { dateList, priceList, timeList, usersList } from "./db";
 import { Login } from "./login";
-import { render } from "./render";
 
 export class Admin {
   constructor() {
@@ -25,10 +24,10 @@ export class Admin {
 
     this.btnUpdatePrice = document.getElementById("btn-update-price");
 
-    this.arrDate = dateList;
-    this.arrTime = timeList;
-    this.arrPrice = priceList;
-    this.arrUser = usersList;
+    this.arrDate = JSON.parse(localStorage.getItem("dateList"));
+    this.arrTime = JSON.parse(localStorage.getItem("timeList"));
+    this.arrPrice = JSON.parse(localStorage.getItem("priceList"));
+    this.arrUser = JSON.parse(localStorage.getItem("usersList"));
 
     this.btnAdminLogOut = document.getElementById("admin-btn-logout");
   }
@@ -40,7 +39,9 @@ export class Admin {
   }
 
   updateData() {
-    render();
+    localStorage.setItem("dateList", JSON.stringify(dateList));
+    localStorage.setItem("timeList", JSON.stringify(timeList));
+    localStorage.setItem("priceList", JSON.stringify(priceList));
     for (const dateItem of this.arrDate) {
       this.adminDateList.innerHTML += this.itemWrap(dateItem);
     }
@@ -119,6 +120,7 @@ export class Admin {
         this.arrPrice.basic = this.basicPriceInput.value;
         this.arrPrice.senior = this.seniorPriceInput.value;
         localStorage.setItem("priceList", JSON.stringify(this.arrPrice));
+        alert("Price updated successfully!");
       }
     });
   }
