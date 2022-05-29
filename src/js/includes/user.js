@@ -1,4 +1,5 @@
 import { ticketsList } from "./db";
+import { Login } from "./login";
 import { removeFromTable } from "./utils";
 
 export class User {
@@ -7,16 +8,30 @@ export class User {
     this.returnedTicketList = document.getElementById("returned-list");
     this.tableTickets = document.getElementById("user-ticket-list");
     this.tableDataList = document.querySelectorAll(".profile-ticket-list__table-data");
-    this.arrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+
+    this.arrTickets = ticketsList;
+
     this.btnLoadImage = document.getElementById("upload-img");
     this.sampleImg = document.querySelector(".profile__avatar-img");
+
     this.userNameField = document.getElementById("user-name");
     this.userPasswordField = document.getElementById("user-password");
     this.userEmailFiled = document.getElementById("user-email");
     this.userPhoneFiled = document.getElementById("user-phone");
+
+    this.userBtnLogOut = document.getElementById("user-btn-logout");
+
+    this.userDataForm = document.getElementById("user-data-form");
+
+    this.usersList = JSON.parse(localStorage.getItem("usersList"));
+
+    this.authLogin = JSON.parse(localStorage.getItem("auth"));
   }
 
   loadData() {
+    this.userDataForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
     for (const ticketItem of this.arrTickets) {
       console.log(this.arrTickets);
       this.tableTickets.innerHTML += this.ticketWrap(
@@ -27,6 +42,22 @@ export class User {
         ticketItem.time,
         ticketItem.amount
       );
+    }
+    this.isUser(this.authLogin.login);
+  }
+
+  isUser(login) {
+    for (const user of this.usersList) {
+      if (user.username === login) {
+        this.userNameField.value = user.username;
+        this.userPasswordField.value = user.password;
+        this.userEmailFiled.value = user.email;
+        if (user.phone === undefined) {
+          this.userPhoneFiled.value = "Enter phone number";
+        } else {
+          this.userPhoneFiled.value = user.phone;
+        }
+      }
     }
   }
 
@@ -44,6 +75,12 @@ export class User {
         const src = URL.createObjectURL(event.target.files[0]);
         this.sampleImg.src = src;
       }
+    });
+  }
+
+  userLogOut() {
+    this.userBtnLogOut.addEventListener("click", () => {
+      new Login().logOut();
     });
   }
 

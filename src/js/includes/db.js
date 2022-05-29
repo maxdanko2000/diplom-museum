@@ -58,9 +58,3 @@ export const priceList = {
   basic: 20,
   senior: 10,
 };
-
-localStorage.setItem("usersList", JSON.stringify(usersList));
-localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
-localStorage.setItem("dateList", JSON.stringify(dateList));
-localStorage.setItem("timeList", JSON.stringify(timeList));
-localStorage.setItem("priceList", JSON.stringify(priceList));

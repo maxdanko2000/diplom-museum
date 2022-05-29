@@ -1,22 +1,36 @@
+import { dateList, priceList, timeList, usersList } from "./db";
+import { Login } from "./login";
+import { render } from "./render";
+
 export class Admin {
   constructor() {
     this.adminForm = document.getElementById("admin-form");
+
     this.adminDateList = document.getElementById("admin-date-list");
     this.adminTimeList = document.getElementById("admin-time-list");
     this.adminUserList = document.getElementById("admin-user-list");
+
     this.selectDateField = document.getElementById("select-date-field");
     this.selectTimeField = document.getElementById("select-time-field");
+
     this.btnAddDate = document.getElementById("btn-add-date");
     this.btnAddTime = document.getElementById("btn-add-time");
+
     this.btnRemoveList = document.querySelectorAll(".admin__btn-remove");
+
     this.btnDeleteUserList = document.querySelectorAll(".admin__data-btn");
+
     this.basicPriceInput = document.getElementById("admin-basic-price");
     this.seniorPriceInput = document.getElementById("admin-senior-price");
+
     this.btnUpdatePrice = document.getElementById("btn-update-price");
-    this.arrDate = JSON.parse(localStorage.getItem("dateList"));
-    this.arrTime = JSON.parse(localStorage.getItem("timeList"));
-    this.arrPrice = JSON.parse(localStorage.getItem("priceList"));
-    this.arrUser = JSON.parse(localStorage.getItem("usersList"));
+
+    this.arrDate = dateList;
+    this.arrTime = timeList;
+    this.arrPrice = priceList;
+    this.arrUser = usersList;
+
+    this.btnAdminLogOut = document.getElementById("admin-btn-logout");
   }
 
   init() {
@@ -26,6 +40,7 @@ export class Admin {
   }
 
   updateData() {
+    render();
     for (const dateItem of this.arrDate) {
       this.adminDateList.innerHTML += this.itemWrap(dateItem);
     }
@@ -133,5 +148,11 @@ export class Admin {
         <span class="admin__btn-remove"></span>
       </td>
     </tr>`;
+  }
+
+  adminLogOut() {
+    this.btnAdminLogOut.addEventListener("click", () => {
+      new Login().logOut();
+    });
   }
 }

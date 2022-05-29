@@ -2,7 +2,7 @@
   <div class="profile__container section-container">
     <h1 class="profile__title title">Profile</h1>
     <div class="profile__body">
-      <div class="profile__left">
+      <form id="user-data-form" class="profile__left">
         <label class="tickets-form__field-toggler" for="user-name">
           <svg
             fill="none"
@@ -88,7 +88,8 @@
             pattern="[0-9]{10,12}"
           />
         </label>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
       <div class="profile-center">
         <span class="profile-center__title">Tickets</span>
         <div class="profile-center__container">
@@ -184,7 +185,7 @@
           <label class="profile__avatar-btn" for="upload-img"> Upload picture </label>
         </div>
         <a class="profile__link" href="register-page.html">Delete account</a>
-        <a class="profile__link" href="login-page.html">Log out</a>
+        <a id="user-btn-logout" class="profile__link" href="login-page.html">Log out</a>
       </div>
     </div>
     <a class="profile__link" href="index.html">Back to Louvre</a>

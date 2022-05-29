@@ -9,3 +9,9 @@ export function removeFromTable(e) {
   console.log("removed");
   return this;
 }
+
+export function showModal(modal) {
+  setTimeout(() => {
+    modal.style.display = "block";
+  }, 3000);
+}
