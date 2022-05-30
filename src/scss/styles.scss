@@ -1,13 +1,13 @@
 //Libs
 @import "~modern-normalize/modern-normalize.css";
 // Configuration
-@import "variables";
+@import "base/variables";
 //Base
 @import "base/fonts";
 @import "base/mixins";
 @import "base/root";
 // Layout & components
-@import "reboot";
+@import "base/reboot";
 // Mixes
 // Blocks
 @import "blocks/socials";
