@@ -11,21 +11,24 @@ export class Register {
     this.btnRegister = document.getElementById("btn-register");
 
     this.formEl = document.getElementById("register-form");
-    localStorage.setItem("usersList", JSON.stringify(usersList));
+
     this.usersList = JSON.parse(localStorage.getItem("usersList"));
   }
   register() {
+    if (!this.usersList) {
+      localStorage.setItem("usersList", JSON.stringify(usersList));
+      this.usersList = JSON.parse(localStorage.getItem("usersList"));
+    }
     this.formEl.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.passwordConfirmField.value === this.passwordField.value) {
         if (!isAuth(this.usersList, this.usernameField.value, this.passwordField.value)) {
           let user = {
-            id,
             username: `${this.usernameField.value}`,
             password: `${this.passwordField.value}`,
             email: `${this.emailField.value}`,
           };
-          id++;
+
           this.btnRegister.disabled = true;
           usersList.push(user);
           localStorage.setItem("usersList", JSON.stringify(usersList));

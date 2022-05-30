@@ -1,6 +1,5 @@
 export const usersList = [
   {
-    id: 0,
     username: "admin",
     password: "admin",
     email: "",
@@ -8,7 +7,6 @@ export const usersList = [
     isAdmin: true,
   },
   {
-    id: 1,
     username: "maxmax",
     password: "Maxim123",
     email: "m@m.ru",
@@ -16,7 +14,6 @@ export const usersList = [
     isAdmin: false,
   },
   {
-    id: 2,
     username: "vladislav",
     password: "Vladsensei2022",
     email: "v@m.ru",
@@ -49,6 +46,41 @@ export const ticketsList = [
     date: "2022-03-03",
     time: "14:14",
     amount: 8,
+  },
+];
+
+export const returnedTickets = [
+  {
+    id: 1,
+    type: "Temporary exhibition",
+    age: "basic",
+    date: "2022-01-01",
+    time: "12:12",
+    amount: 12,
+  },
+  {
+    id: 2,
+    type: "Permanent exhibition",
+    age: "senior",
+    date: "2022-02-02",
+    time: "13:13",
+    amount: 4,
+  },
+  {
+    id: 2,
+    type: "Permanent exhibition",
+    age: "senior",
+    date: "2022-02-02",
+    time: "13:13",
+    amount: 4,
+  },
+  {
+    id: 2,
+    type: "Permanent exhibition",
+    age: "senior",
+    date: "2022-02-02",
+    time: "13:13",
+    amount: 4,
   },
 ];
 

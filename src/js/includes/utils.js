@@ -4,12 +4,6 @@ export function isAuth(array, username, password) {
   );
 }
 
-export function removeFromTable(e) {
-  e.path[1].style.display = "none";
-  console.log("removed");
-  return this;
-}
-
 export function showModal(modal) {
   setTimeout(() => {
     modal.style.display = "block";

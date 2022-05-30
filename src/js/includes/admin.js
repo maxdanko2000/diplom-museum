@@ -39,9 +39,12 @@ export class Admin {
   }
 
   updateData() {
-    localStorage.setItem("dateList", JSON.stringify(dateList));
-    localStorage.setItem("timeList", JSON.stringify(timeList));
-    localStorage.setItem("priceList", JSON.stringify(priceList));
+    if (!this.arrDate && !this.arrTime && !this.arrPrice) {
+      localStorage.setItem("dateList", JSON.stringify(dateList));
+      localStorage.setItem("timeList", JSON.stringify(timeList));
+      localStorage.setItem("priceList", JSON.stringify(priceList));
+    }
+
     for (const dateItem of this.arrDate) {
       this.adminDateList.innerHTML += this.itemWrap(dateItem);
     }
@@ -51,7 +54,6 @@ export class Admin {
     for (const userItem of this.arrUser) {
       if (!userItem.isAdmin) {
         this.adminUserList.innerHTML += this.userWrap(
-          userItem.id,
           userItem.username,
           userItem.password,
           userItem.email,
@@ -59,6 +61,8 @@ export class Admin {
         );
       }
     }
+    this.basicPriceInput.value = this.arrPrice.basic;
+    this.seniorPriceInput.value = this.arrPrice.senior;
   }
 
   itemWrap(data) {
@@ -73,8 +77,8 @@ export class Admin {
     this.btnAddDate.addEventListener("click", (e) => {
       if (this.selectDateField.value) {
         this.arrDate.push(this.selectDateField.value);
-        localStorage.setItem("dateList", JSON.stringify(this.arrDate));
         e.path[1].childNodes[3].innerHTML += this.itemWrap(this.selectDateField.value);
+        localStorage.setItem("dateList", JSON.stringify(this.arrDate));
       }
     });
   }
@@ -129,8 +133,9 @@ export class Admin {
     for (const btnDeleteUser of this.btnDeleteUserList) {
       btnDeleteUser.addEventListener("click", (e) => {
         e.path[1].style.display = "none";
+
         const result = this.arrUser.filter(
-          (item) => !(+item.id === +e.path[1].childNodes[1].innerHTML)
+          (item) => !(item.username === e.path[1].childNodes[1].innerHTML)
         );
         this.arrUser = result;
         localStorage.setItem("usersList", JSON.stringify(this.arrUser));
@@ -138,10 +143,9 @@ export class Admin {
     }
   }
 
-  userWrap(id, username, password, email, phone) {
+  userWrap(username, password, email, phone) {
     return `
     <tr class="admin__table-row">
-      <td class="admin__table-data">${id}</td>
       <td class="admin__table-data">${username}</td>
       <td class="admin__table-data">${password}</td>
       <td class="admin__table-data">${email}</td>

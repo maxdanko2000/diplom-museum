@@ -12,6 +12,10 @@ export class Login {
     this.auth = { isAdmin: false, isAuth: false, login: "" };
   }
   authorize() {
+    if (!this.usersList) {
+      localStorage.setItem("usersList", JSON.stringify(usersList));
+      this.usersList = JSON.parse(localStorage.getItem("usersList"));
+    }
     this.loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       if (isAuth(this.usersList, this.userNameField.value, this.passwordField.value)) {

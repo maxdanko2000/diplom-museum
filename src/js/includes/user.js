@@ -1,15 +1,13 @@
-import { ticketsList } from "./db";
+import { ticketsList, returnedTickets, priceList } from "./db";
 import { Login } from "./login";
-import { removeFromTable } from "./utils";
 
 export class User {
   constructor() {
     this.btnReturnList = document.querySelectorAll(".profile-ticket-list__btn-return");
-    this.returnedTicketList = document.getElementById("returned-list");
-    this.tableTickets = document.getElementById("user-ticket-list");
-    this.tableDataList = document.querySelectorAll(".profile-ticket-list__table-data");
 
-    this.arrTickets = ticketsList;
+    this.returnedTicketList = document.getElementById("returned-list");
+    this.ticketList = document.getElementById("user-ticket-list");
+    this.tableDataList = document.querySelectorAll(".profile-ticket-list__table-data");
 
     this.btnLoadImage = document.getElementById("upload-img");
     this.sampleImg = document.querySelector(".profile__avatar-img");
@@ -28,6 +26,12 @@ export class User {
     this.authLogin = JSON.parse(localStorage.getItem("auth"));
 
     this.btnDeleteAccount = document.getElementById("btn-delete-account");
+
+    this.ticketsCounter = document.getElementById("tickets-counter");
+    this.returnedTicketsCounter = document.getElementById("returned-tickets-counter");
+
+    this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+    this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
   }
 
   loadData() {
@@ -36,7 +40,6 @@ export class User {
       const usersList = JSON.parse(localStorage.getItem("usersList"));
       for (const user of usersList) {
         if (user.username === this.authLogin.login) {
-          console.log(this.authLogin.login);
           user.username = this.userNameField.value;
           user.password = this.userPasswordField.value;
           user.email = this.userEmailFiled.value;
@@ -47,8 +50,31 @@ export class User {
         }
       }
     });
-    for (const ticketItem of this.arrTickets) {
-      this.tableTickets.innerHTML += this.ticketWrap(
+
+    if (!this.localArrTickets && !this.localArrReturned) {
+      localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+      localStorage.setItem("returnedTickets", JSON.stringify(returnedTickets));
+      this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+      this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
+    }
+
+    this.ticketsCounter.innerHTML = this.localArrTickets.length;
+    this.returnedTicketsCounter.innerHTML = this.localArrReturned.length;
+
+    for (const returnedTicket of this.localArrReturned) {
+      this.returnedTicketList.innerHTML += this.returnTicketWrap(
+        returnedTicket.id,
+        returnedTicket.type,
+        returnedTicket.age,
+        returnedTicket.date,
+        returnedTicket.time,
+        returnedTicket.amount,
+        "price"
+      );
+    }
+
+    for (const ticketItem of this.localArrTickets) {
+      this.ticketList.innerHTML += this.ticketWrap(
         ticketItem.id,
         ticketItem.type,
         ticketItem.age,
@@ -57,17 +83,17 @@ export class User {
         ticketItem.amount
       );
     }
-    this.isUser(this.authLogin.login);
+    this.loadUserData(this.authLogin.login);
   }
 
-  isUser(login) {
+  loadUserData(login) {
     for (const user of this.usersList) {
       if (user.username === login) {
         this.userNameField.value = user.username;
         this.userPasswordField.value = user.password;
         this.userEmailFiled.value = user.email;
         if (user.phone === undefined) {
-          this.userPhoneFiled.value = "Enter phone number";
+          this.userPhoneFiled.placeholder = "Enter phone number";
         } else {
           this.userPhoneFiled.value = user.phone;
         }
@@ -78,7 +104,40 @@ export class User {
   returnTicket() {
     for (const btnReturnItem of this.btnReturnList) {
       btnReturnItem.addEventListener("click", (e) => {
-        removeFromTable(e);
+        this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+
+        localStorage.setItem(
+          "ticketsList",
+          JSON.stringify(
+            this.localArrTickets.filter((item) => +item.id !== +e.path[1].childNodes[1].innerHTML)
+          )
+        );
+
+        this.localArrReturned.push(
+          this.localArrTickets.filter((item) => +item.id === +e.path[1].childNodes[1].innerHTML)
+        );
+
+        localStorage.setItem("returnedTickets", JSON.stringify(this.localArrReturned));
+        e.path[1].style.display = "none";
+
+        this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+        this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
+
+        this.ticketsCounter.innerHTML = this.localArrTickets.length;
+        this.returnedTicketsCounter.innerHTML = this.localArrReturned.length;
+
+        for (const returnedTicket of this.localArrReturned) {
+          this.returnedTicketList.innerHTML = "";
+          this.returnedTicketList.innerHTML += this.returnTicketWrap(
+            returnedTicket.id,
+            returnedTicket.type,
+            returnedTicket.age,
+            returnedTicket.date,
+            returnedTicket.time,
+            returnedTicket.amount,
+            "price"
+          );
+        }
       });
     }
   }
@@ -106,10 +165,24 @@ export class User {
     });
   }
 
+  returnTicketWrap(id, type, age, date, time, amount, price) {
+    return `
+    <tr class="profile-ticket-list__table-row">
+    <td class="profile-ticket-list__table-data">${id}</td>
+      <td class="profile-ticket-list__table-data">${type}</td>
+      <td class="profile-ticket-list__table-data">${age}</td>
+      <td class="profile-ticket-list__table-data">${date}</td>
+      <td class="profile-ticket-list__table-data">${time}</td>
+      <td class="profile-ticket-list__table-data">${amount}</td>
+      <td class="profile-ticket-list__table-data">${price}</td>
+    </tr>
+    `;
+  }
+
   ticketWrap(id, type, age, date, time, amount) {
     return `
     <tr class="profile-ticket-list__table-row">
-      <td class="profile-ticket-list__table-data">${id}</td>
+    <td class="profile-ticket-list__table-data">${id}</td>
       <td class="profile-ticket-list__table-data">${type}</td>
       <td class="profile-ticket-list__table-data">${age}</td>
       <td class="profile-ticket-list__table-data">${date}</td>
