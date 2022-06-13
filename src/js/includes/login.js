@@ -11,6 +11,7 @@ export class Login {
     this.usersList = JSON.parse(localStorage.getItem("usersList"));
     this.auth = { isAdmin: false, isAuth: false, login: "" };
   }
+
   authorize() {
     if (!this.usersList) {
       localStorage.setItem("usersList", JSON.stringify(usersList));
@@ -24,7 +25,7 @@ export class Login {
           this.auth.isAuth = true;
           this.auth.login = this.userNameField.value;
           localStorage.setItem("auth", JSON.stringify(this.auth));
-          alert("Welcome SENSEI");
+          alert("Welcome administrator!");
           document.location.pathname = "/index.html";
         } else {
           this.auth.isAdmin = false;

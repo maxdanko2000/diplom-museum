@@ -3,9 +3,3 @@ export function isAuth(array, username, password) {
     array.filter((item) => item.username === username && item.password === password).length > 0
   );
 }
-
-export function showModal(modal) {
-  setTimeout(() => {
-    modal.style.display = "block";
-  }, 3000);
-}
