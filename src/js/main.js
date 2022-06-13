@@ -10,7 +10,7 @@ import { Login } from "./includes/login.js";
 import { Admin } from "./includes/admin.js";
 import { render } from "./includes/render.js";
 
-if (document.location.pathname === "/" || document.location.pathname === "/index.html") {
+if (document.location.pathname === "/" || document.location.pathname === "/main.html") {
   //Explore
   render();
   new Comparison().comparing();

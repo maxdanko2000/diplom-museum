@@ -1,4 +1,3 @@
-import { render } from "./render";
 import { usersList } from "./db";
 import { isAuth } from "./utils";
 
@@ -26,14 +25,14 @@ export class Login {
           this.auth.login = this.userNameField.value;
           localStorage.setItem("auth", JSON.stringify(this.auth));
           alert("Welcome administrator!");
-          document.location.pathname = "/index.html";
+          document.location.pathname = "/main.html";
         } else {
           this.auth.isAdmin = false;
           this.auth.isAuth = true;
           this.auth.login = this.userNameField.value;
           localStorage.setItem("auth", JSON.stringify(this.auth));
           alert(`Welcome ${this.userNameField.value}!`);
-          document.location.pathname = "/index.html";
+          document.location.pathname = "/main.html";
         }
       } else {
         this.auth.isAdmin = false;
