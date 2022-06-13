@@ -1,8 +1,8 @@
-import { dateList, timeList } from "./db";
+import { dateList, priceList, timeList } from "./db";
 
 export class Form {
   constructor() {
-    this.listItems = document.querySelectorAll(".tickets-form__droplist>li>input");
+    this.listItems = document.querySelectorAll(".tickets-form__droplist-field");
 
     this.droplistFieldList = document.querySelectorAll(".field-text");
 
@@ -29,17 +29,29 @@ export class Form {
 
     this.resultPrice = 0;
 
-    this.auth = JSON.parse(localStorage.getItem("auth"));
-
-    this.localPrice = JSON.parse(localStorage.getItem("priceList"));
-
     this.priceBasicText = document.querySelectorAll(".price-basic");
     this.priceSeniorText = document.querySelectorAll(".price-senior");
 
+    this.auth = JSON.parse(localStorage.getItem("auth"));
+    this.localPrice = JSON.parse(localStorage.getItem("priceList"));
     this.localDateList = JSON.parse(localStorage.getItem("dateList"));
     this.localTimeList = JSON.parse(localStorage.getItem("timeList"));
+
     this.dropListDate = document.getElementById("form-droplist-date");
     this.dropListTime = document.getElementById("form-droplist-time");
+  }
+
+  init() {
+    if (!this.auth) {
+      this.auth = { isAdmin: false, isAuth: false, login: "" };
+      localStorage.setItem("auth", JSON.stringify(this.auth));
+    }
+
+    if (!this.localDateList && !this.localTimeList && !this.localPrice) {
+      localStorage.setItem("dateList", JSON.stringify(dateList));
+      localStorage.setItem("timeList", JSON.stringify(timeList));
+      localStorage.setItem("priceList", JSON.stringify(priceList));
+    }
   }
 
   buyTicket() {
@@ -52,25 +64,19 @@ export class Form {
 
   toggleForm() {
     this.formCloseBtn.addEventListener("click", () => {
-      console.log(0);
       this.form.classList.remove("tickets-form__visible");
     });
 
     this.formOpenBtn.addEventListener("click", () => {
-      console.log(1);
       if (this.auth.isAdmin === false && this.auth.isAuth === false) {
         alert("Please authorize!");
         document.location.pathname = "/login-page.html";
       } else {
         this.form.classList.add("tickets-form__visible");
 
-        // localStorage.setItem("dateList", JSON.stringify(dateList));
-
         for (const date of this.localDateList) {
           this.dropListDate.innerHTML += this.dateWrap(date);
         }
-
-        // localStorage.setItem("timeList", JSON.stringify(timeList));
 
         for (const time of this.localTimeList) {
           this.dropListTime.innerHTML += this.dateWrap(time);
@@ -90,7 +96,6 @@ export class Form {
     const pricesBasic = document.querySelectorAll(".basic-price");
     const pricesSenior = document.querySelectorAll(".senior-price");
 
-    console.log();
     if (e.path[1].children[1].value < 0) {
       e.path[1].children[1].value = 0;
     }
@@ -161,6 +166,7 @@ export class Form {
 
     for (const listItem of this.listItems) {
       listItem.addEventListener("click", (e) => {
+        console.log("1");
         e.path[3].childNodes[3].innerHTML = e.target.value;
         this.overviewTextList[0].innerHTML = this.droplistFieldList[0].innerHTML;
         this.overviewTextList[1].innerHTML = this.droplistFieldList[1].innerHTML;

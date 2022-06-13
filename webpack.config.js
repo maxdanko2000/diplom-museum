@@ -6,7 +6,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const glob = require("glob");
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -25,15 +24,11 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins("./src/html/templates");
 
 const config = {
-  entry: glob.sync("./src/{scss,js}/*.{js,scss}").reduce((obj, el) => {
-    obj[path.parse(el).name] = el;
-    return obj;
-  }, {}),
+  entry: ["./src/js/index.js", "./src/scss/styles.scss"],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "./js/[name].min.js",
+    filename: "./js/main.min.js",
   },
-  // devtool: "source-map",
   mode: "production",
   optimization: {
     minimize: true,
@@ -52,9 +47,6 @@ const config = {
         extractComments: true,
       }),
     ],
-  },
-  performance: {
-    hints: false,
   },
   module: {
     rules: [

@@ -10,7 +10,7 @@ import { Login } from "./includes/login.js";
 import { Admin } from "./includes/admin.js";
 import { render } from "./includes/render.js";
 
-if (document.location.pathname === "/" || document.location.pathname === "/main.html") {
+if (document.location.pathname === "/" || document.location.pathname === "/index.html") {
   //Explore
   render();
   new Comparison().comparing();
@@ -26,11 +26,12 @@ if (document.location.pathname === "/" || document.location.pathname === "/main.
   new JourneyVideo().progressLoop();
   new Swiper(".journey-slider-inner", Object.assign(journeyOptions));
   //Tickets form
+  new Form().init();
   new Form().buyTicket();
   new Form().toggleForm();
   new Form().increase();
   new Form().decrease();
-  new Form().selectValue();
+  // new Form().selectValue();
 }
 
 if (document.location.pathname === "/user-page.html") {
