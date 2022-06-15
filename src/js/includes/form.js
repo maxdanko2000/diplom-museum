@@ -1,10 +1,13 @@
-import { dateList, priceList, timeList } from "./db";
+import { dateList, priceList, ticketsList, timeList } from "./db";
 
 export class Form {
   constructor() {
     this.listItems = document.querySelectorAll(".tickets-form__droplist-field");
-
     this.droplistFieldList = document.querySelectorAll(".field-text");
+    this.overviewTextList = document.querySelectorAll(".overview__row-text");
+    this.overviewAgeCount;
+
+    this.localTicketList = JSON.parse(localStorage.getItem("ticketsList"));
 
     this.btnIncreases = document.querySelectorAll(".counter-increase");
     this.btnDecreases = document.querySelectorAll(".counter-decrease");
@@ -20,12 +23,7 @@ export class Form {
     this.formOpenBtn = document.getElementById("open-form-btn");
     this.formOpenToggler = document.getElementById("tickets-form-toggler");
 
-    this.ticketTypeList = document.querySelectorAll(".tickets-type__bar");
-    this.ticketTypeTexts = document.querySelectorAll(".tickets-type-text");
-
     this.totalAgeCounters = document.querySelectorAll(".overview-age__count");
-
-    this.overviewTextList = document.querySelectorAll(".overview__row-text");
 
     this.resultPrice = 0;
 
@@ -47,17 +45,68 @@ export class Form {
       localStorage.setItem("auth", JSON.stringify(this.auth));
     }
 
-    if (!this.localDateList && !this.localTimeList && !this.localPrice) {
+    if (!this.localDateList && !this.localTimeList && !this.localPrice && !this.localTicketList) {
       localStorage.setItem("dateList", JSON.stringify(dateList));
       localStorage.setItem("timeList", JSON.stringify(timeList));
       localStorage.setItem("priceList", JSON.stringify(priceList));
+      localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+    }
+
+    for (const date of this.localDateList) {
+      this.dropListDate.innerHTML += this.dateWrap(date);
+    }
+
+    for (const time of this.localTimeList) {
+      this.dropListTime.innerHTML += this.dateWrap(time);
+    }
+
+    for (const basicPriceText of this.priceBasicText) {
+      basicPriceText.innerHTML = this.localPrice.basic;
+    }
+    for (const seniorPriceText of this.priceSeniorText) {
+      seniorPriceText.innerHTML = this.localPrice.senior;
     }
   }
 
   buyTicket() {
     this.form.addEventListener("submit", (e) => {
       e.preventDefault();
+      this.overviewAgeCount = document.querySelectorAll(".overview-age__count");
+      const dateValue = this.overviewTextList[0].innerHTML;
+      const timeValue = this.overviewTextList[1].innerHTML;
+      const ticketTypeValue = this.overviewTextList[2].innerHTML;
+      const basicAmount = +this.overviewAgeCount[0].innerHTML;
+      const seniorAmount = +this.overviewAgeCount[1].innerHTML;
+      const basicText = "basic";
+      const seniorText = "senior";
 
+      const ticketBasic = {
+        type: ticketTypeValue,
+        age: basicText,
+        date: dateValue,
+        time: timeValue,
+        amount: basicAmount,
+      };
+
+      const ticketSenior = {
+        type: ticketTypeValue,
+        age: seniorText,
+        date: dateValue,
+        time: timeValue,
+        amount: seniorAmount,
+      };
+
+      if (basicAmount !== 0) {
+        ticketBasic.id = this.localTicketList.length;
+        this.localTicketList.push(ticketBasic);
+        localStorage.setItem("ticketsList", JSON.stringify(this.localTicketList));
+      }
+
+      if (seniorAmount !== 0) {
+        ticketSenior.id = this.localTicketList.length;
+        this.localTicketList.push(ticketSenior);
+        localStorage.setItem("ticketsList", JSON.stringify(this.localTicketList));
+      }
       alert("Ticket purchased successfully!");
     });
   }
@@ -73,21 +122,6 @@ export class Form {
         document.location.pathname = "/login-page.html";
       } else {
         this.form.classList.add("tickets-form__visible");
-
-        for (const date of this.localDateList) {
-          this.dropListDate.innerHTML += this.dateWrap(date);
-        }
-
-        for (const time of this.localTimeList) {
-          this.dropListTime.innerHTML += this.dateWrap(time);
-        }
-
-        for (const basicPriceText of this.priceBasicText) {
-          basicPriceText.innerHTML = this.localPrice.basic;
-        }
-        for (const seniorPriceText of this.priceSeniorText) {
-          seniorPriceText.innerHTML = this.localPrice.senior;
-        }
       }
     });
   }
@@ -156,18 +190,10 @@ export class Form {
   }
 
   selectValue() {
-    for (const ticketTypeItem of this.ticketTypeList) {
-      ticketTypeItem.addEventListener("click", (e) => {
-        for (const ticketTypeText of this.ticketTypeTexts) {
-          ticketTypeText.innerHTML = e.path[1].childNodes[3].innerHTML;
-        }
-      });
-    }
-
     for (const listItem of this.listItems) {
       listItem.addEventListener("click", (e) => {
-        console.log("1");
-        e.path[3].childNodes[3].innerHTML = e.target.value;
+        this.overviewAgeCount = document.querySelectorAll(".overview-age__count");
+        e.path[3].childNodes[2].innerHTML = e.target.value;
         this.overviewTextList[0].innerHTML = this.droplistFieldList[0].innerHTML;
         this.overviewTextList[1].innerHTML = this.droplistFieldList[1].innerHTML;
         this.overviewTextList[2].innerHTML = this.droplistFieldList[2].innerHTML;

@@ -31,7 +31,7 @@ if (document.location.pathname === "/" || document.location.pathname === "/index
   new Form().toggleForm();
   new Form().increase();
   new Form().decrease();
-  // new Form().selectValue();
+  new Form().selectValue();
 }
 
 if (document.location.pathname === "/user-page.html") {

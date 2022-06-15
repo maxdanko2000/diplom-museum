@@ -1,4 +1,4 @@
-import { ticketsList, returnedTickets, priceList } from "./db";
+import { ticketsList, returnedTickets } from "./db";
 import { Login } from "./login";
 
 export class User {
@@ -51,26 +51,20 @@ export class User {
       }
     });
 
-    if (!this.localArrTickets && !this.localArrReturned) {
-      localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
+    if (!this.localArrReturned) {
       localStorage.setItem("returnedTickets", JSON.stringify(returnedTickets));
-      this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
       this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
     }
 
-    this.ticketsCounter.innerHTML = this.localArrTickets.length;
-    this.returnedTicketsCounter.innerHTML = this.localArrReturned.length;
-
-    for (const returnedTicket of this.localArrReturned) {
-      this.returnedTicketList.innerHTML += this.returnTicketWrap(
-        returnedTicket.id,
-        returnedTicket.type,
-        returnedTicket.age,
-        returnedTicket.date,
-        returnedTicket.time,
-        returnedTicket.amount,
-        "price"
-      );
+    if (this.localArrTickets.length === null) {
+      this.ticketsCounter.innerHTML = "0";
+    } else {
+      this.ticketsCounter.innerHTML = this.localArrTickets.length;
+    }
+    if (this.localArrReturned.length === null) {
+      this.returnedTicketsCounter.innerHTML = "0";
+    } else {
+      this.returnedTicketsCounter.innerHTML = this.localArrReturned.length;
     }
 
     for (const ticketItem of this.localArrTickets) {
@@ -83,6 +77,18 @@ export class User {
         ticketItem.amount
       );
     }
+    this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
+    for (const returnedTicket of this.localArrReturned) {
+      this.returnedTicketList.innerHTML += this.returnTicketWrap(
+        returnedTicket.id,
+        returnedTicket.type,
+        returnedTicket.age,
+        returnedTicket.date,
+        returnedTicket.time,
+        returnedTicket.amount
+      );
+    }
+
     this.loadUserData(this.authLogin.login);
   }
 
@@ -105,39 +111,47 @@ export class User {
     for (const btnReturnItem of this.btnReturnList) {
       btnReturnItem.addEventListener("click", (e) => {
         this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
+        this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
+
+        e.path[1].style.display = "none";
 
         localStorage.setItem(
           "ticketsList",
           JSON.stringify(
-            this.localArrTickets.filter((item) => +item.id !== +e.path[1].childNodes[1].innerHTML)
+            this.localArrTickets.filter(
+              (ticket) => +ticket.id !== +e.path[1].childNodes[1].innerHTML
+            )
           )
         );
 
-        this.localArrReturned.push(
-          this.localArrTickets.filter((item) => +item.id === +e.path[1].childNodes[1].innerHTML)
-        );
+        const returnedTicket = {
+          id: e.path[1].childNodes[1].innerHTML,
+          type: e.path[1].childNodes[3].innerHTML,
+          age: e.path[1].childNodes[5].innerHTML,
+          date: e.path[1].childNodes[7].innerHTML,
+          time: e.path[1].childNodes[9].innerHTML,
+          amount: e.path[1].childNodes[11].innerHTML,
+        };
+
+        this.localArrReturned.push(returnedTicket);
 
         localStorage.setItem("returnedTickets", JSON.stringify(this.localArrReturned));
-        e.path[1].style.display = "none";
-
-        this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
-        this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
-
-        this.ticketsCounter.innerHTML = this.localArrTickets.length;
-        this.returnedTicketsCounter.innerHTML = this.localArrReturned.length;
 
         for (const returnedTicket of this.localArrReturned) {
-          this.returnedTicketList.innerHTML = "";
           this.returnedTicketList.innerHTML += this.returnTicketWrap(
             returnedTicket.id,
             returnedTicket.type,
             returnedTicket.age,
             returnedTicket.date,
             returnedTicket.time,
-            returnedTicket.amount,
-            "price"
+            returnedTicket.amount
           );
         }
+
+        this.ticketsCounter.innerHTML--;
+        this.returnedTicketsCounter.innerHTML++;
+
+        document.location.reload();
       });
     }
   }
@@ -165,7 +179,7 @@ export class User {
     });
   }
 
-  returnTicketWrap(id, type, age, date, time, amount, price) {
+  returnTicketWrap(id, type, age, date, time, amount) {
     return `
     <tr class="profile-ticket-list__table-row">
     <td class="profile-ticket-list__table-data">${id}</td>
@@ -174,7 +188,6 @@ export class User {
       <td class="profile-ticket-list__table-data">${date}</td>
       <td class="profile-ticket-list__table-data">${time}</td>
       <td class="profile-ticket-list__table-data">${amount}</td>
-      <td class="profile-ticket-list__table-data">${price}</td>
     </tr>
     `;
   }
