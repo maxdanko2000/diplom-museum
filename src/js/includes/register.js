@@ -34,6 +34,7 @@ export class Register {
           localStorage.setItem("usersList", JSON.stringify(usersList));
           alert(`User: ${user.username} successfully register! Please sign in.`);
           this.btnRegister.disabled = false;
+          this.clearTickets();
         } else {
           alert("User with current name already register!");
         }
@@ -48,5 +49,10 @@ export class Register {
     this.emailField.value = "";
     this.passwordField.value = "";
     this.passwordConfirmField.value = "";
+  }
+
+  clearTickets() {
+    let ticketsList = [];
+    localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
   }
 }

@@ -79,6 +79,7 @@ export class Admin {
         this.arrDate.push(this.selectDateField.value);
         e.path[1].childNodes[3].innerHTML += this.itemWrap(this.selectDateField.value);
         localStorage.setItem("dateList", JSON.stringify(this.arrDate));
+        document.location.reload();
       }
     });
   }
@@ -88,7 +89,6 @@ export class Admin {
       btnRemove.addEventListener("click", (e) => {
         const currentValue = e.target.parentNode.childNodes[1].value;
         e.target.parentNode.style.display = "none";
-        console.log(currentValue);
         const result = this.arrDate.filter((item) => !(item === currentValue));
         this.arrDate = result;
         localStorage.setItem("dateList", JSON.stringify(this.arrDate));
@@ -102,6 +102,7 @@ export class Admin {
         this.arrTime.push(this.selectTimeField.value);
         localStorage.setItem("timeList", JSON.stringify(this.arrTime));
         e.path[1].childNodes[3].innerHTML += this.itemWrap(this.selectTimeField.value);
+        document.location.reload();
       }
     });
   }
