@@ -26,7 +26,7 @@ export const ticketsList = [];
 
 export const returnedTickets = [];
 
-export const dateList = ["2022-01-01", "2022-02-02", "2022-03-03", "2022-04-04", "2022-05-05"];
+export const dateList = ["2022-01-01", "2022-02-02", "2022-03-03"];
 export const timeList = ["12:12", "13:13", "14:14", "15:15", "16:16"];
 export const priceList = {
   basic: 20,
