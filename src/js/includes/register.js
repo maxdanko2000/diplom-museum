@@ -53,6 +53,7 @@ export class Register {
 
   clearTickets() {
     let ticketsList = [];
+    localStorage.setItem("returnedTickets", JSON.stringify(ticketsList));
     localStorage.setItem("ticketsList", JSON.stringify(ticketsList));
   }
 }
