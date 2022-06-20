@@ -1,3 +1,5 @@
+import { IndexedDB } from "./idb";
+
 export const usersList = [
   {
     username: "admin",

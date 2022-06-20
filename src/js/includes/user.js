@@ -1,35 +1,25 @@
-import { ticketsList, returnedTickets } from "./db";
+import { returnedTickets } from "./db";
 import { Login } from "./login";
 
 export class User {
   constructor() {
     this.btnReturnList = document.querySelectorAll(".profile-ticket-list__btn-return");
-
     this.returnedTicketList = document.getElementById("returned-list");
     this.ticketList = document.getElementById("user-ticket-list");
     this.tableDataList = document.querySelectorAll(".profile-ticket-list__table-data");
-
     this.btnLoadImage = document.getElementById("upload-img");
     this.sampleImg = document.querySelector(".profile__avatar-img");
-
     this.userNameField = document.getElementById("user-name");
     this.userPasswordField = document.getElementById("user-password");
     this.userEmailFiled = document.getElementById("user-email");
     this.userPhoneFiled = document.getElementById("user-phone");
-
     this.userBtnLogOut = document.getElementById("user-btn-logout");
-
     this.userDataForm = document.getElementById("user-data-form");
-
     this.usersList = JSON.parse(localStorage.getItem("usersList"));
-
     this.authLogin = JSON.parse(localStorage.getItem("auth"));
-
     this.btnDeleteAccount = document.getElementById("btn-delete-account");
-
     this.ticketsCounter = document.getElementById("tickets-counter");
     this.returnedTicketsCounter = document.getElementById("returned-tickets-counter");
-
     this.localArrTickets = JSON.parse(localStorage.getItem("ticketsList"));
     this.localArrReturned = JSON.parse(localStorage.getItem("returnedTickets"));
   }
@@ -37,7 +27,9 @@ export class User {
   loadData() {
     this.userDataForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
       const usersList = JSON.parse(localStorage.getItem("usersList"));
+
       for (const user of usersList) {
         if (user.username === this.authLogin.login) {
           user.username = this.userNameField.value;
