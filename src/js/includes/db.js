@@ -1,5 +1,3 @@
-import { IndexedDB } from "./idb";
-
 export const usersList = [
   {
     username: "admin",
@@ -33,4 +31,9 @@ export const timeList = ["12:12", "13:13", "14:14", "15:15", "16:16"];
 export const priceList = {
   basic: 20,
   senior: 10,
+};
+export const auth = {
+  isAdministrator: false,
+  isAuth: false,
+  login: "",
 };

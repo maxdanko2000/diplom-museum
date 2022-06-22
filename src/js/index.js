@@ -9,10 +9,11 @@ import { Register } from "./includes/register.js";
 import { Login } from "./includes/login.js";
 import { Admin } from "./includes/admin.js";
 import { render } from "./includes/render.js";
+import { Idb } from "./includes/idb.js";
 
 if (document.location.pathname === "/" || document.location.pathname === "/index.html") {
   //Explore
-  render();
+
   new Comparison().comparing();
   //Hero
   new Swiper(".hero-slider", Object.assign(heroOptions));
@@ -32,19 +33,19 @@ if (document.location.pathname === "/" || document.location.pathname === "/index
   new Form().increase();
   new Form().decrease();
   new Form().selectValue();
+  render();
 }
 
 if (document.location.pathname === "/user-page.html") {
-  render();
   new User().loadData();
   new User().imagePreview();
   new User().returnTicket();
   new User().userLogOut();
   new User().deleteAccount();
+  render();
 }
 
 if (document.location.pathname === "/admin-page.html") {
-  render();
   new Admin().init();
   new Admin().updateData();
   new Admin().addDate();
@@ -54,14 +55,16 @@ if (document.location.pathname === "/admin-page.html") {
   new Admin().removeUser();
   new Admin().updatePrice();
   new Admin().adminLogOut();
+  render();
 }
 
 if (document.location.pathname === "/register-page.html") {
-  render();
   new Register().register();
+  render();
 }
 
 if (document.location.pathname === "/login-page.html") {
-  render();
   new Login().authorize();
+  new Idb().init();
+  render();
 }
